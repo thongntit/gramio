@@ -29,7 +29,8 @@ test('Library no longer uses prototype learning data or progress copy', () => {
 });
 
 test('Library is protected and Today does not pass a prototype deck id', () => {
-  assert.match(appSource, /<PrivateRoute>\s*<Library\s*\/>\s*<\/PrivateRoute>/);
+  assert.match(appSource, /<PrivateRoute>[\s\S]*<AppShell \/>[\s\S]*<\/PrivateRoute>/);
+  assert.match(appSource, /<Route path="\/library" element=\{<Library \/>\}/);
   assert.doesNotMatch(todaySource, /openDeckId/);
   assert.match(todaySource, /navigate\(['"]\/library['"]\)/);
 });

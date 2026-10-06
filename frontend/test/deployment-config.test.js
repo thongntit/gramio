@@ -101,9 +101,16 @@ test('backend workflow has isolated branch deployment hooks', () => {
   assert.doesNotMatch(deployWorkflow, /secrets\.COOLIFY_WEBHOOK_URL/);
 });
 
-test('both Coolify deployment hooks force a fresh image pull', () => {
-  assert.match(deployWorkflow, /COOLIFY_DEV_WEBHOOK_URL }}&force=true/);
-  assert.match(deployWorkflow, /COOLIFY_PROD_WEBHOOK_URL }}&force=true/);
+test('both Coolify deployment hooks use POST and force a fresh image pull', () => {
+  assert.match(
+    deployWorkflow,
+    /-X POST "\$\{\{ secrets\.COOLIFY_DEV_WEBHOOK_URL \}\}&force=true"/,
+  );
+  assert.match(
+    deployWorkflow,
+    /-X POST "\$\{\{ secrets\.COOLIFY_PROD_WEBHOOK_URL \}\}&force=true"/,
+  );
+  assert.doesNotMatch(deployWorkflow, /-X GET .*COOLIFY_.*WEBHOOK_URL/);
 });
 
 test('backend PR workflow contains validation only', () => {

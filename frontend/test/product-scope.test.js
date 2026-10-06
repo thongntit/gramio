@@ -14,6 +14,7 @@ const staticManifest = JSON.parse(
   read('../public/assets/manifest.webmanifest'),
 );
 const viteConfig = read('../vite.config.mjs');
+const serviceWorker = read('../src/sw.js');
 
 const legacyRuntimeFiles = [
   '../src/pages/Home.jsx',
@@ -66,7 +67,21 @@ test('both PWA manifest sources describe Gramio', () => {
   assert.equal(staticManifest.name, 'Gramio');
   assert.equal(staticManifest.short_name, 'Gramio');
   assert.match(staticManifest.description, /grammar and vocabulary/i);
+  assert.equal(staticManifest.id, '/');
+  assert.equal(staticManifest.start_url, '/');
+  assert.equal(staticManifest.scope, '/');
+  assert.equal(staticManifest.lang, 'en');
+  assert.equal(staticManifest.display, 'standalone');
   assert.match(viteConfig, /name: 'Gramio'/);
   assert.match(viteConfig, /short_name: 'Gramio'/);
   assert.match(viteConfig, /grammar and vocabulary/i);
+  assert.match(viteConfig, /id: '\/'/);
+  assert.match(viteConfig, /start_url: '\/'/);
+  assert.match(viteConfig, /scope: '\/'/);
+  assert.match(viteConfig, /lang: 'en'/);
+});
+
+test('service worker serves the cached app shell for offline navigation', () => {
+  assert.match(serviceWorker, /NavigationRoute/);
+  assert.match(serviceWorker, /createHandlerBoundToURL\('\/index\.html'\)/);
 });

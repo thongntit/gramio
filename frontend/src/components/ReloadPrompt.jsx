@@ -44,11 +44,11 @@ function ReloadPrompt() {
           </div>
           <div className="flex-1">
             <p className="text-sm font-medium text-gray-900 dark:text-white">
-              {offlineReady ? 'App ready to work offline' : 'New version available'}
+              {offlineReady ? 'App shell ready offline' : 'New version available'}
             </p>
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
               {offlineReady
-                ? 'You can now use this app without an internet connection.'
+                ? 'You can reopen Gramio without a connection, but new reviews still need a connection.'
                 : 'A new version is available. Refresh to update.'}
             </p>
           </div>

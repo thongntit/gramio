@@ -1,13 +1,19 @@
 import { clientsClaim } from 'workbox-core';
-import { precacheAndRoute } from 'workbox-precaching';
+import { createHandlerBoundToURL, precacheAndRoute } from 'workbox-precaching';
 import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 import { ExpirationPlugin } from 'workbox-expiration';
-import { registerRoute } from 'workbox-routing';
+import { NavigationRoute, registerRoute } from 'workbox-routing';
 import { CacheFirst } from 'workbox-strategies';
 
 self.skipWaiting();
 clientsClaim();
 precacheAndRoute(self.__WB_MANIFEST);
+
+registerRoute(
+  new NavigationRoute(createHandlerBoundToURL('/index.html'), {
+    denylist: [/^\/api\//],
+  }),
+);
 
 registerRoute(
   ({ url }) => url.origin === 'https://fonts.googleapis.com',

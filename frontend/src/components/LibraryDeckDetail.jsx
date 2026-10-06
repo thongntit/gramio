@@ -10,6 +10,7 @@ import {
 import Card from '@/components/ui/Card';
 import TypeChip from '@/components/ui/TypeChip';
 import { ApiError, getContentDeckCards } from '@/services/openspeakApi';
+import { track } from '@/lib/analytics';
 import { useLearningStore } from '@/stores/learningStore';
 
 const TYPE_META = {
@@ -85,6 +86,13 @@ export default function LibraryDeckDetail({
       }
       setIsLearning(nextIsLearning);
       setEnrollmentStatus('success');
+      track(nextIsLearning ? 'deck_enrolled' : 'deck_unenrolled', {
+        deck_id: deck.id,
+        deck_slug: deck.slug,
+        deck_type: deck.type,
+        level: deck.level,
+        card_count: deck.cardCount,
+      });
       onLearningChanged?.(deck.id, nextIsLearning);
     } catch (requestError) {
       setEnrollmentStatus('error');

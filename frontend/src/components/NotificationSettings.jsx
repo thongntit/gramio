@@ -15,6 +15,7 @@ import {
   serializePushSubscription,
   subscribeToPush,
 } from '@/services/notificationPush';
+import { track } from '@/lib/analytics';
 
 function capabilityCopy(reason) {
   if (reason === 'not-configured') {
@@ -96,6 +97,7 @@ export default function NotificationSettings() {
           { token },
         );
         await subscription.unsubscribe();
+        track('notifications_updated', { enabled: false });
         setSubscription(null);
         setStatus('disabled');
         return;
@@ -108,6 +110,10 @@ export default function NotificationSettings() {
         return;
       }
       await persistSubscription(result.subscription);
+      track('notifications_updated', {
+        enabled: true,
+        reminder_time: reminderTime,
+      });
       setSubscription(result.subscription);
       setStatus('enabled');
     } catch (toggleError) {
@@ -119,13 +125,19 @@ export default function NotificationSettings() {
 
   const handleTimeChange = async (event) => {
     const nextTime = event.target.value;
+    const previousTime = reminderTime;
     setReminderTime(nextTime);
     if (status !== 'enabled' || !subscription || nextTime.length !== 5) return;
     setError('');
     setSaving(true);
     try {
       await persistSubscription(subscription, nextTime);
+      track('notifications_updated', {
+        enabled: true,
+        reminder_time: nextTime,
+      });
     } catch (timeError) {
+      setReminderTime(previousTime);
       setError(timeError.message || 'Could not save reminder time.');
     } finally {
       setSaving(false);

@@ -1,26 +1,24 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ClerkProvider } from '@clerk/clerk-react'
 import './index.css'
-import App from './App.jsx'
 import ReloadPrompt from './components/ReloadPrompt'
 import DatabaseErrorBoundary from './components/DatabaseErrorBoundary'
 import OfflineIndicator from './components/OfflineIndicator'
+import RootApp from './components/RootApp'
+import { initAnalytics } from './lib/analytics'
 
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+initAnalytics()
 
 const inner = (
   <DatabaseErrorBoundary>
     <ReloadPrompt />
-    <App />
+    <RootApp />
     <OfflineIndicator />
   </DatabaseErrorBoundary>
 )
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {PUBLISHABLE_KEY
-      ? <ClerkProvider publishableKey={PUBLISHABLE_KEY}>{inner}</ClerkProvider>
-      : inner}
+    {inner}
   </StrictMode>
 )

@@ -11,6 +11,7 @@ import { cn } from '@/lib/cn';
 import TypeChip from '@/components/ui/TypeChip';
 import ReauthenticateButton from '@/components/ReauthenticateButton';
 import useHorizontalSwipe from '@/hooks/useHorizontalSwipe';
+import { track } from '@/lib/analytics';
 import { useLearningStore } from '@/stores/learningStore';
 
 const REVIEW_BUTTONS = [
@@ -56,6 +57,7 @@ export default function Review() {
   const reviewStatus = useLearningStore((state) => state.reviewStatus);
   const reviewError = useLearningStore((state) => state.reviewError);
   const pendingReview = useLearningStore((state) => state.pendingReview);
+  const reviewSnapshot = useLearningStore((state) => state.reviewSnapshot);
   const loadToday = useLearningStore((state) => state.loadToday);
   const beginReview = useLearningStore((state) => state.beginReview);
   const submitPendingReview = useLearningStore((state) => state.submitPendingReview);
@@ -69,6 +71,7 @@ export default function Review() {
   const [counts, setCounts] = useState(EMPTY_COUNTS);
   const [reviewedCount, setReviewedCount] = useState(0);
   const refreshedMissingCard = useRef(null);
+  const reviewStarted = useRef(false);
 
   const card = today?.queue?.[0]?.card ?? null;
   const isSubmitting = reviewStatus === 'submitting';
@@ -83,6 +86,21 @@ export default function Review() {
       void loadToday(getToken);
     }
   }, [getToken, loadStatus, loadToday]);
+
+  useEffect(() => {
+    if (
+      reviewStarted.current
+      || loadStatus !== 'ready'
+      || !today
+      || today.caughtUp
+      || today.queue.length === 0
+    ) {
+      return;
+    }
+
+    reviewStarted.current = true;
+    track('review_started', { due_count: today.totalDue });
+  }, [loadStatus, today]);
 
   useEffect(() => {
     if (reviewError?.status !== 404) return;
@@ -100,24 +118,66 @@ export default function Review() {
 
   const submitRating = async (rating) => {
     if (!card || isSubmitting) return;
-    beginReview(card.id, rating);
+    const reviewCard = card;
+    const answeredCorrectly = hasMCQ && picked
+      ? picked === reviewCard.answer
+      : null;
+    beginReview(reviewCard.id, rating);
     const response = await submitPendingReview(getToken);
-    if (response) recordAcceptedRating(rating);
+    if (response) {
+      recordAcceptedRating(rating, reviewCard, answeredCorrectly);
+    } else {
+      recordFailedRating(rating, reviewCard, 'initial');
+    }
   };
 
   const retryReview = async () => {
     const rating = pendingReview?.rating;
     if (!rating || isSubmitting) return;
+    const reviewCard = reviewSnapshot?.queue?.[0]?.card ?? card;
+    const reviewHasMCQ = Array.isArray(reviewCard?.options) && reviewCard.options.length > 0;
+    const answeredCorrectly = reviewHasMCQ && picked
+      ? picked === reviewCard.answer
+      : null;
     const response = await retryPendingReview(getToken);
-    if (response) recordAcceptedRating(rating);
+    if (response) {
+      recordAcceptedRating(rating, reviewCard, answeredCorrectly);
+    } else {
+      recordFailedRating(rating, reviewCard, 'retry');
+    }
   };
 
-  const recordAcceptedRating = (rating) => {
+  const recordAcceptedRating = (rating, reviewCard, answeredCorrectly) => {
+    const properties = {
+      card_id: reviewCard?.id,
+      deck_id: reviewCard?.deck_id,
+      card_type: reviewCard?.type,
+      level: reviewCard?.level,
+      rating,
+      answered_correctly: answeredCorrectly,
+    };
+    track('card_answered', properties);
     setCounts((current) => ({
       ...current,
       [rating]: current[rating] + 1,
     }));
     setReviewedCount((current) => current + 1);
+  };
+
+  const recordFailedRating = (rating, reviewCard, attempt) => {
+    const { reviewError, reviewStatus: currentReviewStatus } = useLearningStore.getState();
+    if (!reviewError) return;
+
+    track('card_answer_failed', {
+      card_id: reviewCard?.id,
+      deck_id: reviewCard?.deck_id,
+      card_type: reviewCard?.type,
+      level: reviewCard?.level,
+      rating,
+      attempt,
+      status: reviewError.status,
+      retryable: currentReviewStatus === 'retryable-error',
+    });
   };
 
   const refreshSession = async () => {
@@ -500,6 +560,21 @@ function ReviewError({ error, retryable, submitting, onRetry, onRefresh, onExit 
 function ReviewDone({ counts, total, onExit }) {
   const remembered = counts.good + counts.easy;
   const accuracy = total ? Math.round((remembered / total) * 100) : 0;
+  const completionTracked = useRef(false);
+
+  useEffect(() => {
+    if (total === 0 || completionTracked.current) return;
+
+    completionTracked.current = true;
+    track('review_completed', {
+      cards_reviewed: total,
+      again: counts.again,
+      hard: counts.hard,
+      good: counts.good,
+      easy: counts.easy,
+      accuracy,
+    });
+  }, [accuracy, counts, total]);
 
   return (
     <div className="flex flex-col items-center px-6 py-16 text-center animate-screen-fade-in">
