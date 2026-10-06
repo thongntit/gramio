@@ -109,6 +109,26 @@ export function getProfileSummary(opts = {}) {
   return request('/me/summary', opts);
 }
 
+export function getNotificationPreferences(opts = {}) {
+  return request('/notifications', opts);
+}
+
+export function saveNotificationSubscription(payload, opts = {}) {
+  return request('/notifications/subscription', {
+    ...opts,
+    method: 'POST',
+    body: payload,
+  });
+}
+
+export function removeNotificationSubscription(payload, opts = {}) {
+  return request('/notifications/subscription', {
+    ...opts,
+    method: 'DELETE',
+    body: payload,
+  });
+}
+
 export function getToday(opts = {}) {
   return request('/today', opts);
 }

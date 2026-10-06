@@ -17,6 +17,7 @@ export default defineConfig({
     include: [
       'test/learning-api.test.js',
       'test/learning-store.test.js',
+      'test/analytics.test.js',
       'test/*.test.jsx',
     ],
     setupFiles: ['./test/setup.js'],

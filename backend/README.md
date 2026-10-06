@@ -56,6 +56,9 @@ All required unless noted. Managed by `@nestjs/config` with Joi validation — t
 | `PORT`         | `3000`                                                | default `3000`                            |
 | `NODE_ENV`     | `development` \| `production` \| `test`               | default `development`; controls SQL logging + prod error hiding |
 | `CORS_ORIGIN`  | `http://localhost:5173`                               | required; exact origin match              |
+| `VAPID_SUBJECT` | `mailto:you@example.com`                             | required to send push reminders           |
+| `VAPID_PUBLIC_KEY` | generated VAPID public key                         | required to send push reminders           |
+| `VAPID_PRIVATE_KEY` | generated VAPID private key                       | required to send push reminders; secret   |
 
 Copy `.env.example` to `.env` for local dev.
 

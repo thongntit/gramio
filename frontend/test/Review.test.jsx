@@ -12,11 +12,13 @@ import {
 } from '@/services/openspeakApi';
 import { useLearningStore } from '@/stores/learningStore';
 import Review from '@/pages/Review';
+import { track } from '@/lib/analytics';
 
 const testDir = path.dirname(fileURLToPath(import.meta.url));
 const reviewSource = readFileSync(path.resolve(testDir, '../src/pages/Review.jsx'), 'utf8');
 
 const clerk = vi.hoisted(() => ({ signOut: vi.fn() }));
+const analytics = vi.hoisted(() => ({ track: vi.fn() }));
 
 vi.mock('@clerk/clerk-react', () => ({
   useAuth: () => ({ getToken: () => Promise.resolve('fresh-token') }),
@@ -31,6 +33,10 @@ vi.mock('@/services/openspeakApi', async (importOriginal) => {
     submitReview: vi.fn(),
   };
 });
+
+vi.mock('@/lib/analytics', () => ({
+  track: analytics.track,
+}));
 
 const CARD = {
   id: 'be7d7592-2e3d-4a41-8cf5-20f1ea90f4fd',
@@ -155,6 +161,73 @@ beforeEach(() => {
 });
 
 describe('Review', () => {
+  it('tracks a review lifecycle with safe card metadata', async () => {
+    const user = userEvent.setup();
+    useLearningStore.getState().replaceToday(TODAY);
+    submitReview.mockResolvedValue({ duplicate: false, today: CAUGHT_UP });
+
+    renderReview();
+
+    expect(track).toHaveBeenCalledWith('review_started', { due_count: 1 });
+    await selectAndReveal(user, CARD.answer);
+    await user.click(screen.getByRole('button', { name: 'Good' }));
+
+    expect(track).toHaveBeenCalledWith('card_answered', {
+      card_id: CARD.id,
+      deck_id: CARD.deck_id,
+      card_type: CARD.type,
+      level: CARD.level,
+      rating: 'good',
+      answered_correctly: true,
+    });
+    expect(await screen.findByText(/session complete/i)).toBeInTheDocument();
+    expect(track).toHaveBeenCalledWith('review_completed', {
+      cards_reviewed: 1,
+      again: 0,
+      hard: 0,
+      good: 1,
+      easy: 0,
+      accuracy: 100,
+    });
+  });
+
+  it('tracks failed review submissions with retry context and safe card metadata', async () => {
+    const user = userEvent.setup();
+    useLearningStore.getState().replaceToday(TODAY);
+    submitReview
+      .mockRejectedValueOnce(new ApiError(503, { message: 'Service unavailable' }, '/reviews'))
+      .mockRejectedValueOnce(new ApiError(503, { message: 'Service unavailable' }, '/reviews'));
+
+    renderReview();
+
+    await revealAndRate(user, 'Good');
+    await user.click(await screen.findByRole('button', { name: /retry review/i }));
+    await screen.findByRole('button', { name: /retry review/i });
+
+    expect(track.mock.calls.filter(([event]) => event === 'card_answer_failed')).toEqual([
+      ['card_answer_failed', {
+        card_id: CARD.id,
+        deck_id: CARD.deck_id,
+        card_type: CARD.type,
+        level: CARD.level,
+        rating: 'good',
+        attempt: 'initial',
+        status: 503,
+        retryable: true,
+      }],
+      ['card_answer_failed', {
+        card_id: CARD.id,
+        deck_id: CARD.deck_id,
+        card_type: CARD.type,
+        level: CARD.level,
+        rating: 'good',
+        attempt: 'retry',
+        status: 503,
+        retryable: true,
+      }],
+    ]);
+  });
+
   it('renders the backend queue head and answer fields', async () => {
     const user = userEvent.setup();
     useLearningStore.getState().replaceToday(TODAY);
