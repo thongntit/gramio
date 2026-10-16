@@ -1,0 +1,85 @@
+name: Release Learning Database
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Coolify environment to prepare
+        required: true
+        type: choice
+        options:
+          - dev
+          - production
+      runs:
+        description: Number of idempotent preparation runs
+        required: true
+        default: "1"
+        type: choice
+        options:
+          - "1"
+          - "2"
+
+permissions:
+  contents: read
+
+jobs:
+  prepare:
+    name: Prepare ${{ inputs.target }} database
+    runs-on: ubuntu-latest
+    env:
+      COOLIFY_BASE_URL: https://coolify.thongnt.dev
+      COOLIFY_TOKEN: ${{ secrets.COOLIFY_TOKEN }}
+      SERVICE_UUID: ${{ inputs.target == 'dev' && 'kjduvgi7sin5hmly73l8za2f' || 'ea2xn2x5i6y6gvs0bmpzdp4a' }}
+
+    steps:
+      - name: Run db:prepare:prod through Coolify
+        shell: bash
+        env:
+          TARGET: ${{ inputs.target }}
+          RUNS: ${{ inputs.runs }}
+        run: |
+          set -euo pipefail
+
+          command='npm run db:prepare:prod'
+          for run_number in $(seq 1 "$RUNS"); do
+            task_name="gramio-${TARGET}-release-${GITHUB_RUN_ID}-${run_number}"
+            payload=$(jq -cn \
+              --arg name "$task_name" \
+              --arg command "$command" \
+              '{name: $name, command: $command, frequency: "* * * * *", container: "api", timeout: 300, enabled: true}')
+
+            task=$(curl --fail-with-body --silent --show-error \
+              -X POST "$COOLIFY_BASE_URL/api/v1/services/$SERVICE_UUID/scheduled-tasks" \
+              -H "Authorization: Bearer $COOLIFY_TOKEN" \
+              -H 'Content-Type: application/json' \
+              --data "$payload")
+            task_uuid=$(jq -er '.uuid' <<<"$task")
+            echo "Created one-off task $task_uuid for $TARGET run $run_number."
+
+            status='running'
+            message=''
+            deadline=$(( $(date +%s) + 180 ))
+            while (( $(date +%s) < deadline )); do
+              executions=$(curl --fail-with-body --silent --show-error \
+                "$COOLIFY_BASE_URL/api/v1/services/$SERVICE_UUID/scheduled-tasks/$task_uuid/executions" \
+                -H "Authorization: Bearer $COOLIFY_TOKEN")
+              status=$(jq -r '.[0].status // "running"' <<<"$executions")
+              message=$(jq -r '.[0].message // ""' <<<"$executions")
+              if [[ "$status" != 'running' ]]; then
+                break
+              fi
+              sleep 5
+            done
+
+            curl --fail-with-body --silent --show-error \
+              -X DELETE "$COOLIFY_BASE_URL/api/v1/services/$SERVICE_UUID/scheduled-tasks/$task_uuid" \
+              -H "Authorization: Bearer $COOLIFY_TOKEN" \
+              >/dev/null
+            echo "Deleted one-off task $task_uuid."
+            printf 'Run %s status: %s\n%s\n' "$run_number" "$status" "$message"
+
+            if [[ "$status" != 'success' ]]; then
+              echo "db:prepare:prod failed for $TARGET run $run_number."
+              exit 1
+            fi
+          done

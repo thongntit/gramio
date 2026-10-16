@@ -7,6 +7,7 @@ const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const app = readFileSync(new URL('../src/App.jsx', import.meta.url), 'utf8');
 const rootApp = readFileSync(new URL('../src/components/RootApp.jsx', import.meta.url), 'utf8');
 const appShell = readFileSync(new URL('../src/components/AppShell.jsx', import.meta.url), 'utf8');
+const pwaNoticeStack = readFileSync(new URL('../src/components/PwaNoticeStack.jsx', import.meta.url), 'utf8');
 const analytics = readFileSync(new URL('../src/lib/analytics.js', import.meta.url), 'utf8');
 const reloadPrompt = readFileSync(new URL('../src/components/ReloadPrompt.jsx', import.meta.url), 'utf8');
 
@@ -57,6 +58,29 @@ test('offline-ready notice describes the cached app shell without promising offl
   assert.match(reloadPrompt, /App shell ready offline/);
   assert.match(reloadPrompt, /new reviews still need a connection/i);
   assert.doesNotMatch(reloadPrompt, /use this app without an internet connection/i);
+});
+
+test('PWA status notices are announced and stay above the mobile tab bar', () => {
+  assert.match(appShell, /<PwaNoticeStack showInstall=\{!isReview\} \/>/);
+  assert.match(pwaNoticeStack, /<InstallPrompt \/>/);
+  assert.match(pwaNoticeStack, /<ReloadPrompt \/>/);
+  assert.match(pwaNoticeStack, /<OfflineIndicator \/>/);
+  assert.match(
+    pwaNoticeStack,
+    /pointer-events-none absolute inset-x-4 bottom-\[calc\(env\(safe-area-inset-bottom\)\+6\.5rem\)\] z-50 flex flex-col gap-3/,
+  );
+  assert.match(reloadPrompt, /role="status"/);
+  assert.match(reloadPrompt, /aria-live="polite"/);
+  assert.match(
+    reloadPrompt,
+    /aria-label=\{offlineReady \? 'Dismiss offline-ready notice' : 'Dismiss update notice'\}/,
+  );
+  assert.match(reloadPrompt, /min-h-11 min-w-11/);
+});
+
+test('PWA update actions keep touch-friendly tap targets', () => {
+  assert.match(reloadPrompt, /className="flex-1 min-h-11 bg-primary/);
+  assert.match(reloadPrompt, /className="flex-1 min-h-11 bg-gray-100/);
 });
 
 test('lazy-loads route screens behind an accessible loading boundary', () => {

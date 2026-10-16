@@ -527,7 +527,10 @@ function ReviewCardUnavailable({ onRetry, onExit }) {
 
 function ReviewError({ error, retryable, submitting, onRetry, onRefresh, onExit }) {
   return (
-    <div className="mb-3 rounded-xl border border-[rgba(180,83,9,.25)] bg-[rgba(180,83,9,.07)] p-3 text-[13px] text-[var(--text-1)]">
+    <div
+      role="alert"
+      className="mb-3 rounded-xl border border-[rgba(180,83,9,.25)] bg-[rgba(180,83,9,.07)] p-3 text-[13px] text-[var(--text-1)]"
+    >
       <div className="font-bold">
         {retryable ? 'Review was not sent' : error.message}
       </div>

@@ -56,10 +56,16 @@ export default function InstallPrompt() {
 
   const install = async () => {
     if (!installEvent) return;
-    await installEvent.prompt();
-    const choice = await installEvent.userChoice;
-    setInstallEvent(null);
-    if (choice?.outcome === 'accepted') dismiss();
+
+    try {
+      await installEvent.prompt();
+      const choice = await installEvent.userChoice;
+      if (choice?.outcome === 'accepted') dismiss();
+    } catch (error) {
+      console.error('Install prompt failed', error);
+    } finally {
+      setInstallEvent(null);
+    }
   };
 
   if (dismissed || (!installEvent && !ios)) return null;
@@ -68,7 +74,7 @@ export default function InstallPrompt() {
     <aside
       role="status"
       aria-label="Install Gramio"
-      className="fixed inset-x-4 bottom-[calc(env(safe-area-inset-bottom)+6.5rem)] z-40 rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-card)] p-3.5 shadow-[0_12px_36px_rgba(15,22,32,0.16)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.4)] sm:left-auto sm:w-[min(360px,calc(100%-2rem))]"
+      className="pointer-events-auto w-full rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-card)] p-3.5 shadow-[0_12px_36px_rgba(15,22,32,0.16)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.4)]"
     >
       <div className="flex items-start gap-3">
         <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[rgba(19,127,236,.10)] text-[var(--primary-hex)]">
@@ -86,17 +92,17 @@ export default function InstallPrompt() {
           type="button"
           onClick={dismiss}
           aria-label="Dismiss install prompt"
-          className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-[var(--text-2)] hover:bg-[var(--bg-app)]"
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-[var(--text-2)] hover:bg-[var(--bg-app)]"
         >
           <X size={16} />
         </button>
       </div>
       <div className="mt-3 flex items-center justify-end gap-2">
-        <Button variant="ghost" size="sm" onClick={dismiss}>
+        <Button variant="ghost" size="sm" className="min-h-11" onClick={dismiss}>
           Not now
         </Button>
         {!ios && (
-          <Button size="sm" onClick={() => void install()}>
+          <Button size="sm" className="min-h-11" onClick={() => void install()}>
             Install Gramio
           </Button>
         )}

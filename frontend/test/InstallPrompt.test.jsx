@@ -3,10 +3,10 @@ import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import InstallPrompt from '@/components/InstallPrompt';
 
-function createInstallEvent(outcome = 'accepted') {
+function createInstallEvent(outcome = 'accepted', prompt = vi.fn().mockResolvedValue(undefined)) {
   const event = new Event('beforeinstallprompt');
   Object.defineProperties(event, {
-    prompt: { value: vi.fn().mockResolvedValue(undefined) },
+    prompt: { value: prompt },
     userChoice: { value: Promise.resolve({ outcome }) },
   });
   return event;
@@ -46,5 +46,37 @@ describe('InstallPrompt', () => {
 
     expect(localStorage.getItem('gramio-install-prompt-dismissed')).toBe('1');
     expect(screen.queryByText(/keep your daily practice/i)).not.toBeInTheDocument();
+  });
+
+  it('closes cleanly when the browser rejects the install prompt', async () => {
+    const user = userEvent.setup();
+    const error = new Error('prompt unavailable');
+    const prompt = vi.fn().mockRejectedValue(error);
+    const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {});
+    render(<InstallPrompt />);
+    fireEvent(window, createInstallEvent('accepted', prompt));
+
+    expect(await screen.findByText(/keep your daily practice/i)).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: /install gramio/i }));
+
+    await waitFor(() => {
+      expect(screen.queryByText(/keep your daily practice/i)).not.toBeInTheDocument();
+    });
+    expect(prompt).toHaveBeenCalledOnce();
+    expect(consoleError).toHaveBeenCalledWith('Install prompt failed', error);
+  });
+
+  it('keeps every install prompt control at a touch-friendly size', async () => {
+    render(<InstallPrompt />);
+    fireEvent(window, createInstallEvent());
+
+    expect(await screen.findByText(/keep your daily practice/i)).toBeInTheDocument();
+
+    expect(screen.getByRole('button', { name: /dismiss install prompt/i })).toHaveClass(
+      'h-11',
+      'w-11',
+    );
+    expect(screen.getByRole('button', { name: /not now/i })).toHaveClass('min-h-11');
+    expect(screen.getByRole('button', { name: /install gramio/i })).toHaveClass('min-h-11');
   });
 });

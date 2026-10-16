@@ -1,6 +1,18 @@
+import { useEffect, useRef } from 'react';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 
+const UPDATE_CHECK_INTERVAL = 60 * 60 * 1000;
+
+async function checkForServiceWorkerUpdate(registration) {
+  try {
+    await registration.update();
+  } catch (error) {
+    console.error('SW update check failed', error);
+  }
+}
+
 function ReloadPrompt() {
+  const updateIntervalRef = useRef(null);
   const {
     offlineReady: [offlineReady, setOfflineReady],
     needRefresh: [needRefresh, setNeedRefresh],
@@ -8,15 +20,29 @@ function ReloadPrompt() {
   } = useRegisterSW({
     onRegistered(r) {
       console.log('SW Registered: ' + r);
-      // Check for updates every hour
-      r && setInterval(() => {
-        r.update();
-      }, 60 * 60 * 1000);
+      if (updateIntervalRef.current !== null) {
+        clearInterval(updateIntervalRef.current);
+        updateIntervalRef.current = null;
+      }
+
+      if (r) {
+        // Check for updates every hour
+        updateIntervalRef.current = setInterval(() => {
+          void checkForServiceWorkerUpdate(r);
+        }, UPDATE_CHECK_INTERVAL);
+      }
     },
     onRegisterError(error) {
       console.error('SW registration error', error);
     },
   });
+
+  useEffect(() => () => {
+    if (updateIntervalRef.current !== null) {
+      clearInterval(updateIntervalRef.current);
+      updateIntervalRef.current = null;
+    }
+  }, []);
 
   const close = () => {
     setOfflineReady(false);
@@ -28,7 +54,11 @@ function ReloadPrompt() {
   }
 
   return (
-    <div className="fixed bottom-4 right-4 left-4 z-50 sm:left-auto sm:w-80">
+    <div
+      role="status"
+      aria-live="polite"
+      className="pointer-events-auto w-full"
+    >
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 border border-gray-200 dark:border-gray-700">
         <div className="flex items-start gap-3">
           <div className="flex-shrink-0">
@@ -53,8 +83,10 @@ function ReloadPrompt() {
             </p>
           </div>
           <button
+            type="button"
             onClick={close}
-            className="flex-shrink-0 text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
+            aria-label={offlineReady ? 'Dismiss offline-ready notice' : 'Dismiss update notice'}
+            className="inline-flex min-h-11 min-w-11 flex-shrink-0 items-center justify-center rounded-lg text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -64,14 +96,16 @@ function ReloadPrompt() {
         {!offlineReady && (
           <div className="flex gap-2 mt-3">
             <button
+              type="button"
               onClick={() => updateServiceWorker(true)}
-              className="flex-1 bg-primary text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-opacity-90 transition-colors"
+              className="flex-1 min-h-11 bg-primary text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-opacity-90 transition-colors"
             >
               Refresh
             </button>
             <button
+              type="button"
               onClick={close}
-              className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              className="flex-1 min-h-11 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
             >
               Later
             </button>

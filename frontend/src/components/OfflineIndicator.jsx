@@ -21,7 +21,7 @@ export default function OfflineIndicator() {
     <div
       role="status"
       aria-live="polite"
-      className="fixed inset-x-4 bottom-[calc(env(safe-area-inset-bottom)+5rem)] z-50 rounded-xl border border-[#334155] bg-[#1c2630] px-3.5 py-2.5 text-white shadow-lg sm:left-4 sm:right-auto"
+      className="pointer-events-auto w-full rounded-xl border border-[#334155] bg-[#1c2630] px-3.5 py-2.5 text-white shadow-lg"
     >
       <div className="flex items-start gap-2.5">
         <WifiOff className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />

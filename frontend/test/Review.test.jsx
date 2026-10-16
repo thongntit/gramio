@@ -594,6 +594,19 @@ describe('Review', () => {
     expect(await screen.findByText(NEXT_CARD.front)).toBeInTheDocument();
   });
 
+  it('announces review submission errors to assistive technology', async () => {
+    const user = userEvent.setup();
+    useLearningStore.getState().replaceToday(TODAY);
+    submitReview.mockRejectedValue(
+      new ApiError(409, { message: 'Request conflict' }, '/reviews'),
+    );
+    renderReview();
+
+    await revealAndRate(user, 'Easy');
+
+    expect(await screen.findByRole('alert')).toHaveTextContent(/request conflict/i);
+  });
+
   it('returns from Complete to the caught-up Today route', async () => {
     const user = userEvent.setup();
     useLearningStore.getState().replaceToday(CAUGHT_UP);

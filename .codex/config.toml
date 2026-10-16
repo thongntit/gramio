@@ -1,0 +1,4 @@
+# Enable the globally configured Coolify connector only while working in Gramio.
+# Its command and credentials remain in ~/.codex/config.toml.
+[mcp_servers.coolify]
+enabled = true

@@ -1,11 +1,12 @@
 import { Suspense } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import TabBar from './TabBar';
-import InstallPrompt from './InstallPrompt';
+import PwaNoticeStack from './PwaNoticeStack';
 
 export default function AppShell() {
   const { pathname } = useLocation();
-  const isReview = pathname === '/review';
+  const normalizedPathname = pathname.replace(/\/+$/, '') || '/';
+  const isReview = normalizedPathname === '/review';
 
   return (
     <div className="flex min-h-dvh flex-col items-center bg-[var(--bg-app)] pb-[env(safe-area-inset-bottom)] pt-[env(safe-area-inset-top)] md:justify-center md:bg-transparent md:py-6">
@@ -18,7 +19,7 @@ export default function AppShell() {
           '[transform:translateZ(0)]',
         ].join(' ')}
       >
-        {!isReview && <InstallPrompt />}
+        <PwaNoticeStack showInstall={!isReview} />
         <main className={`flex-1 overflow-y-auto ${isReview ? 'pb-4' : 'pb-24'} [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden`}>
           <Suspense fallback={<RouteLoading />}>
             <Outlet />

@@ -31,4 +31,11 @@ describe('OfflineIndicator', () => {
 
     expect(screen.queryByRole('status')).not.toBeInTheDocument();
   });
+
+  it('renders as an interactive card inside the shared notice stack', () => {
+    Object.defineProperty(navigator, 'onLine', { configurable: true, value: false });
+    render(<OfflineIndicator />);
+
+    expect(screen.getByRole('status')).toHaveClass('pointer-events-auto', 'w-full');
+  });
 });
