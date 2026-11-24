@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAuth } from '@clerk/clerk-react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   ArrowRight,
   BookOpen,
@@ -9,6 +9,7 @@ import {
   Flame,
   Languages,
   Lightbulb,
+  Map,
   Moon,
   RefreshCw,
   Sun,
@@ -83,6 +84,16 @@ export default function Today() {
         </button>
       </header>
       {content}
+      <div className="px-4 pb-5 pt-4">
+        <Link
+          to="/missions"
+          className="flex min-h-14 items-center gap-3 rounded-card border border-[var(--border-soft)] bg-[var(--bg-card)] px-4 py-3 text-[var(--text-1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--primary-hex)]"
+        >
+          <Map size={21} className="shrink-0 text-[var(--primary-hex)]" aria-hidden="true" />
+          <span className="flex-1 font-bold">English Missions</span>
+          <ArrowRight size={17} className="shrink-0 text-[var(--text-2)]" aria-hidden="true" />
+        </Link>
+      </div>
     </div>
   );
 }

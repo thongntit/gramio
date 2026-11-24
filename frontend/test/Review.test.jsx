@@ -14,6 +14,7 @@ import { useLearningStore } from '@/stores/learningStore';
 import Review from '@/pages/Review';
 import { track } from '@/lib/analytics';
 import grammarContrastDrills from '@/data/grammarContrastDrills.json';
+import { getScheduledRematches } from '@/services/missionRematch';
 
 const testDir = path.dirname(fileURLToPath(import.meta.url));
 const reviewSource = readFileSync(path.resolve(testDir, '../src/pages/Review.jsx'), 'utf8');
@@ -22,7 +23,7 @@ const clerk = vi.hoisted(() => ({ signOut: vi.fn() }));
 const analytics = vi.hoisted(() => ({ track: vi.fn() }));
 
 vi.mock('@clerk/clerk-react', () => ({
-  useAuth: () => ({ getToken: () => Promise.resolve('fresh-token') }),
+  useAuth: () => ({ getToken: () => Promise.resolve('fresh-token'), userId: 'review-test-user' }),
   useClerk: () => ({ signOut: clerk.signOut }),
 }));
 
@@ -160,6 +161,7 @@ async function swipeReviewCard({ fromX, toX, fromY = 180, toY = fromY }) {
 
 beforeEach(() => {
   vi.clearAllMocks();
+  localStorage.clear();
   useLearningStore.getState().resetLearning();
 });
 
@@ -637,6 +639,9 @@ describe('Review', () => {
       await user.click(screen.getByRole('button', { name: choice }));
       if (index === 0) {
         expect(screen.getByText(`Correct answer: ${question.answer}`)).toBeInTheDocument();
+        expect(getScheduledRematches('review-test-user')).toEqual([
+          expect.objectContaining({ skill: drill.id, questionId: question.id }),
+        ]);
       }
       expect(screen.getByText(question.explanation)).toBeInTheDocument();
       expect(screen.getByText(question.example)).toBeInTheDocument();
