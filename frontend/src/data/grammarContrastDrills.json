@@ -1,0 +1,3346 @@
+[
+  {
+    "id": "present-simple-vs-present-continuous",
+    "title": "Present simple vs. present continuous",
+    "level": "beginner",
+    "reviewContentKeys": [
+      "present-tense-001",
+      "present-tense-002",
+      "present-tense-003",
+      "present-tense-011",
+      "present-tense-015",
+      "present-tense-020"
+    ],
+    "referenceUrl": "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/talking-about-present",
+    "questions": [
+      {
+        "id": "weekly-routine",
+        "front": "This is part of Ava's weekly routine. Complete the sentence: Ava ___ groceries on Saturdays.",
+        "options": [
+          "Ava buys groceries on Saturdays.",
+          "Ava is buying groceries on Saturdays."
+        ],
+        "answer": "Ava buys groceries on Saturdays.",
+        "explanation": "Use the present simple for a regular habit. The sentence describes what Ava normally does each Saturday.",
+        "example": "My brother cooks dinner every Friday."
+      },
+      {
+        "id": "action-in-progress",
+        "front": "You call Ben while he is in the middle of making lunch. He says: I ___ lunch right now.",
+        "options": [
+          "I make lunch right now.",
+          "I am making lunch right now."
+        ],
+        "answer": "I am making lunch right now.",
+        "explanation": "Use the present continuous for an action in progress at the moment of speaking.",
+        "example": "I am washing my hands right now."
+      },
+      {
+        "id": "temporary-change",
+        "front": "Lina usually works at the shop. This week the shop is closed for repairs. Complete the sentence: Lina ___ from home this week.",
+        "options": [
+          "Lina is working from home this week.",
+          "Lina works from home this week."
+        ],
+        "answer": "Lina is working from home this week.",
+        "explanation": "The present continuous highlights a temporary change to Lina's usual routine.",
+        "example": "We are eating lunch outside this week because the cafeteria is closed."
+      },
+      {
+        "id": "present-contrast-024",
+        "front": "On clear nights, the lighthouse sends a signal every few seconds. Complete: The lighthouse ___ every few seconds.",
+        "options": [
+          "The lighthouse flashes every few seconds.",
+          "The lighthouse is flashing every few seconds."
+        ],
+        "answer": "The lighthouse flashes every few seconds.",
+        "explanation": "This is a regular repeated function, so use the present simple.",
+        "example": "The clock chimes at noon each day."
+      },
+      {
+        "id": "present-contrast-083",
+        "front": "The cook is chopping vegetables for tonight's soup at the counter. Complete: He ___ carrots right now.",
+        "options": [
+          "He is chopping carrots right now.",
+          "He chops carrots right now."
+        ],
+        "answer": "He is chopping carrots right now.",
+        "explanation": "The chopping is in progress at this moment, so use the present continuous.",
+        "example": "I am slicing fresh bread for lunch."
+      },
+      {
+        "id": "present-contrast-044",
+        "front": "Rina's suitcase is packed, and she has her boarding pass. Complete: Rina ___ the train to the airport on every trip.",
+        "options": [
+          "Rina takes the train to the airport on every trip.",
+          "Rina is taking the train to the airport on every trip."
+        ],
+        "answer": "Rina takes the train to the airport on every trip.",
+        "explanation": "Every trip describes her usual choice, so use the present simple.",
+        "example": "We usually choose the window seats on long journeys."
+      },
+      {
+        "id": "present-contrast-035",
+        "front": "A student is typing a message to her tutor at this very moment. Complete: She ___ her tutor now.",
+        "options": [
+          "She is messaging her tutor now.",
+          "She messages her tutor now."
+        ],
+        "answer": "She is messaging her tutor now.",
+        "explanation": "The message is being written now, so use the present continuous.",
+        "example": "I am sending the final page to the printer."
+      },
+      {
+        "id": "present-contrast-039",
+        "front": "The painter has a roller in hand and is covering the wall. Complete: I ___ the hallway wall now.",
+        "options": [
+          "I paint the hallway wall now.",
+          "I am painting the hallway wall now."
+        ],
+        "answer": "I am painting the hallway wall now.",
+        "explanation": "The painting is in progress, so use the present continuous.",
+        "example": "They are decorating the shop window today."
+      },
+      {
+        "id": "present-contrast-069",
+        "front": "The hotel elevator is out of order, and guests are taking the stairs today. Complete: Guests ___ the stairs today.",
+        "options": [
+          "Guests use the stairs today.",
+          "Guests are using the stairs today."
+        ],
+        "answer": "Guests are using the stairs today.",
+        "explanation": "This is a temporary response to a problem, so use the present continuous.",
+        "example": "We are sharing one car while the other is at the garage."
+      },
+      {
+        "id": "present-contrast-047",
+        "front": "A barista is making the drink you just ordered. Complete: She ___ your cappuccino now.",
+        "options": [
+          "She prepares your cappuccino now.",
+          "She is preparing your cappuccino now."
+        ],
+        "answer": "She is preparing your cappuccino now.",
+        "explanation": "The barista is doing this at the moment, so use the present continuous.",
+        "example": "The chef is plating our meals now."
+      },
+      {
+        "id": "present-contrast-007",
+        "front": "For two weeks, Omar is staying in a small hotel while his apartment is painted. Complete: Omar ___ in a hotel this month.",
+        "options": [
+          "Omar is staying in a hotel this month.",
+          "Omar stays in a hotel this month."
+        ],
+        "answer": "Omar is staying in a hotel this month.",
+        "explanation": "This is a temporary arrangement, so use the present continuous.",
+        "example": "We are using the meeting room while ours is repaired."
+      },
+      {
+        "id": "present-contrast-010",
+        "front": "The science teacher is explaining a fact about magnets. Complete: A magnet ___ iron.",
+        "options": [
+          "A magnet attracts iron.",
+          "A magnet is attracting iron."
+        ],
+        "answer": "A magnet attracts iron.",
+        "explanation": "This is a general fact, so use the present simple.",
+        "example": "The moon moves around the Earth."
+      },
+      {
+        "id": "present-contrast-014",
+        "front": "Each morning, Hana reads the news on the train to work. Complete: Hana ___ the news during her commute.",
+        "options": [
+          "Hana reads the news during her commute.",
+          "Hana is reading the news during her commute."
+        ],
+        "answer": "Hana reads the news during her commute.",
+        "explanation": "A repeated everyday habit takes the present simple.",
+        "example": "I listen to a language lesson on my walk each day."
+      },
+      {
+        "id": "present-contrast-061",
+        "front": "The number of electric cars on this road keeps increasing. Complete: More drivers ___ electric cars in this area.",
+        "options": [
+          "More drivers are choosing electric cars in this area.",
+          "More drivers choose electric cars in this area."
+        ],
+        "answer": "More drivers are choosing electric cars in this area.",
+        "explanation": "The choice is becoming more common as a current trend, so use the present continuous.",
+        "example": "Businesses are switching to paper-free receipts."
+      },
+      {
+        "id": "present-contrast-005",
+        "front": "The office printer is making a strange noise, and Jo is checking it at this moment. Complete: Jo ___ the printer now.",
+        "options": [
+          "Jo checks the printer now.",
+          "Jo is checking the printer now."
+        ],
+        "answer": "Jo is checking the printer now.",
+        "explanation": "Now marks an action in progress, so use the present continuous.",
+        "example": "I am testing the new microphone at the moment."
+      },
+      {
+        "id": "present-contrast-009",
+        "front": "Priya is holding a camera and taking a picture of the cake. Complete: Priya ___ the cake right now.",
+        "options": [
+          "Priya is photographing the cake right now.",
+          "Priya photographs the cake right now."
+        ],
+        "answer": "Priya is photographing the cake right now.",
+        "explanation": "She is doing this at the moment, so use the present continuous.",
+        "example": "We are recording the birds outside the window."
+      },
+      {
+        "id": "present-contrast-078",
+        "front": "Every time the train stops at this station, its doors open on the left. Complete: The train ___ its doors on this side here.",
+        "options": [
+          "The train is opening its doors on this side here.",
+          "The train opens its doors on this side here."
+        ],
+        "answer": "The train opens its doors on this side here.",
+        "explanation": "This is a regular feature of the train's service, so use the present simple.",
+        "example": "This bus turns left at the next stop each time."
+      },
+      {
+        "id": "present-contrast-040",
+        "front": "A notice explains a general safety rule for the elevator. Complete: This lift ___ when the doors are open.",
+        "options": [
+          "This lift stops when the doors are open.",
+          "This lift is stopping when the doors are open."
+        ],
+        "answer": "This lift stops when the doors are open.",
+        "explanation": "This is a general operating rule, so use the present simple.",
+        "example": "The alarm rings if someone opens the emergency exit."
+      },
+      {
+        "id": "present-contrast-038",
+        "front": "The hotel information card says breakfast is served in the garden. Complete: Breakfast ___ at seven.",
+        "options": [
+          "Breakfast is beginning at seven.",
+          "Breakfast begins at seven."
+        ],
+        "answer": "Breakfast begins at seven.",
+        "explanation": "A fixed daily schedule takes the present simple.",
+        "example": "The ferry departs at 8:15 each morning."
+      },
+      {
+        "id": "present-contrast-095",
+        "front": "A group of volunteers is painting a mural on the community center this week. Complete: They ___ the outside wall this week.",
+        "options": [
+          "They decorate the outside wall this week.",
+          "They are decorating the outside wall this week."
+        ],
+        "answer": "They are decorating the outside wall this week.",
+        "explanation": "The work is temporary and underway this week, so use the present continuous.",
+        "example": "Our class is preparing a display for the school fair."
+      },
+      {
+        "id": "present-contrast-011",
+        "front": "The regular chef is away, so Luis is covering the kitchen for a few days. Complete: Luis ___ dinner at the café this week.",
+        "options": [
+          "Luis prepares dinner at the café this week.",
+          "Luis is preparing dinner at the café this week."
+        ],
+        "answer": "Luis is preparing dinner at the café this week.",
+        "explanation": "A short-term change from his normal role takes the present continuous.",
+        "example": "Tara is answering customer emails while Ben is away."
+      },
+      {
+        "id": "present-contrast-054",
+        "front": "Nabil's schedule says he has a weekly language lesson on Wednesdays. Complete: Nabil ___ Spanish every Wednesday.",
+        "options": [
+          "Nabil is studying Spanish every Wednesday.",
+          "Nabil studies Spanish every Wednesday."
+        ],
+        "answer": "Nabil studies Spanish every Wednesday.",
+        "explanation": "This is a regular weekly lesson, so use the present simple.",
+        "example": "We have a dance class after work on Thursdays."
+      },
+      {
+        "id": "present-contrast-034",
+        "front": "Tariq has a regular evening shift at the hotel reception desk. Complete: Tariq ___ the front desk from six to midnight.",
+        "options": [
+          "Tariq staffs the front desk from six to midnight.",
+          "Tariq is staffing the front desk from six to midnight."
+        ],
+        "answer": "Tariq staffs the front desk from six to midnight.",
+        "explanation": "This is his normal work schedule, so use the present simple.",
+        "example": "Mia leads the evening tour every Friday."
+      },
+      {
+        "id": "present-contrast-012",
+        "front": "Nora is choosing a design and says the blue one is her favorite. Complete: Nora ___ the blue design.",
+        "options": [
+          "Nora is preferring the blue design.",
+          "Nora prefers the blue design."
+        ],
+        "answer": "Nora prefers the blue design.",
+        "explanation": "Prefer describes a state or opinion here, so it normally takes the present simple.",
+        "example": "My cousins prefer quiet places to crowded ones."
+      },
+      {
+        "id": "present-contrast-033",
+        "front": "The number of visitors to the museum is rising month by month. Complete: More people ___ the museum each season.",
+        "options": [
+          "More people visit the museum each season.",
+          "More people are visiting the museum each season."
+        ],
+        "answer": "More people are visiting the museum each season.",
+        "explanation": "The cue describes an ongoing upward trend, so use the present continuous.",
+        "example": "Online orders are growing every month."
+      },
+      {
+        "id": "present-contrast-008",
+        "front": "The map shows the usual route for the city bus. Complete: The number 8 bus ___ the museum.",
+        "options": [
+          "The number 8 bus is passing the museum.",
+          "The number 8 bus passes the museum."
+        ],
+        "answer": "The number 8 bus passes the museum.",
+        "explanation": "A regular route is a repeated fact, so use the present simple.",
+        "example": "The airport shuttle stops beside the library."
+      },
+      {
+        "id": "present-contrast-063",
+        "front": "A student is pointing at a diagram while she talks to the group. Complete: She ___ the water cycle now.",
+        "options": [
+          "She is explaining the water cycle now.",
+          "She explains the water cycle now."
+        ],
+        "answer": "She is explaining the water cycle now.",
+        "explanation": "She is speaking and explaining at this moment, so use the present continuous.",
+        "example": "We are discussing our project in the hallway."
+      },
+      {
+        "id": "present-contrast-023",
+        "front": "The school has moved classes to the gym while the roof is repaired. Complete: The students ___ in the gym this week.",
+        "options": [
+          "The students study in the gym this week.",
+          "The students are studying in the gym this week."
+        ],
+        "answer": "The students are studying in the gym this week.",
+        "explanation": "The location is temporary, so use the present continuous.",
+        "example": "Our family is sleeping downstairs during the renovation."
+      },
+      {
+        "id": "present-contrast-060",
+        "front": "The class timetable says the art lesson is on Monday morning. Complete: Our art class ___ at nine on Mondays.",
+        "options": [
+          "Our art class is starting at nine on Mondays.",
+          "Our art class starts at nine on Mondays."
+        ],
+        "answer": "Our art class starts at nine on Mondays.",
+        "explanation": "This is the regular timetable, so use the present simple.",
+        "example": "My piano lesson finishes at half past four every week."
+      },
+      {
+        "id": "present-contrast-088",
+        "front": "Sofia understands the directions and is sure the station is nearby. Complete: Sofia ___ the way to the station.",
+        "options": [
+          "Sofia understands the way to the station.",
+          "Sofia is understanding the way to the station."
+        ],
+        "answer": "Sofia understands the way to the station.",
+        "explanation": "Understand describes knowledge, so it normally uses the present simple.",
+        "example": "We know the hotel is across the square."
+      },
+      {
+        "id": "present-contrast-036",
+        "front": "The guidebook gives the standard exchange rate at this kiosk. Complete: The kiosk ___ euros for local money.",
+        "options": [
+          "The kiosk is exchanging euros for local money.",
+          "The kiosk exchanges euros for local money."
+        ],
+        "answer": "The kiosk exchanges euros for local money.",
+        "explanation": "This describes a general service the kiosk offers, so use the present simple.",
+        "example": "That desk rents bicycles by the hour."
+      },
+      {
+        "id": "present-contrast-071",
+        "front": "A cat is pawing at the closed cupboard while its owner watches. Complete: The cat ___ to get inside.",
+        "options": [
+          "The cat is trying to get inside.",
+          "The cat tries to get inside."
+        ],
+        "answer": "The cat is trying to get inside.",
+        "explanation": "The attempt is happening now, so use the present continuous.",
+        "example": "The puppy is pushing its toy under the sofa."
+      },
+      {
+        "id": "present-contrast-076",
+        "front": "The ticket office opens at the same time on each workday. Complete: The ticket office ___ at half past seven.",
+        "options": [
+          "The ticket office opens at half past seven.",
+          "The ticket office is opening at half past seven."
+        ],
+        "answer": "The ticket office opens at half past seven.",
+        "explanation": "This is a regular business schedule, so use the present simple.",
+        "example": "The gym welcomes members from six each morning."
+      },
+      {
+        "id": "present-contrast-042",
+        "front": "The village bakery makes the same kind of bread each morning. Complete: The baker ___ fresh rolls before sunrise.",
+        "options": [
+          "The baker makes fresh rolls before sunrise.",
+          "The baker is making fresh rolls before sunrise."
+        ],
+        "answer": "The baker makes fresh rolls before sunrise.",
+        "explanation": "This is a repeated daily activity, so use the present simple.",
+        "example": "Our neighbor delivers milk before breakfast every day."
+      },
+      {
+        "id": "present-contrast-037",
+        "front": "Because of a short course, Ben is living near campus until Friday. Complete: Ben ___ near campus this week.",
+        "options": [
+          "Ben is living near campus this week.",
+          "Ben lives near campus this week."
+        ],
+        "answer": "Ben is living near campus this week.",
+        "explanation": "His stay is temporary, so use the present continuous.",
+        "example": "They are staying with an aunt during the house move."
+      },
+      {
+        "id": "present-contrast-019",
+        "front": "Mira has a temporary job at a mountain lodge during the summer season. Complete: Mira ___ at the lodge this summer.",
+        "options": [
+          "Mira is working at the lodge this summer.",
+          "Mira works at the lodge this summer."
+        ],
+        "answer": "Mira is working at the lodge this summer.",
+        "explanation": "This job is limited to one season, so use the present continuous.",
+        "example": "I am taking a short course in graphic design this month."
+      },
+      {
+        "id": "present-contrast-062",
+        "front": "At the library, Mina has a regular Saturday shift sorting returns. Complete: Mina ___ returned books every Saturday.",
+        "options": [
+          "Mina is sorting returned books every Saturday.",
+          "Mina sorts returned books every Saturday."
+        ],
+        "answer": "Mina sorts returned books every Saturday.",
+        "explanation": "Every Saturday describes a normal work duty, so use the present simple.",
+        "example": "Jon checks sports equipment before each class."
+      },
+      {
+        "id": "present-contrast-092",
+        "front": "The travel guide gives a permanent fact about the island's only road. Complete: This road ___ the harbor with the airport.",
+        "options": [
+          "This road is connecting the harbor with the airport.",
+          "This road connects the harbor with the airport."
+        ],
+        "answer": "This road connects the harbor with the airport.",
+        "explanation": "Connect describes a lasting feature of the road, so use the present simple.",
+        "example": "A footpath joins the village to the beach."
+      },
+      {
+        "id": "present-contrast-066",
+        "front": "The school handbook gives a general rule about lunch. Complete: Each student ___ a meal card.",
+        "options": [
+          "Each student needs a meal card.",
+          "Each student is needing a meal card."
+        ],
+        "answer": "Each student needs a meal card.",
+        "explanation": "Need describes a state here and normally takes the present simple.",
+        "example": "We believe the museum is open today."
+      },
+      {
+        "id": "present-contrast-041",
+        "front": "For the next month, the team is testing a new way to share files. Complete: Our team ___ a new platform for a month.",
+        "options": [
+          "Our team tries a new platform for a month.",
+          "Our team is trying a new platform for a month."
+        ],
+        "answer": "Our team is trying a new platform for a month.",
+        "explanation": "The team is experimenting for a limited period, so use the present continuous.",
+        "example": "I am learning to use the new booking system this week."
+      },
+      {
+        "id": "present-contrast-032",
+        "front": "Before every flight, the pilot checks the fuel gauge. Complete: The pilot ___ the fuel gauge before takeoff.",
+        "options": [
+          "The pilot checks the fuel gauge before takeoff.",
+          "The pilot is checking the fuel gauge before takeoff."
+        ],
+        "answer": "The pilot checks the fuel gauge before takeoff.",
+        "explanation": "This describes a repeated procedure, so use the present simple.",
+        "example": "The guide counts the group before each hike."
+      },
+      {
+        "id": "present-contrast-051",
+        "front": "A violinist is practicing a difficult passage in the next room. Complete: She ___ the same four bars again.",
+        "options": [
+          "She plays the same four bars again.",
+          "She is playing the same four bars again."
+        ],
+        "answer": "She is playing the same four bars again.",
+        "explanation": "She is repeating the passage during practice now, so use the present continuous.",
+        "example": "The drummer is rehearsing the new rhythm upstairs."
+      },
+      {
+        "id": "present-contrast-085",
+        "front": "The usual gym is closed for cleaning, so the team is meeting at the park today. Complete: The team ___ outdoors this afternoon.",
+        "options": [
+          "The team practices outdoors this afternoon.",
+          "The team is practicing outdoors this afternoon."
+        ],
+        "answer": "The team is practicing outdoors this afternoon.",
+        "explanation": "Today's location is a temporary change, so use the present continuous.",
+        "example": "We are having our lunch break on the roof today."
+      },
+      {
+        "id": "present-contrast-029",
+        "front": "Aisha has swapped her car for a bicycle while her car is at the garage. Complete: Aisha ___ to work this week.",
+        "options": [
+          "Aisha is riding her bike to work this week.",
+          "Aisha rides her bike to work this week."
+        ],
+        "answer": "Aisha is riding her bike to work this week.",
+        "explanation": "This is a temporary travel arrangement, so use the present continuous.",
+        "example": "We are taking the ferry while the bridge is closed."
+      },
+      {
+        "id": "present-contrast-068",
+        "front": "The river flows past the town in every season. Complete: The river ___ under the old stone bridge.",
+        "options": [
+          "The river flows under the old stone bridge.",
+          "The river is flowing under the old stone bridge."
+        ],
+        "answer": "The river flows under the old stone bridge.",
+        "explanation": "This describes a lasting geographical fact, so use the present simple.",
+        "example": "A narrow path runs beside the canal."
+      },
+      {
+        "id": "present-contrast-027",
+        "front": "A kettle is making steam on the counter. Complete: The water ___ now.",
+        "options": [
+          "The water is boiling now.",
+          "The water boils now."
+        ],
+        "answer": "The water is boiling now.",
+        "explanation": "Boiling is happening at this moment, so use the present continuous.",
+        "example": "The soup is heating on the stove."
+      },
+      {
+        "id": "present-contrast-089",
+        "front": "The repair shop is unusually busy, so Dan is helping there until Monday. Complete: Dan ___ at the repair shop this weekend.",
+        "options": [
+          "Dan is helping at the repair shop this weekend.",
+          "Dan helps at the repair shop this weekend."
+        ],
+        "answer": "Dan is helping at the repair shop this weekend.",
+        "explanation": "He is covering a short period, so use the present continuous.",
+        "example": "My sister is working at the festival for three days."
+      },
+      {
+        "id": "present-contrast-021",
+        "front": "A child is drawing a picture while you watch. Complete: She ___ a picture of a dragon.",
+        "options": [
+          "She is drawing a picture of a dragon.",
+          "She draws a picture of a dragon."
+        ],
+        "answer": "She is drawing a picture of a dragon.",
+        "explanation": "The drawing is in progress now, so use the present continuous.",
+        "example": "He is building a tower with wooden blocks."
+      },
+      {
+        "id": "present-contrast-020",
+        "front": "A calendar shows the club's regular meeting day. Complete: The chess club ___ on Thursday evenings.",
+        "options": [
+          "The chess club is meeting on Thursday evenings.",
+          "The chess club meets on Thursday evenings."
+        ],
+        "answer": "The chess club meets on Thursday evenings.",
+        "explanation": "A regular weekly schedule takes the present simple.",
+        "example": "Our team practices in the gym every Tuesday."
+      },
+      {
+        "id": "present-contrast-016",
+        "front": "At the bakery, a sign lists the usual opening time. Complete: The bakery ___ at six on weekdays.",
+        "options": [
+          "The bakery opens at six on weekdays.",
+          "The bakery is opening at six on weekdays."
+        ],
+        "answer": "The bakery opens at six on weekdays.",
+        "explanation": "A regular opening time is a routine, so use the present simple.",
+        "example": "Our pool closes at nine every evening."
+      },
+      {
+        "id": "present-contrast-013",
+        "front": "The baby is asleep in the next room, so everyone is speaking quietly. Complete: The baby ___ at the moment.",
+        "options": [
+          "The baby is sleeping at the moment.",
+          "The baby sleeps at the moment."
+        ],
+        "answer": "The baby is sleeping at the moment.",
+        "explanation": "The sleep is happening now, so use the present continuous.",
+        "example": "My neighbors are having lunch right now."
+      },
+      {
+        "id": "present-contrast-087",
+        "front": "A student is reading aloud from a page while the teacher listens. Complete: Ken ___ the instructions now.",
+        "options": [
+          "Ken reads the instructions now.",
+          "Ken is reading the instructions now."
+        ],
+        "answer": "Ken is reading the instructions now.",
+        "explanation": "Reading is happening at this moment, so use the present continuous.",
+        "example": "She is checking the recipe before we cook."
+      },
+      {
+        "id": "present-contrast-082",
+        "front": "The bus company's route guide lists its normal stop at the university. Complete: The bus ___ outside the main gate.",
+        "options": [
+          "The bus is stopping outside the main gate.",
+          "The bus stops outside the main gate."
+        ],
+        "answer": "The bus stops outside the main gate.",
+        "explanation": "This describes the regular route, so use the present simple.",
+        "example": "The airport train connects with the subway downtown."
+      },
+      {
+        "id": "present-contrast-045",
+        "front": "The leaves on the park trees are turning yellow earlier this year. Complete: The leaves ___ earlier than usual.",
+        "options": [
+          "The leaves are changing color earlier than usual.",
+          "The leaves change color earlier than usual."
+        ],
+        "answer": "The leaves are changing color earlier than usual.",
+        "explanation": "The change is developing this season, so use the present continuous.",
+        "example": "The days are getting shorter as winter approaches."
+      },
+      {
+        "id": "present-contrast-077",
+        "front": "The city is putting more public benches along the waterfront over several months. Complete: The city ___ more benches by the river.",
+        "options": [
+          "The city adds more benches by the river.",
+          "The city is adding more benches by the river."
+        ],
+        "answer": "The city is adding more benches by the river.",
+        "explanation": "The installation is an ongoing project, so use the present continuous.",
+        "example": "Our neighborhood is planting trees along the main road."
+      },
+      {
+        "id": "present-contrast-050",
+        "front": "When the temperature reaches zero, fresh water turns to ice. Complete: Water ___ at zero degrees Celsius.",
+        "options": [
+          "Water freezes at zero degrees Celsius.",
+          "Water is freezing at zero degrees Celsius."
+        ],
+        "answer": "Water freezes at zero degrees Celsius.",
+        "explanation": "This is a general scientific fact, so use the present simple.",
+        "example": "Metal expands when it gets hot."
+      },
+      {
+        "id": "present-contrast-090",
+        "front": "The weather station measures air temperature at regular intervals. Complete: The station ___ the temperature every hour.",
+        "options": [
+          "The station is recording the temperature every hour.",
+          "The station records the temperature every hour."
+        ],
+        "answer": "The station records the temperature every hour.",
+        "explanation": "This is a regular measurement schedule, so use the present simple.",
+        "example": "The sensor sends a reading every ten minutes."
+      },
+      {
+        "id": "present-contrast-028",
+        "front": "In this region, the dry season brings little rain every year. Complete: The dry season ___ from May to August.",
+        "options": [
+          "The dry season is lasting from May to August.",
+          "The dry season lasts from May to August."
+        ],
+        "answer": "The dry season lasts from May to August.",
+        "explanation": "This is a regular fact about the season, so use the present simple.",
+        "example": "The festival takes place in early spring."
+      },
+      {
+        "id": "present-contrast-084",
+        "front": "A fact card beside the tank tells visitors about sea turtles. Complete: A sea turtle ___ air through its lungs.",
+        "options": [
+          "A sea turtle is breathing air through its lungs.",
+          "A sea turtle breathes air through its lungs."
+        ],
+        "answer": "A sea turtle breathes air through its lungs.",
+        "explanation": "This is a general fact about sea turtles, so use the present simple.",
+        "example": "A dolphin uses sound to find objects underwater."
+      },
+      {
+        "id": "present-contrast-017",
+        "front": "A courier is at the gate with a package for you. Complete: I ___ the door now.",
+        "options": [
+          "I answer the door now.",
+          "I am answering the door now."
+        ],
+        "answer": "I am answering the door now.",
+        "explanation": "The action is happening at this moment, so use the present continuous.",
+        "example": "She is collecting her parcel downstairs."
+      },
+      {
+        "id": "present-contrast-052",
+        "front": "The shop's regular delivery arrives before the doors open. Complete: A truck ___ fruit here every Tuesday.",
+        "options": [
+          "A truck delivers fruit here every Tuesday.",
+          "A truck is delivering fruit here every Tuesday."
+        ],
+        "answer": "A truck delivers fruit here every Tuesday.",
+        "explanation": "Every Tuesday describes a regular delivery, so use the present simple.",
+        "example": "The laundry collects uniforms on Mondays."
+      },
+      {
+        "id": "present-contrast-064",
+        "front": "At this café, the menu says the bread is made on site each morning. Complete: The café ___ its own bread.",
+        "options": [
+          "The café is baking its own bread.",
+          "The café bakes its own bread."
+        ],
+        "answer": "The café bakes its own bread.",
+        "explanation": "This describes a normal feature of the café, so use the present simple.",
+        "example": "The hotel serves breakfast until ten."
+      },
+      {
+        "id": "present-contrast-081",
+        "front": "The community garden is producing more vegetables as the plants grow. Complete: The garden ___ more tomatoes each week.",
+        "options": [
+          "The garden is producing more tomatoes each week.",
+          "The garden produces more tomatoes each week."
+        ],
+        "answer": "The garden is producing more tomatoes each week.",
+        "explanation": "The amount is increasing during ongoing growth, so use the present continuous.",
+        "example": "The young trees are growing taller every month."
+      },
+      {
+        "id": "present-contrast-043",
+        "front": "You can see a mechanic under the car, working on the engine. Complete: He ___ the engine at the moment.",
+        "options": [
+          "He repairs the engine at the moment.",
+          "He is repairing the engine at the moment."
+        ],
+        "answer": "He is repairing the engine at the moment.",
+        "explanation": "The repair is happening now, so use the present continuous.",
+        "example": "The technician is replacing a broken screen right now."
+      },
+      {
+        "id": "present-contrast-053",
+        "front": "The city is replacing old streetlights with brighter ones across several neighborhoods. Complete: The city ___ its streetlights this year.",
+        "options": [
+          "The city upgrades its streetlights this year.",
+          "The city is upgrading its streetlights this year."
+        ],
+        "answer": "The city is upgrading its streetlights this year.",
+        "explanation": "The work is an ongoing project and change, so use the present continuous.",
+        "example": "Our school is adding solar panels to the roof."
+      },
+      {
+        "id": "present-contrast-059",
+        "front": "A woman is carrying a large box through the doorway. Complete: She ___ the box upstairs right now.",
+        "options": [
+          "She carries the box upstairs right now.",
+          "She is carrying the box upstairs right now."
+        ],
+        "answer": "She is carrying the box upstairs right now.",
+        "explanation": "The carrying is happening now, so use the present continuous.",
+        "example": "The movers are lifting the sofa into the truck."
+      },
+      {
+        "id": "present-contrast-096",
+        "front": "At this school, a bell signals the end of every lesson. Complete: The bell ___ when the class finishes.",
+        "options": [
+          "The bell rings when the class finishes.",
+          "The bell is ringing when the class finishes."
+        ],
+        "answer": "The bell rings when the class finishes.",
+        "explanation": "This describes a repeated school routine, so use the present simple.",
+        "example": "A light flashes when the printer needs paper."
+      },
+      {
+        "id": "present-contrast-080",
+        "front": "Maya has a fixed role on the school project team. Complete: Maya ___ the group budget.",
+        "options": [
+          "Maya is managing the group budget.",
+          "Maya manages the group budget."
+        ],
+        "answer": "Maya manages the group budget.",
+        "explanation": "This names Maya's regular responsibility, so use the present simple.",
+        "example": "Our captain organizes practice each weekend."
+      },
+      {
+        "id": "present-contrast-055",
+        "front": "A cashier is scanning the items in your basket. Complete: She ___ the groceries now.",
+        "options": [
+          "She is scanning the groceries now.",
+          "She scans the groceries now."
+        ],
+        "answer": "She is scanning the groceries now.",
+        "explanation": "Scanning is in progress at this moment, so use the present continuous.",
+        "example": "I am weighing the apples for you."
+      },
+      {
+        "id": "present-contrast-094",
+        "front": "The local market has a regular delivery of flowers on Friday mornings. Complete: A florist ___ fresh tulips here every Friday.",
+        "options": [
+          "A florist sells fresh tulips here every Friday.",
+          "A florist is selling fresh tulips here every Friday."
+        ],
+        "answer": "A florist sells fresh tulips here every Friday.",
+        "explanation": "Every Friday describes a repeated market routine, so use the present simple.",
+        "example": "The farm brings eggs to the market each weekend."
+      },
+      {
+        "id": "present-contrast-015",
+        "front": "The town is adding more bike lanes, and the project is still underway. Complete: The town ___ its cycle network.",
+        "options": [
+          "The town expands its cycle network.",
+          "The town is expanding its cycle network."
+        ],
+        "answer": "The town is expanding its cycle network.",
+        "explanation": "The network is changing over time, so use the present continuous.",
+        "example": "More shops are opening along this street."
+      },
+      {
+        "id": "present-contrast-091",
+        "front": "The ice on the pond is melting as the afternoon gets warmer. Complete: The ice ___ quickly today.",
+        "options": [
+          "The ice is melting quickly today.",
+          "The ice melts quickly today."
+        ],
+        "answer": "The ice is melting quickly today.",
+        "explanation": "Melting is a change happening during today, so use the present continuous.",
+        "example": "The snow is disappearing from the rooftops."
+      },
+      {
+        "id": "present-contrast-073",
+        "front": "The days are becoming warmer as spring moves into summer. Complete: The weather ___ warmer this week.",
+        "options": [
+          "The weather is getting warmer this week.",
+          "The weather gets warmer this week."
+        ],
+        "answer": "The weather is getting warmer this week.",
+        "explanation": "The weather is changing over this period, so use the present continuous.",
+        "example": "The nights are growing shorter now."
+      },
+      {
+        "id": "present-contrast-030",
+        "front": "The label on the jar tells shoppers what is inside. Complete: This jar ___ honey.",
+        "options": [
+          "This jar is containing honey.",
+          "This jar contains honey."
+        ],
+        "answer": "This jar contains honey.",
+        "explanation": "Contain describes what the jar holds, a state, so use the present simple.",
+        "example": "The box holds a set of colored pencils."
+      },
+      {
+        "id": "present-contrast-006",
+        "front": "The hills near Mei's town follow the same seasonal pattern each year. Complete: It ___ there every January.",
+        "options": [
+          "It is getting very cold there every January.",
+          "It gets very cold there every January."
+        ],
+        "answer": "It gets very cold there every January.",
+        "explanation": "This describes a regular seasonal pattern, so use the present simple.",
+        "example": "The lake freezes each winter."
+      },
+      {
+        "id": "present-contrast-099",
+        "front": "The bridge is closed to cars for repairs, so residents are taking another way to town. Complete: Residents ___ the hill road this week.",
+        "options": [
+          "Residents use the hill road this week.",
+          "Residents are using the hill road this week."
+        ],
+        "answer": "Residents are using the hill road this week.",
+        "explanation": "The route is a temporary choice during repairs, so use the present continuous.",
+        "example": "I am walking through the park while the main path is closed."
+      },
+      {
+        "id": "present-contrast-065",
+        "front": "The usual bus stop is closed, so passengers are using the next street until Friday. Complete: We ___ the bus on Oak Street this week.",
+        "options": [
+          "We are catching the bus on Oak Street this week.",
+          "We catch the bus on Oak Street this week."
+        ],
+        "answer": "We are catching the bus on Oak Street this week.",
+        "explanation": "The change lasts only this week, so use the present continuous.",
+        "example": "She is entering the building through the side door during repairs."
+      },
+      {
+        "id": "present-contrast-026",
+        "front": "Ella's family normally eats at home on Sundays. Complete: They ___ lunch together every Sunday.",
+        "options": [
+          "They are eating lunch together every Sunday.",
+          "They eat lunch together every Sunday."
+        ],
+        "answer": "They eat lunch together every Sunday.",
+        "explanation": "Every Sunday signals a normal routine, so use the present simple.",
+        "example": "My cousins visit their grandparents each month."
+      },
+      {
+        "id": "present-contrast-046",
+        "front": "Leo's address is printed on the form, and it has not changed. Complete: Leo ___ in apartment 12.",
+        "options": [
+          "Leo is living in apartment 12.",
+          "Leo lives in apartment 12."
+        ],
+        "answer": "Leo lives in apartment 12.",
+        "explanation": "This gives a current stable fact about Leo's home, so use the present simple.",
+        "example": "My aunt owns a flat near the river."
+      },
+      {
+        "id": "present-contrast-048",
+        "front": "The park's sign explains a rule that applies all year. Complete: The gate ___ at sunset.",
+        "options": [
+          "The gate locks at sunset.",
+          "The gate is locking at sunset."
+        ],
+        "answer": "The gate locks at sunset.",
+        "explanation": "This is the usual rule for the gate, so use the present simple.",
+        "example": "The reading room closes at six each evening."
+      },
+      {
+        "id": "present-contrast-031",
+        "front": "A dog is chasing a ball across the park right now. Complete: The dog ___ after the ball.",
+        "options": [
+          "The dog runs after the ball.",
+          "The dog is running after the ball."
+        ],
+        "answer": "The dog is running after the ball.",
+        "explanation": "The chase is in progress now, so use the present continuous.",
+        "example": "The kitten is climbing the curtain at this moment."
+      },
+      {
+        "id": "present-contrast-079",
+        "front": "A reporter is speaking to a shop owner outside the market. Complete: She ___ the shop owner at the moment.",
+        "options": [
+          "She is interviewing the shop owner at the moment.",
+          "She interviews the shop owner at the moment."
+        ],
+        "answer": "She is interviewing the shop owner at the moment.",
+        "explanation": "The interview is in progress now, so use the present continuous.",
+        "example": "The student is asking the librarian for help right now."
+      },
+      {
+        "id": "present-contrast-056",
+        "front": "This recipe uses a little salt to improve the flavor. Complete: The soup ___ better with fresh herbs.",
+        "options": [
+          "The soup is tasting better with fresh herbs.",
+          "The soup tastes better with fresh herbs."
+        ],
+        "answer": "The soup tastes better with fresh herbs.",
+        "explanation": "Taste describes the soup's quality here, so use the present simple.",
+        "example": "This fabric feels soft against the skin."
+      },
+      {
+        "id": "present-contrast-075",
+        "front": "A technician has connected the new router and is setting up the network. Complete: He ___ the office Wi-Fi now.",
+        "options": [
+          "He configures the office Wi-Fi now.",
+          "He is configuring the office Wi-Fi now."
+        ],
+        "answer": "He is configuring the office Wi-Fi now.",
+        "explanation": "He is setting it up at this moment, so use the present continuous.",
+        "example": "I am installing the language app on my tablet."
+      },
+      {
+        "id": "present-contrast-004",
+        "front": "At the clinic, Marco follows the same morning schedule every weekday. Complete: Marco ___ the front desk at eight.",
+        "options": [
+          "Marco opens the front desk at eight.",
+          "Marco is opening the front desk at eight."
+        ],
+        "answer": "Marco opens the front desk at eight.",
+        "explanation": "A repeated weekday schedule is a routine, so use the present simple.",
+        "example": "Nina checks the classroom windows before lessons."
+      },
+      {
+        "id": "present-contrast-049",
+        "front": "Maks is using his sister's laptop while his own computer is being repaired. Complete: Maks ___ his sister's laptop for a few days.",
+        "options": [
+          "Maks borrows his sister's laptop for a few days.",
+          "Maks is borrowing his sister's laptop for a few days."
+        ],
+        "answer": "Maks is borrowing his sister's laptop for a few days.",
+        "explanation": "The borrowing is a temporary arrangement, so use the present continuous.",
+        "example": "I am using a spare phone until mine arrives."
+      },
+      {
+        "id": "present-contrast-025",
+        "front": "The road crew is laying new pavement today, and the work is not finished. Complete: They ___ the road outside the school.",
+        "options": [
+          "They are resurfacing the road outside the school.",
+          "They resurface the road outside the school."
+        ],
+        "answer": "They are resurfacing the road outside the school.",
+        "explanation": "The crew is doing temporary work now, so use the present continuous.",
+        "example": "Workers are fixing the footbridge this week."
+      },
+      {
+        "id": "present-contrast-093",
+        "front": "A hotel worker is carrying clean towels to a guest room. Complete: She ___ fresh towels upstairs now.",
+        "options": [
+          "She takes fresh towels upstairs now.",
+          "She is taking fresh towels upstairs now."
+        ],
+        "answer": "She is taking fresh towels upstairs now.",
+        "explanation": "The worker is doing this now, so use the present continuous.",
+        "example": "The porter is bringing our bags to the lobby."
+      },
+      {
+        "id": "present-contrast-098",
+        "front": "The label on the bottle says it is made from recycled glass. Complete: This bottle ___ recycled glass.",
+        "options": [
+          "This bottle contains recycled glass.",
+          "This bottle is containing recycled glass."
+        ],
+        "answer": "This bottle contains recycled glass.",
+        "explanation": "Contain describes what is inside, so it normally uses the present simple.",
+        "example": "The packet includes two spare buttons."
+      },
+      {
+        "id": "present-contrast-072",
+        "front": "Before every lesson, the tutor writes three new words on the board. Complete: Our tutor ___ three new words before class.",
+        "options": [
+          "Our tutor is writing three new words before class.",
+          "Our tutor writes three new words before class."
+        ],
+        "answer": "Our tutor writes three new words before class.",
+        "explanation": "This is a repeated classroom routine, so use the present simple.",
+        "example": "The coach demonstrates each exercise before practice."
+      },
+      {
+        "id": "present-contrast-067",
+        "front": "A gardener is watering the seedlings in the greenhouse right now. Complete: He ___ the young plants.",
+        "options": [
+          "He waters the young plants.",
+          "He is watering the young plants."
+        ],
+        "answer": "He is watering the young plants.",
+        "explanation": "He is doing this at the moment, so use the present continuous.",
+        "example": "She is feeding the chickens before breakfast."
+      },
+      {
+        "id": "present-contrast-086",
+        "front": "A notice at the station lists the normal last train time. Complete: The last train ___ at 11:40 every night.",
+        "options": [
+          "The last train leaves at 11:40 every night.",
+          "The last train is leaving at 11:40 every night."
+        ],
+        "answer": "The last train leaves at 11:40 every night.",
+        "explanation": "Every night marks a regular timetable, so use the present simple.",
+        "example": "The museum tour starts at two each afternoon."
+      },
+      {
+        "id": "present-contrast-100",
+        "front": "At the animal center, volunteers feed the rabbits at the same time each day. Complete: A volunteer ___ the rabbits at noon.",
+        "options": [
+          "A volunteer feeds the rabbits at noon.",
+          "A volunteer is feeding the rabbits at noon."
+        ],
+        "answer": "A volunteer feeds the rabbits at noon.",
+        "explanation": "This is a daily care routine, so use the present simple.",
+        "example": "The keeper checks the baby birds every morning."
+      },
+      {
+        "id": "present-contrast-074",
+        "front": "A local guide knows every path in the forest. Complete: She ___ the safest route to the waterfall.",
+        "options": [
+          "She knows the safest route to the waterfall.",
+          "She is knowing the safest route to the waterfall."
+        ],
+        "answer": "She knows the safest route to the waterfall.",
+        "explanation": "Know describes knowledge, a state, so use the present simple.",
+        "example": "I remember the name of that small village."
+      },
+      {
+        "id": "present-contrast-018",
+        "front": "Sam's passport is in his bag; he is certain it is there. Complete: Sam ___ where his passport is.",
+        "options": [
+          "Sam is knowing where his passport is.",
+          "Sam knows where his passport is."
+        ],
+        "answer": "Sam knows where his passport is.",
+        "explanation": "Know is a stative verb and is not normally used in the continuous.",
+        "example": "They own a small shop near the station."
+      },
+      {
+        "id": "present-contrast-097",
+        "front": "You can see two friends at a table, sharing a bowl of noodles. Complete: They ___ lunch together right now.",
+        "options": [
+          "They have lunch together right now.",
+          "They are having lunch together right now."
+        ],
+        "answer": "They are having lunch together right now.",
+        "explanation": "The meal is in progress at the moment, so use the present continuous.",
+        "example": "We are enjoying a quiet break in the garden."
+      },
+      {
+        "id": "present-contrast-070",
+        "front": "At the end of the path, a small sign gives its distance from the station. Complete: The trail ___ two kilometers from the station.",
+        "options": [
+          "The trail is beginning two kilometers from the station.",
+          "The trail begins two kilometers from the station."
+        ],
+        "answer": "The trail begins two kilometers from the station.",
+        "explanation": "This states a fixed location fact, so use the present simple.",
+        "example": "The walking route ends beside the lake."
+      },
+      {
+        "id": "present-contrast-057",
+        "front": "A family is visiting relatives in another city and plans to return on Sunday. Complete: They ___ with their cousins this weekend.",
+        "options": [
+          "They are staying with their cousins this weekend.",
+          "They stay with their cousins this weekend."
+        ],
+        "answer": "They are staying with their cousins this weekend.",
+        "explanation": "This is a temporary weekend arrangement, so use the present continuous.",
+        "example": "I am sleeping at a friend's place tonight."
+      },
+      {
+        "id": "present-contrast-058",
+        "front": "The museum displays a new collection every spring. Complete: The museum ___ local paintings each year.",
+        "options": [
+          "The museum exhibits local paintings each year.",
+          "The museum is exhibiting local paintings each year."
+        ],
+        "answer": "The museum exhibits local paintings each year.",
+        "explanation": "Each year marks a repeated program, so use the present simple.",
+        "example": "The library hosts a book fair every autumn."
+      },
+      {
+        "id": "present-contrast-022",
+        "front": "The shop's price list says each postcard costs two dollars. Complete: Each postcard ___ two dollars.",
+        "options": [
+          "Each postcard is costing two dollars.",
+          "Each postcard costs two dollars."
+        ],
+        "answer": "Each postcard costs two dollars.",
+        "explanation": "Cost describes a stable price here, so use the present simple.",
+        "example": "This ticket includes a free drink."
+      }
+    ]
+  },
+  {
+    "id": "past-simple-vs-present-perfect",
+    "title": "Past simple vs. present perfect",
+    "level": "intermediate",
+    "reviewContentKeys": [
+      "present-perfect-001",
+      "present-perfect-002",
+      "tense-contrast-001",
+      "tense-correction-001"
+    ],
+    "referenceUrl": "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/talking-about-past",
+    "questions": [
+      {
+        "id": "finished-past-time",
+        "front": "You are telling a friend when you bought your bike. Complete the sentence: I ___ my bike last October.",
+        "options": [
+          "I have bought my bike last October.",
+          "I bought my bike last October."
+        ],
+        "answer": "I bought my bike last October.",
+        "explanation": "Use the past simple when you place a completed action in a finished period such as last October.",
+        "example": "We booked the tickets on Monday."
+      },
+      {
+        "id": "continues-to-present",
+        "front": "Noor joined the club in 2022 and is still a member. Complete the sentence: Noor ___ a member since 2022.",
+        "options": [
+          "Noor has been a member since 2022.",
+          "Noor was a member since 2022."
+        ],
+        "answer": "Noor has been a member since 2022.",
+        "explanation": "Use the present perfect for a state that began in the past and continues now. Since 2022 gives its starting point.",
+        "example": "We have known each other since primary school."
+      },
+      {
+        "id": "present-result-and-past-time",
+        "front": "The pickup was yesterday and Iris still has the parcel. Complete the sentence: Iris ___ her parcel yesterday, so she has it with her now.",
+        "options": [
+          "Iris has picked up her parcel yesterday, so she has it with her now.",
+          "Iris picked up her parcel yesterday, so she has it with her now."
+        ],
+        "answer": "Iris picked up her parcel yesterday, so she has it with her now.",
+        "explanation": "The pickup happened yesterday, a finished time, so use the past simple for that action. The second clause describes the result now.",
+        "example": "I repaired the lock yesterday, so the door closes properly now."
+      },
+      {
+        "id": "perfect-contrast-021",
+        "front": "The storm passed through the village last night. Complete the sentence: It ___ several branches across the road.",
+        "options": [
+          "It has blown several branches across the road.",
+          "It blew several branches across the road."
+        ],
+        "answer": "It blew several branches across the road.",
+        "explanation": "“The storm passed through the village last night” fixes a completed past time, so use the past simple.",
+        "example": "The wind carried leaves into the courtyard yesterday."
+      },
+      {
+        "id": "perfect-contrast-039",
+        "front": "Our trip to the lake was in July. Complete the sentence: We ___ a wooden boat for the afternoon.",
+        "options": [
+          "We have hired a wooden boat for the afternoon.",
+          "We hired a wooden boat for the afternoon."
+        ],
+        "answer": "We hired a wooden boat for the afternoon.",
+        "explanation": "“Our trip to the lake was in July” fixes a completed past time, so use the past simple.",
+        "example": "They rented bicycles for their holiday in May."
+      },
+      {
+        "id": "perfect-contrast-046",
+        "front": "The school planted a row of trees in 2019. Complete the sentence: Students ___ them beside the playground.",
+        "options": [
+          "Students planted them beside the playground.",
+          "Students have planted them beside the playground."
+        ],
+        "answer": "Students planted them beside the playground.",
+        "explanation": "“The school planted a row of trees in 2019” fixes a completed past time, so use the past simple.",
+        "example": "The neighbors grew sunflowers along the fence last summer."
+      },
+      {
+        "id": "perfect-contrast-053",
+        "front": "Ben started working at the bakery six years ago and still works there. Complete the sentence: Ben ___ at the bakery for six years.",
+        "options": [
+          "Ben worked at the bakery for six years.",
+          "Ben has worked at the bakery for six years."
+        ],
+        "answer": "Ben has worked at the bakery for six years.",
+        "explanation": "“Ben started working at the bakery six years ago and still works there” shows the state or activity continues now; use the present perfect.",
+        "example": "Our neighbors have lived on this street for a decade."
+      },
+      {
+        "id": "perfect-contrast-061",
+        "front": "The dog arrived at the shelter in April and is still there. Complete the sentence: It ___ with us for three months.",
+        "options": [
+          "It stayed with us for three months.",
+          "It has stayed with us for three months."
+        ],
+        "answer": "It has stayed with us for three months.",
+        "explanation": "“The dog arrived at the shelter in April and is still there” shows the state or activity continues now; use the present perfect.",
+        "example": "My brother has lived with our aunt since May."
+      },
+      {
+        "id": "perfect-contrast-099",
+        "front": "The store is still counting its weekend total. Complete the sentence: Customers ___ 75 reusable bags so far this weekend.",
+        "options": [
+          "Customers bought 75 reusable bags so far this weekend.",
+          "Customers have bought 75 reusable bags so far this weekend."
+        ],
+        "answer": "Customers have bought 75 reusable bags so far this weekend.",
+        "explanation": "“The store is still counting its weekend total” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "Visitors have donated many books this weekend."
+      },
+      {
+        "id": "perfect-contrast-079",
+        "front": "It is still Wednesday, and the repair desk closes at six. Complete the sentence: The technician ___ eight laptops today.",
+        "options": [
+          "The technician repaired eight laptops today.",
+          "The technician has repaired eight laptops today."
+        ],
+        "answer": "The technician has repaired eight laptops today.",
+        "explanation": "“It is still Wednesday, and the repair desk closes at six” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "I have checked three reports today."
+      },
+      {
+        "id": "perfect-contrast-074",
+        "front": "This is the current expedition log, and the group is still on the mountain. Complete the sentence: The climbers ___ two camps so far.",
+        "options": [
+          "The climbers have set up two camps so far.",
+          "The climbers set up two camps so far."
+        ],
+        "answer": "The climbers have set up two camps so far.",
+        "explanation": "“This is the current expedition log, and the group is still on the mountain” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "Our volunteers have packed forty food boxes so far."
+      },
+      {
+        "id": "perfect-contrast-041",
+        "front": "The class finished the puzzle during Tuesday's lesson. Complete the sentence: We ___ the final clue in the last minute.",
+        "options": [
+          "We have found the final clue in the last minute.",
+          "We found the final clue in the last minute."
+        ],
+        "answer": "We found the final clue in the last minute.",
+        "explanation": "“The class finished the puzzle during Tuesday's lesson” fixes a completed past time, so use the past simple.",
+        "example": "My team solved the riddle before the bell rang on Friday."
+      },
+      {
+        "id": "perfect-contrast-047",
+        "front": "The restaurant opened in 2020. Complete the sentence: Its first customers ___ a table near the window.",
+        "options": [
+          "Its first customers have chosen a table near the window.",
+          "Its first customers chose a table near the window."
+        ],
+        "answer": "Its first customers chose a table near the window.",
+        "explanation": "“The restaurant opened in 2020” fixes a completed past time, so use the past simple.",
+        "example": "We picked seats at the back during last week's lecture."
+      },
+      {
+        "id": "perfect-contrast-017",
+        "front": "The museum visit was two weeks ago. Complete the sentence: Our guide ___ us how the old clock worked.",
+        "options": [
+          "Our guide has shown us how the old clock worked.",
+          "Our guide showed us how the old clock worked."
+        ],
+        "answer": "Our guide showed us how the old clock worked.",
+        "explanation": "“The museum visit was two weeks ago” fixes a completed past time, so use the past simple.",
+        "example": "The ranger pointed out animal tracks during our walk last weekend."
+      },
+      {
+        "id": "perfect-contrast-023",
+        "front": "The school play had its last performance on Saturday. Complete the sentence: I ___ the stage lights for the final scene.",
+        "options": [
+          "I have switched on the stage lights for the final scene.",
+          "I switched on the stage lights for the final scene."
+        ],
+        "answer": "I switched on the stage lights for the final scene.",
+        "explanation": "“The school play had its last performance on Saturday” fixes a completed past time, so use the past simple.",
+        "example": "Tess turned off the projector after the lecture yesterday."
+      },
+      {
+        "id": "perfect-contrast-094",
+        "front": "The museum's visitor count is live through closing time. Complete the sentence: The museum ___ 2,000 guests today.",
+        "options": [
+          "The museum has welcomed 2,000 guests today.",
+          "The museum welcomed 2,000 guests today."
+        ],
+        "answer": "The museum has welcomed 2,000 guests today.",
+        "explanation": "“The museum's visitor count is live through closing time” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "The aquarium has received many school groups today."
+      },
+      {
+        "id": "perfect-contrast-085",
+        "front": "The survey remains open until Friday. Complete the sentence: More than 300 residents ___ the survey so far.",
+        "options": [
+          "More than 300 residents completed the survey so far.",
+          "More than 300 residents have completed the survey so far."
+        ],
+        "answer": "More than 300 residents have completed the survey so far.",
+        "explanation": "“The survey remains open until Friday” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "Over a hundred families have joined the program so far."
+      },
+      {
+        "id": "perfect-contrast-100",
+        "front": "The film festival continues until Sunday. Complete the sentence: We ___ four short films at the festival so far.",
+        "options": [
+          "We have watched four short films at the festival so far.",
+          "We watched four short films at the festival so far."
+        ],
+        "answer": "We have watched four short films at the festival so far.",
+        "explanation": "“The film festival continues until Sunday” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "They have attended three talks at the event so far."
+      },
+      {
+        "id": "perfect-contrast-037",
+        "front": "The contest ended on 10 April. Complete the sentence: Hana ___ first place in the spelling round.",
+        "options": [
+          "Hana has won first place in the spelling round.",
+          "Hana won first place in the spelling round."
+        ],
+        "answer": "Hana won first place in the spelling round.",
+        "explanation": "“The contest ended on 10 April” fixes a completed past time, so use the past simple.",
+        "example": "Luis took the top prize at the fair last year."
+      },
+      {
+        "id": "perfect-contrast-044",
+        "front": "At the end of the 2022 course, our instructor gave certificates. Complete the sentence: I ___ mine at the closing ceremony.",
+        "options": [
+          "I received mine at the closing ceremony.",
+          "I have received mine at the closing ceremony."
+        ],
+        "answer": "I received mine at the closing ceremony.",
+        "explanation": "“At the end of the 2022 course, our instructor gave certificates” fixes a completed past time, so use the past simple.",
+        "example": "He collected his award after the ceremony last June."
+      },
+      {
+        "id": "perfect-contrast-027",
+        "front": "The cooking class was last month. Complete the sentence: We ___ fresh pasta by hand.",
+        "options": [
+          "We have made fresh pasta by hand.",
+          "We made fresh pasta by hand."
+        ],
+        "answer": "We made fresh pasta by hand.",
+        "explanation": "“The cooking class was last month” fixes a completed past time, so use the past simple.",
+        "example": "My aunt prepared dumplings for the family in April."
+      },
+      {
+        "id": "perfect-contrast-092",
+        "front": "A report due at the end of this week is still being updated. Complete the sentence: The team ___ two client visits this week.",
+        "options": [
+          "The team has made two client visits this week.",
+          "The team made two client visits this week."
+        ],
+        "answer": "The team has made two client visits this week.",
+        "explanation": "“A report due at the end of this week is still being updated” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "Our manager has attended three briefings this week."
+      },
+      {
+        "id": "perfect-contrast-007",
+        "front": "The parcel arrived on Tuesday. Complete the sentence: The courier ___ it at the front desk.",
+        "options": [
+          "The courier has left it at the front desk.",
+          "The courier left it at the front desk."
+        ],
+        "answer": "The courier left it at the front desk.",
+        "explanation": "“The parcel arrived on Tuesday” fixes a completed past time, so use the past simple.",
+        "example": "A delivery driver brought the new chairs on Thursday."
+      },
+      {
+        "id": "perfect-contrast-097",
+        "front": "The family is still on its trip and has another stop tomorrow. Complete the sentence: They ___ three national parks on this trip so far.",
+        "options": [
+          "They visited three national parks on this trip so far.",
+          "They have visited three national parks on this trip so far."
+        ],
+        "answer": "They have visited three national parks on this trip so far.",
+        "explanation": "“The family is still on its trip and has another stop tomorrow” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "We have explored two islands on our holiday so far."
+      },
+      {
+        "id": "perfect-contrast-029",
+        "front": "The town's old bridge was replaced in 2015. Complete the sentence: The council ___ it after the flood.",
+        "options": [
+          "The council has replaced it after the flood.",
+          "The council replaced it after the flood."
+        ],
+        "answer": "The council replaced it after the flood.",
+        "explanation": "“The town's old bridge was replaced in 2015” fixes a completed past time, so use the past simple.",
+        "example": "The city renovated the market hall in 2019."
+      },
+      {
+        "id": "perfect-contrast-088",
+        "front": "The chef is still preparing tonight's menu. Complete the sentence: She ___ five dishes for the tasting so far.",
+        "options": [
+          "She has prepared five dishes for the tasting so far.",
+          "She prepared five dishes for the tasting so far."
+        ],
+        "answer": "She has prepared five dishes for the tasting so far.",
+        "explanation": "“The chef is still preparing tonight's menu” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "They have tested four sauces so far."
+      },
+      {
+        "id": "perfect-contrast-077",
+        "front": "The class project is due next week, and the group is still working. Complete the sentence: We ___ the first two sections so far.",
+        "options": [
+          "We finished the first two sections so far.",
+          "We have finished the first two sections so far."
+        ],
+        "answer": "We have finished the first two sections so far.",
+        "explanation": "“The class project is due next week, and the group is still working” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "The students have completed three tasks so far."
+      },
+      {
+        "id": "perfect-contrast-087",
+        "front": "The current school term ends next month. Complete the sentence: Our class ___ two field trips this term.",
+        "options": [
+          "Our class took two field trips this term.",
+          "Our class has taken two field trips this term."
+        ],
+        "answer": "Our class has taken two field trips this term.",
+        "explanation": "“The current school term ends next month” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "The students have visited three local businesses this term."
+      },
+      {
+        "id": "perfect-contrast-020",
+        "front": "The science fair finished yesterday. Complete the sentence: Kim ___ a small weather station for her display.",
+        "options": [
+          "Kim built a small weather station for her display.",
+          "Kim has built a small weather station for her display."
+        ],
+        "answer": "Kim built a small weather station for her display.",
+        "explanation": "“The science fair finished yesterday” fixes a completed past time, so use the past simple.",
+        "example": "Arun designed a paper bridge for the class exhibition last term."
+      },
+      {
+        "id": "perfect-contrast-056",
+        "front": "Asha moved into this flat seven years ago and still lives here. Complete the sentence: Asha ___ here for seven years.",
+        "options": [
+          "Asha has lived here for seven years.",
+          "Asha lived here for seven years."
+        ],
+        "answer": "Asha has lived here for seven years.",
+        "explanation": "“Asha moved into this flat seven years ago and still lives here” shows the state or activity continues now; use the present perfect.",
+        "example": "We have rented this room for three months."
+      },
+      {
+        "id": "perfect-contrast-016",
+        "front": "The book club met on Wednesday. Complete the sentence: We ___ the final chapter together.",
+        "options": [
+          "We read the final chapter together.",
+          "We have read the final chapter together."
+        ],
+        "answer": "We read the final chapter together.",
+        "explanation": "“The book club met on Wednesday” fixes a completed past time, so use the past simple.",
+        "example": "The group discussed a short story at its last meeting."
+      },
+      {
+        "id": "perfect-contrast-075",
+        "front": "The application period closes tomorrow. Complete the sentence: The committee ___ twelve applications up to now.",
+        "options": [
+          "The committee reviewed twelve applications up to now.",
+          "The committee has reviewed twelve applications up to now."
+        ],
+        "answer": "The committee has reviewed twelve applications up to now.",
+        "explanation": "“The application period closes tomorrow” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "I have answered six emails up to now."
+      },
+      {
+        "id": "perfect-contrast-058",
+        "front": "The town started using its new library eight years ago, and it is still open. Complete the sentence: The library ___ the riverside building for eight years.",
+        "options": [
+          "The library has used the riverside building for eight years.",
+          "The library used the riverside building for eight years."
+        ],
+        "answer": "The library has used the riverside building for eight years.",
+        "explanation": "“The town started using its new library eight years ago, and it is still open” shows the state or activity continues now; use the present perfect.",
+        "example": "The clinic has occupied the corner building since 2017."
+      },
+      {
+        "id": "perfect-contrast-018",
+        "front": "The garden party took place last Sunday. Complete the sentence: Priya ___ a lemon cake for the guests.",
+        "options": [
+          "Priya baked a lemon cake for the guests.",
+          "Priya has baked a lemon cake for the guests."
+        ],
+        "answer": "Priya baked a lemon cake for the guests.",
+        "explanation": "“The garden party took place last Sunday” fixes a completed past time, so use the past simple.",
+        "example": "Dad made vegetable soup for the neighbors on Friday."
+      },
+      {
+        "id": "perfect-contrast-070",
+        "front": "We first made this soup six years ago and still make it regularly. Complete the sentence: We ___ this soup for six years.",
+        "options": [
+          "We have made this soup for six years.",
+          "We made this soup for six years."
+        ],
+        "answer": "We have made this soup for six years.",
+        "explanation": "“We first made this soup six years ago and still make it regularly” shows the state or activity continues now; use the present perfect.",
+        "example": "My mother has baked that bread since she was a student."
+      },
+      {
+        "id": "perfect-contrast-035",
+        "front": "The storm ended at dawn yesterday. Complete the sentence: The rain ___ the footpath overnight.",
+        "options": [
+          "The rain has flooded the footpath overnight.",
+          "The rain flooded the footpath overnight."
+        ],
+        "answer": "The rain flooded the footpath overnight.",
+        "explanation": "“The storm ended at dawn yesterday” fixes a completed past time, so use the past simple.",
+        "example": "Heavy snow covered the playground during the night on Monday."
+      },
+      {
+        "id": "perfect-contrast-028",
+        "front": "The flight landed at 11 p.m. last night. Complete the sentence: The pilot ___ the plane smoothly.",
+        "options": [
+          "The pilot landed the plane smoothly.",
+          "The pilot has landed the plane smoothly."
+        ],
+        "answer": "The pilot landed the plane smoothly.",
+        "explanation": "“The flight landed at 11 p.m. last night” fixes a completed past time, so use the past simple.",
+        "example": "The ferry reached the island just before dusk on Saturday."
+      },
+      {
+        "id": "perfect-contrast-014",
+        "front": "When Leo was eight, he learned to swim. Complete the sentence: Leo ___ his first length without help at that age.",
+        "options": [
+          "Leo swam his first length without help at that age.",
+          "Leo has swum his first length without help at that age."
+        ],
+        "answer": "Leo swam his first length without help at that age.",
+        "explanation": "“When Leo was eight, he learned to swim” fixes a completed past time, so use the past simple.",
+        "example": "I rode a bicycle without training wheels when I was six."
+      },
+      {
+        "id": "perfect-contrast-051",
+        "front": "The building work finished last winter. Complete the sentence: The builders ___ a ramp beside the entrance.",
+        "options": [
+          "The builders have added a ramp beside the entrance.",
+          "The builders added a ramp beside the entrance."
+        ],
+        "answer": "The builders added a ramp beside the entrance.",
+        "explanation": "“The building work finished last winter” fixes a completed past time, so use the past simple.",
+        "example": "The council installed a new handrail in September."
+      },
+      {
+        "id": "perfect-contrast-091",
+        "front": "The year-end count is not complete yet; the office is still open. Complete the sentence: We ___ 86 orders this quarter.",
+        "options": [
+          "We processed 86 orders this quarter.",
+          "We have processed 86 orders this quarter."
+        ],
+        "answer": "We have processed 86 orders this quarter.",
+        "explanation": "“The year-end count is not complete yet; the office is still open” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "The team has received 140 requests this quarter."
+      },
+      {
+        "id": "perfect-contrast-066",
+        "front": "The museum hired a new guide three years ago, and she still leads tours. Complete the sentence: She ___ visitors through the east wing for three years.",
+        "options": [
+          "She has led visitors through the east wing for three years.",
+          "She led visitors through the east wing for three years."
+        ],
+        "answer": "She has led visitors through the east wing for three years.",
+        "explanation": "“The museum hired a new guide three years ago, and she still leads tours” shows the state or activity continues now; use the present perfect.",
+        "example": "He has guided school groups around the castle since last summer."
+      },
+      {
+        "id": "perfect-contrast-048",
+        "front": "The school trip finished on Friday. Complete the sentence: I ___ my camera on the bus, but the driver returned it.",
+        "options": [
+          "I forgot my camera on the bus, but the driver returned it.",
+          "I have forgotten my camera on the bus, but the driver returned it."
+        ],
+        "answer": "I forgot my camera on the bus, but the driver returned it.",
+        "explanation": "“The school trip finished on Friday” fixes a completed past time, so use the past simple.",
+        "example": "She left her notebook at the café yesterday and went back for it."
+      },
+      {
+        "id": "perfect-contrast-090",
+        "front": "The current exhibition ends next month. Complete the sentence: The gallery ___ six local artists this season.",
+        "options": [
+          "The gallery has featured six local artists this season.",
+          "The gallery featured six local artists this season."
+        ],
+        "answer": "The gallery has featured six local artists this season.",
+        "explanation": "“The current exhibition ends next month” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "The theater has hosted three new plays this season."
+      },
+      {
+        "id": "perfect-contrast-082",
+        "front": "The shop's weekly total is not final until Sunday. Complete the sentence: It ___ thirty handmade candles this week.",
+        "options": [
+          "It has sold thirty handmade candles this week.",
+          "It sold thirty handmade candles this week."
+        ],
+        "answer": "It has sold thirty handmade candles this week.",
+        "explanation": "“The shop's weekly total is not final until Sunday” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "The bakery has baked 200 rolls this week."
+      },
+      {
+        "id": "perfect-contrast-049",
+        "front": "The race took place at the weekend. Complete the sentence: The runners ___ the river path before breakfast.",
+        "options": [
+          "The runners have run the river path before breakfast.",
+          "The runners ran the river path before breakfast."
+        ],
+        "answer": "The runners ran the river path before breakfast.",
+        "explanation": "“The race took place at the weekend” fixes a completed past time, so use the past simple.",
+        "example": "We walked the coastal trail early on Sunday."
+      },
+      {
+        "id": "perfect-contrast-069",
+        "front": "Sam started running with the local club in March and remains a member. Complete the sentence: Sam ___ with the club for four months.",
+        "options": [
+          "Sam ran with the club for four months.",
+          "Sam has run with the club for four months."
+        ],
+        "answer": "Sam has run with the club for four months.",
+        "explanation": "“Sam started running with the local club in March and remains a member” shows the state or activity continues now; use the present perfect.",
+        "example": "I have trained with the swim team since January."
+      },
+      {
+        "id": "perfect-contrast-080",
+        "front": "The wildlife count is ongoing this month. Complete the sentence: Researchers ___ eleven otters this month.",
+        "options": [
+          "Researchers have spotted eleven otters this month.",
+          "Researchers spotted eleven otters this month."
+        ],
+        "answer": "Researchers have spotted eleven otters this month.",
+        "explanation": "“The wildlife count is ongoing this month” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "The team has recorded seven nesting sites this month."
+      },
+      {
+        "id": "perfect-contrast-067",
+        "front": "The family moved to this village in 2016 and still lives here. Complete the sentence: They ___ in the village since 2016.",
+        "options": [
+          "They lived in the village since 2016.",
+          "They have lived in the village since 2016."
+        ],
+        "answer": "They have lived in the village since 2016.",
+        "explanation": "“The family moved to this village in 2016 and still lives here” shows the state or activity continues now; use the present perfect.",
+        "example": "My grandparents have stayed in the same house for forty years."
+      },
+      {
+        "id": "perfect-contrast-043",
+        "front": "The old stadium closed in 2017. Complete the sentence: The club ___ its last home game there in November.",
+        "options": [
+          "The club has played its last home game there in November.",
+          "The club played its last home game there in November."
+        ],
+        "answer": "The club played its last home game there in November.",
+        "explanation": "“The old stadium closed in 2017” fixes a completed past time, so use the past simple.",
+        "example": "The orchestra held its final concert in the hall last March."
+      },
+      {
+        "id": "perfect-contrast-068",
+        "front": "The team adopted a paper-free system last year and still uses it. Complete the sentence: The team ___ digital forms since last year.",
+        "options": [
+          "The team has used digital forms since last year.",
+          "The team used digital forms since last year."
+        ],
+        "answer": "The team has used digital forms since last year.",
+        "explanation": "“The team adopted a paper-free system last year and still uses it” shows the state or activity continues now; use the present perfect.",
+        "example": "Our office has stored invoices online for months."
+      },
+      {
+        "id": "perfect-contrast-038",
+        "front": "The film screening was yesterday at seven. Complete the sentence: The audience ___ quietly during the opening scene.",
+        "options": [
+          "The audience sat quietly during the opening scene.",
+          "The audience has sat quietly during the opening scene."
+        ],
+        "answer": "The audience sat quietly during the opening scene.",
+        "explanation": "“The film screening was yesterday at seven” fixes a completed past time, so use the past simple.",
+        "example": "Everyone stood for the anthem before Tuesday's game."
+      },
+      {
+        "id": "perfect-contrast-096",
+        "front": "The current month has not ended. Complete the sentence: The clinic ___ 40 new patients this month.",
+        "options": [
+          "The clinic has treated 40 new patients this month.",
+          "The clinic treated 40 new patients this month."
+        ],
+        "answer": "The clinic has treated 40 new patients this month.",
+        "explanation": "“The current month has not ended” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "The health center has welcomed many new families this month."
+      },
+      {
+        "id": "perfect-contrast-045",
+        "front": "The museum was free on 1 May. Complete the sentence: We ___ the new photography exhibition that afternoon.",
+        "options": [
+          "We have seen the new photography exhibition that afternoon.",
+          "We saw the new photography exhibition that afternoon."
+        ],
+        "answer": "We saw the new photography exhibition that afternoon.",
+        "explanation": "“The museum was free on 1 May” fixes a completed past time, so use the past simple.",
+        "example": "Mira viewed the sculpture garden during her visit in April."
+      },
+      {
+        "id": "perfect-contrast-042",
+        "front": "The parcel went out with the morning post yesterday. Complete the sentence: I ___ the signed form to the office.",
+        "options": [
+          "I sent the signed form to the office.",
+          "I have sent the signed form to the office."
+        ],
+        "answer": "I sent the signed form to the office.",
+        "explanation": "“The parcel went out with the morning post yesterday” fixes a completed past time, so use the past simple.",
+        "example": "She emailed the receipt to the supplier on Monday."
+      },
+      {
+        "id": "perfect-contrast-011",
+        "front": "The concert ended at midnight last night. Complete the sentence: The band ___ its newest song near the end.",
+        "options": [
+          "The band has played its newest song near the end.",
+          "The band played its newest song near the end."
+        ],
+        "answer": "The band played its newest song near the end.",
+        "explanation": "“The concert ended at midnight last night” fixes a completed past time, so use the past simple.",
+        "example": "The orchestra performed a short encore on Sunday."
+      },
+      {
+        "id": "perfect-contrast-081",
+        "front": "The class is still on page 40 of a 60-page book. Complete the sentence: We ___ half the novel so far.",
+        "options": [
+          "We read half the novel so far.",
+          "We have read half the novel so far."
+        ],
+        "answer": "We have read half the novel so far.",
+        "explanation": "“The class is still on page 40 of a 60-page book” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "I have finished four chapters so far."
+      },
+      {
+        "id": "perfect-contrast-050",
+        "front": "The final was in 2024, and the match report is dated 18 May. Complete the sentence: Our school ___ the regional debate final that day.",
+        "options": [
+          "Our school won the regional debate final that day.",
+          "Our school has won the regional debate final that day."
+        ],
+        "answer": "Our school won the regional debate final that day.",
+        "explanation": "“The final was in 2024, and the match report is dated 18 May” fixes a completed past time, so use the past simple.",
+        "example": "The chess team lost the county match on 6 April."
+      },
+      {
+        "id": "perfect-contrast-073",
+        "front": "The gallery added a children's room in 2024 and still has it. Complete the sentence: The gallery ___ a family area since the renovation.",
+        "options": [
+          "The gallery had a family area since the renovation.",
+          "The gallery has had a family area since the renovation."
+        ],
+        "answer": "The gallery has had a family area since the renovation.",
+        "explanation": "“The gallery added a children's room in 2024 and still has it” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "The school has had a quiet room for students since last term."
+      },
+      {
+        "id": "perfect-contrast-064",
+        "front": "This path opened in May and remains closed for repairs today. Complete the sentence: Workers ___ on the path for three weeks.",
+        "options": [
+          "Workers have worked on the path for three weeks.",
+          "Workers worked on the path for three weeks."
+        ],
+        "answer": "Workers have worked on the path for three weeks.",
+        "explanation": "“This path opened in May and remains closed for repairs today” shows the state or activity continues now; use the present perfect.",
+        "example": "The crew has repaired the roof since Monday."
+      },
+      {
+        "id": "perfect-contrast-065",
+        "front": "Eva joined the project in February and is still on the team. Complete the sentence: Eva ___ on this project since February.",
+        "options": [
+          "Eva worked on this project since February.",
+          "Eva has worked on this project since February."
+        ],
+        "answer": "Eva has worked on this project since February.",
+        "explanation": "“Eva joined the project in February and is still on the team” shows the state or activity continues now; use the present perfect.",
+        "example": "Our class has prepared the display for several days."
+      },
+      {
+        "id": "perfect-contrast-024",
+        "front": "The repair happened during Monday's appointment. Complete the sentence: The mechanic ___ the loose mirror.",
+        "options": [
+          "The mechanic fixed the loose mirror.",
+          "The mechanic has fixed the loose mirror."
+        ],
+        "answer": "The mechanic fixed the loose mirror.",
+        "explanation": "“The repair happened during Monday's appointment” fixes a completed past time, so use the past simple.",
+        "example": "A technician replaced my cracked screen last week."
+      },
+      {
+        "id": "perfect-contrast-083",
+        "front": "The conference continues through Friday. Complete the sentence: Speakers ___ three workshops so far.",
+        "options": [
+          "Speakers led three workshops so far.",
+          "Speakers have led three workshops so far."
+        ],
+        "answer": "Speakers have led three workshops so far.",
+        "explanation": "“The conference continues through Friday” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "The organizers have held two planning sessions so far."
+      },
+      {
+        "id": "perfect-contrast-093",
+        "front": "The season's final standings are not known. Complete the sentence: The swimmer ___ a personal best twice this season.",
+        "options": [
+          "The swimmer set a personal best twice this season.",
+          "The swimmer has set a personal best twice this season."
+        ],
+        "answer": "The swimmer has set a personal best twice this season.",
+        "explanation": "“The season's final standings are not known” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "The runner has broken her own record once this season."
+      },
+      {
+        "id": "perfect-contrast-004",
+        "front": "The school trip ended last Friday. Complete the sentence: We ___ the science museum on the trip.",
+        "options": [
+          "We visited the science museum on the trip.",
+          "We have visited the science museum on the trip."
+        ],
+        "answer": "We visited the science museum on the trip.",
+        "explanation": "“The school trip ended last Friday” fixes a completed past time, so use the past simple.",
+        "example": "Maya photographed the old lighthouse during our trip last spring."
+      },
+      {
+        "id": "perfect-contrast-095",
+        "front": "The class is making a list that will be finished tomorrow. Complete the sentence: We ___ eight useful sources so far.",
+        "options": [
+          "We found eight useful sources so far.",
+          "We have found eight useful sources so far."
+        ],
+        "answer": "We have found eight useful sources so far.",
+        "explanation": "“The class is making a list that will be finished tomorrow” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "The research group has gathered several interviews so far."
+      },
+      {
+        "id": "perfect-contrast-054",
+        "front": "Mina bought this bicycle in 2022 and still owns it. Complete the sentence: Mina ___ the same bicycle since 2022.",
+        "options": [
+          "Mina has owned the same bicycle since 2022.",
+          "Mina owned the same bicycle since 2022."
+        ],
+        "answer": "Mina has owned the same bicycle since 2022.",
+        "explanation": "“Mina bought this bicycle in 2022 and still owns it” shows the state or activity continues now; use the present perfect.",
+        "example": "They have kept that old map for many years."
+      },
+      {
+        "id": "perfect-contrast-031",
+        "front": "The parcel was sent on 2 February. Complete the sentence: I ___ a thank-you card to the host.",
+        "options": [
+          "I have sent a thank-you card to the host.",
+          "I sent a thank-you card to the host."
+        ],
+        "answer": "I sent a thank-you card to the host.",
+        "explanation": "“The parcel was sent on 2 February” fixes a completed past time, so use the past simple.",
+        "example": "We mailed the invitation last Wednesday."
+      },
+      {
+        "id": "perfect-contrast-084",
+        "front": "The current year is still in progress. Complete the sentence: Our school ___ a new language club this year.",
+        "options": [
+          "Our school has started a new language club this year.",
+          "Our school started a new language club this year."
+        ],
+        "answer": "Our school has started a new language club this year.",
+        "explanation": "“The current year is still in progress” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "The museum has added two family events this year."
+      },
+      {
+        "id": "perfect-contrast-072",
+        "front": "The team started using this software four years ago and still relies on it. Complete the sentence: We ___ this program for four years.",
+        "options": [
+          "We have used this program for four years.",
+          "We used this program for four years."
+        ],
+        "answer": "We have used this program for four years.",
+        "explanation": "“The team started using this software four years ago and still relies on it” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "They have depended on solar power since 2021."
+      },
+      {
+        "id": "perfect-contrast-033",
+        "front": "The match was on Sunday afternoon. Complete the sentence: Our goalkeeper ___ the last penalty.",
+        "options": [
+          "Our goalkeeper has caught the last penalty.",
+          "Our goalkeeper caught the last penalty."
+        ],
+        "answer": "Our goalkeeper caught the last penalty.",
+        "explanation": "“The match was on Sunday afternoon” fixes a completed past time, so use the past simple.",
+        "example": "The keeper blocked a shot in the final minute on Friday."
+      },
+      {
+        "id": "perfect-contrast-005",
+        "front": "The workshop took place in March 2023. Complete the sentence: Ravi ___ a basic pottery class there.",
+        "options": [
+          "Ravi has taken a basic pottery class there.",
+          "Ravi took a basic pottery class there."
+        ],
+        "answer": "Ravi took a basic pottery class there.",
+        "explanation": "“The workshop took place in March 2023” fixes a completed past time, so use the past simple.",
+        "example": "I learned to mend a torn jacket at a workshop in May."
+      },
+      {
+        "id": "perfect-contrast-034",
+        "front": "The office moved in 2021. Complete the sentence: The staff ___ their desks to the new building that weekend.",
+        "options": [
+          "The staff moved their desks to the new building that weekend.",
+          "The staff have moved their desks to the new building that weekend."
+        ],
+        "answer": "The staff moved their desks to the new building that weekend.",
+        "explanation": "“The office moved in 2021” fixes a completed past time, so use the past simple.",
+        "example": "The design team shifted its equipment to another room last Tuesday."
+      },
+      {
+        "id": "perfect-contrast-062",
+        "front": "Ava started playing the cello in primary school and still plays. Complete the sentence: Ava ___ the cello since she was nine.",
+        "options": [
+          "Ava has played the cello since she was nine.",
+          "Ava played the cello since she was nine."
+        ],
+        "answer": "Ava has played the cello since she was nine.",
+        "explanation": "“Ava started playing the cello in primary school and still plays” shows the state or activity continues now; use the present perfect.",
+        "example": "I have collected postcards since I was a child."
+      },
+      {
+        "id": "perfect-contrast-026",
+        "front": "The storm damaged the pier on 8 August. Complete the sentence: High waves ___ two wooden benches.",
+        "options": [
+          "High waves broke two wooden benches.",
+          "High waves have broken two wooden benches."
+        ],
+        "answer": "High waves broke two wooden benches.",
+        "explanation": "“The storm damaged the pier on 8 August” fixes a completed past time, so use the past simple.",
+        "example": "A fallen tree blocked the lane during last night's storm."
+      },
+      {
+        "id": "perfect-contrast-055",
+        "front": "The twins met in preschool and are close friends now. Complete the sentence: They ___ each other since they were four.",
+        "options": [
+          "They knew each other since they were four.",
+          "They have known each other since they were four."
+        ],
+        "answer": "They have known each other since they were four.",
+        "explanation": "“The twins met in preschool and are close friends now” shows the state or activity continues now; use the present perfect.",
+        "example": "I have understood this rule since my first lesson."
+      },
+      {
+        "id": "perfect-contrast-022",
+        "front": "The race was on 3 May. Complete the sentence: Mei ___ the 5-kilometre course in under half an hour.",
+        "options": [
+          "Mei ran the 5-kilometre course in under half an hour.",
+          "Mei has run the 5-kilometre course in under half an hour."
+        ],
+        "answer": "Mei ran the 5-kilometre course in under half an hour.",
+        "explanation": "“The race was on 3 May” fixes a completed past time, so use the past simple.",
+        "example": "Omar cycled the forest trail in June."
+      },
+      {
+        "id": "perfect-contrast-052",
+        "front": "Noor joined the choir in 2021 and remains a member. Complete the sentence: Noor ___ with the choir since 2021.",
+        "options": [
+          "Noor has sung with the choir since 2021.",
+          "Noor sang with the choir since 2021."
+        ],
+        "answer": "Noor has sung with the choir since 2021.",
+        "explanation": "“Noor joined the choir in 2021 and remains a member” shows the state or activity continues now; use the present perfect.",
+        "example": "I have volunteered at the animal shelter since 2022."
+      },
+      {
+        "id": "perfect-contrast-012",
+        "front": "The café closed for renovations in January and reopened in April. Complete the sentence: The owners ___ the kitchen during the closure.",
+        "options": [
+          "The owners rebuilt the kitchen during the closure.",
+          "The owners have rebuilt the kitchen during the closure."
+        ],
+        "answer": "The owners rebuilt the kitchen during the closure.",
+        "explanation": "“The café closed for renovations in January and reopened in April” fixes a completed past time, so use the past simple.",
+        "example": "Workers replaced the roof during the winter break."
+      },
+      {
+        "id": "perfect-contrast-059",
+        "front": "Luca began learning Korean two years ago and continues to study. Complete the sentence: Luca ___ Korean for two years.",
+        "options": [
+          "Luca learned Korean for two years.",
+          "Luca has learned Korean for two years."
+        ],
+        "answer": "Luca has learned Korean for two years.",
+        "explanation": "“Luca began learning Korean two years ago and continues to study” shows the state or activity continues now; use the present perfect.",
+        "example": "My cousin has studied astronomy for a year."
+      },
+      {
+        "id": "perfect-contrast-032",
+        "front": "The class visited the farm in October. Complete the sentence: The children ___ the lambs in the barn.",
+        "options": [
+          "The children fed the lambs in the barn.",
+          "The children have fed the lambs in the barn."
+        ],
+        "answer": "The children fed the lambs in the barn.",
+        "explanation": "“The class visited the farm in October” fixes a completed past time, so use the past simple.",
+        "example": "The volunteers watered the seedlings during their visit last month."
+      },
+      {
+        "id": "perfect-contrast-076",
+        "front": "The current season has three matches left. Complete the sentence: The club ___ four home games this season.",
+        "options": [
+          "The club has won four home games this season.",
+          "The club won four home games this season."
+        ],
+        "answer": "The club has won four home games this season.",
+        "explanation": "“The current season has three matches left” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "Our team has scored twenty goals this season."
+      },
+      {
+        "id": "perfect-contrast-036",
+        "front": "We visited the aquarium last Thursday. Complete the sentence: A volunteer ___ us a tiny seahorse.",
+        "options": [
+          "A volunteer showed us a tiny seahorse.",
+          "A volunteer has shown us a tiny seahorse."
+        ],
+        "answer": "A volunteer showed us a tiny seahorse.",
+        "explanation": "“We visited the aquarium last Thursday” fixes a completed past time, so use the past simple.",
+        "example": "The guide pointed out a turtle at the reef last summer."
+      },
+      {
+        "id": "perfect-contrast-008",
+        "front": "The power cut lasted from noon until one yesterday. Complete the sentence: The storm ___ the power for an hour.",
+        "options": [
+          "The storm cut the power for an hour.",
+          "The storm has cut the power for an hour."
+        ],
+        "answer": "The storm cut the power for an hour.",
+        "explanation": "“The power cut lasted from noon until one yesterday” fixes a completed past time, so use the past simple.",
+        "example": "Strong winds damaged the garden fence last night."
+      },
+      {
+        "id": "perfect-contrast-060",
+        "front": "The two departments merged in 2024 and still share a team. Complete the sentence: They ___ one office since the merger.",
+        "options": [
+          "They have shared one office since the merger.",
+          "They shared one office since the merger."
+        ],
+        "answer": "They have shared one office since the merger.",
+        "explanation": "“The two departments merged in 2024 and still share a team” shows the state or activity continues now; use the present perfect.",
+        "example": "We have used the same meeting room since September."
+      },
+      {
+        "id": "perfect-contrast-057",
+        "front": "The café hired Tom in January 2025, and he still has the job. Complete the sentence: Tom ___ as a barista since January 2025.",
+        "options": [
+          "Tom worked as a barista since January 2025.",
+          "Tom has worked as a barista since January 2025."
+        ],
+        "answer": "Tom has worked as a barista since January 2025.",
+        "explanation": "“The café hired Tom in January 2025, and he still has the job” shows the state or activity continues now; use the present perfect.",
+        "example": "She has taught music at the college since 2023."
+      },
+      {
+        "id": "perfect-contrast-086",
+        "front": "The lab's annual report is still being prepared. Complete the sentence: Staff ___ four new samples this year.",
+        "options": [
+          "Staff have collected four new samples this year.",
+          "Staff collected four new samples this year."
+        ],
+        "answer": "Staff have collected four new samples this year.",
+        "explanation": "“The lab's annual report is still being prepared” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "The researchers have tested several materials this year."
+      },
+      {
+        "id": "perfect-contrast-015",
+        "front": "The package was delivered at 9:15 this morning. Complete the sentence: The driver ___ it beside the blue gate.",
+        "options": [
+          "The driver has put it beside the blue gate.",
+          "The driver put it beside the blue gate."
+        ],
+        "answer": "The driver put it beside the blue gate.",
+        "explanation": "“The package was delivered at 9:15 this morning” fixes a completed past time, so use the past simple.",
+        "example": "A neighbor placed the spare key under the flowerpot yesterday."
+      },
+      {
+        "id": "perfect-contrast-009",
+        "front": "In 2018, Elena moved to a different city. Complete the sentence: Elena ___ her first apartment there.",
+        "options": [
+          "Elena has rented her first apartment there.",
+          "Elena rented her first apartment there."
+        ],
+        "answer": "Elena rented her first apartment there.",
+        "explanation": "“In 2018, Elena moved to a different city” fixes a completed past time, so use the past simple.",
+        "example": "Sam bought a small flat near the river in 2020."
+      },
+      {
+        "id": "perfect-contrast-071",
+        "front": "The new timetable began in September and is still in use. Complete the sentence: The buses ___ every twenty minutes since September.",
+        "options": [
+          "The buses ran every twenty minutes since September.",
+          "The buses have run every twenty minutes since September."
+        ],
+        "answer": "The buses have run every twenty minutes since September.",
+        "explanation": "“The new timetable began in September and is still in use” shows the state or activity continues now; use the present perfect.",
+        "example": "Trains have stopped at this platform for decades."
+      },
+      {
+        "id": "perfect-contrast-098",
+        "front": "The current competition has one round left. Complete the sentence: Nia ___ every round so far.",
+        "options": [
+          "Nia has won every round so far.",
+          "Nia won every round so far."
+        ],
+        "answer": "Nia has won every round so far.",
+        "explanation": "“The current competition has one round left” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "Our chess player has answered each question correctly so far."
+      },
+      {
+        "id": "perfect-contrast-030",
+        "front": "Our hike ended before sunset yesterday. Complete the sentence: We ___ the hill path before the rain started.",
+        "options": [
+          "We found the hill path before the rain started.",
+          "We have found the hill path before the rain started."
+        ],
+        "answer": "We found the hill path before the rain started.",
+        "explanation": "“Our hike ended before sunset yesterday” fixes a completed past time, so use the past simple.",
+        "example": "They reached the campsite before dark last Friday."
+      },
+      {
+        "id": "perfect-contrast-078",
+        "front": "The festival is still running today. Complete the sentence: The food stalls ___ more than five hundred meals today.",
+        "options": [
+          "The food stalls have served more than five hundred meals today.",
+          "The food stalls served more than five hundred meals today."
+        ],
+        "answer": "The food stalls have served more than five hundred meals today.",
+        "explanation": "“The festival is still running today” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "The volunteers have welcomed dozens of visitors today."
+      },
+      {
+        "id": "perfect-contrast-010",
+        "front": "The interview was at ten yesterday morning. Complete the sentence: Jo ___ three questions about the project.",
+        "options": [
+          "Jo answered three questions about the project.",
+          "Jo has answered three questions about the project."
+        ],
+        "answer": "Jo answered three questions about the project.",
+        "explanation": "“The interview was at ten yesterday morning” fixes a completed past time, so use the past simple.",
+        "example": "Nina explained the schedule during Monday's interview."
+      },
+      {
+        "id": "perfect-contrast-040",
+        "front": "The workshop ended at noon yesterday. Complete the sentence: The carpenter ___ a shelf for the studio.",
+        "options": [
+          "The carpenter made a shelf for the studio.",
+          "The carpenter has made a shelf for the studio."
+        ],
+        "answer": "The carpenter made a shelf for the studio.",
+        "explanation": "“The workshop ended at noon yesterday” fixes a completed past time, so use the past simple.",
+        "example": "A local artist painted a sign for the shop last winter."
+      },
+      {
+        "id": "perfect-contrast-013",
+        "front": "The conference was on 14 June. Complete the sentence: Our team ___ its research poster that afternoon.",
+        "options": [
+          "Our team has presented its research poster that afternoon.",
+          "Our team presented its research poster that afternoon."
+        ],
+        "answer": "Our team presented its research poster that afternoon.",
+        "explanation": "“The conference was on 14 June” fixes a completed past time, so use the past simple.",
+        "example": "The students displayed their maps at the fair last month."
+      },
+      {
+        "id": "perfect-contrast-019",
+        "front": "The train journey ended at 6:40 yesterday evening. Complete the sentence: We ___ at the north station.",
+        "options": [
+          "We have got off at the north station.",
+          "We got off at the north station."
+        ],
+        "answer": "We got off at the north station.",
+        "explanation": "“The train journey ended at 6:40 yesterday evening” fixes a completed past time, so use the past simple.",
+        "example": "They arrived at the coast before sunset on Monday."
+      },
+      {
+        "id": "perfect-contrast-089",
+        "front": "The town's cleanup event is still underway. Complete the sentence: Volunteers ___ twelve bags of litter today.",
+        "options": [
+          "Volunteers collected twelve bags of litter today.",
+          "Volunteers have collected twelve bags of litter today."
+        ],
+        "answer": "Volunteers have collected twelve bags of litter today.",
+        "explanation": "“The town's cleanup event is still underway” keeps this reporting period open, so the running total reaches now; use the present perfect.",
+        "example": "Our neighbors have planted twenty bulbs today."
+      },
+      {
+        "id": "perfect-contrast-025",
+        "front": "At yesterday's lesson, the teacher gave us a new word list. Complete the sentence: We ___ the words in pairs.",
+        "options": [
+          "We have practised the words in pairs.",
+          "We practised the words in pairs."
+        ],
+        "answer": "We practised the words in pairs.",
+        "explanation": "“At yesterday's lesson, the teacher gave us a new word list” fixes a completed past time, so use the past simple.",
+        "example": "The class reviewed the map before the quiz on Tuesday."
+      },
+      {
+        "id": "perfect-contrast-063",
+        "front": "The shop introduced online orders five years ago and still offers them. Complete the sentence: The shop ___ online orders for five years.",
+        "options": [
+          "The shop offered online orders for five years.",
+          "The shop has offered online orders for five years."
+        ],
+        "answer": "The shop has offered online orders for five years.",
+        "explanation": "“The shop introduced online orders five years ago and still offers them” shows the state or activity continues now; use the present perfect.",
+        "example": "Our library has lent board games for two years."
+      },
+      {
+        "id": "perfect-contrast-006",
+        "front": "The match finished at 4 p.m. yesterday. Complete the sentence: Our team ___ the final by two points.",
+        "options": [
+          "Our team won the final by two points.",
+          "Our team has won the final by two points."
+        ],
+        "answer": "Our team won the final by two points.",
+        "explanation": "“The match finished at 4 p.m. yesterday” fixes a completed past time, so use the past simple.",
+        "example": "Their club lost the opening game on Saturday."
+      }
+    ]
+  },
+  {
+    "id": "past-simple-vs-past-continuous",
+    "title": "Past simple vs. past continuous",
+    "level": "beginner",
+    "reviewContentKeys": [
+      "past-simple-001",
+      "past-continuous-001",
+      "tense-contrast-003",
+      "tense-correction-002"
+    ],
+    "referenceUrl": "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/past-continuous-past-simple",
+    "questions": [
+      {
+        "id": "in-progress-at-a-past-time",
+        "front": "The library shift started at six and ended at eight. Describe what was in progress at seven: At seven, I ___ books onto the shelves.",
+        "options": [
+          "At seven, I was putting books onto the shelves.",
+          "At seven, I put books onto the shelves."
+        ],
+        "answer": "At seven, I was putting books onto the shelves.",
+        "explanation": "Use the past continuous to describe an action already in progress at a specific past time.",
+        "example": "At ten last night, I was packing for the trip."
+      },
+      {
+        "id": "completed-event-in-background",
+        "front": "While I was tying my shoes, a vase fell off the shelf and smashed on impact. Complete the sentence: The vase ___ when it hit the floor.",
+        "options": [
+          "The vase was breaking when it hit the floor.",
+          "The vase broke when it hit the floor."
+        ],
+        "answer": "The vase broke when it hit the floor.",
+        "explanation": "Use the past simple for the completed event. Tying your shoes was the action in progress in the background.",
+        "example": "The door slammed while we were carrying boxes upstairs."
+      },
+      {
+        "id": "ongoing-action-and-short-event",
+        "front": "The video call was already in progress when the power went out. Complete the sentence: We ___ to our instructor when the screen went black.",
+        "options": [
+          "We were talking to our instructor when the screen went black.",
+          "We talked to our instructor when the screen went black."
+        ],
+        "answer": "We were talking to our instructor when the screen went black.",
+        "explanation": "Were talking shows the call was already in progress. Went describes what happened during it.",
+        "example": "I was crossing the street when a driver sounded the horn."
+      },
+      {
+        "id": "past-contrast-085",
+        "front": "The café ran out of oat milk at ten. Complete: The barista ___ the menu board and told customers about the change.",
+        "options": [
+          "The barista was changing the menu board and told customers about the change.",
+          "The barista changed the menu board and told customers about the change."
+        ],
+        "answer": "The barista changed the menu board and told customers about the change.",
+        "explanation": "The sentence gives two completed actions in order after the café ran out of oat milk.",
+        "example": "He closed the register and locked the front door."
+      },
+      {
+        "id": "past-contrast-099",
+        "front": "At 4:10, the pottery class was still working and the mugs were not ready to fire. Complete: Priya ___ a handle onto her clay cup.",
+        "options": [
+          "Priya was attaching a handle onto her clay cup.",
+          "Priya attached a handle onto her clay cup."
+        ],
+        "answer": "Priya was attaching a handle onto her clay cup.",
+        "explanation": "The class was still in progress and the cup was not ready, so Priya was in the middle of attaching the handle.",
+        "example": "At four, Ben was smoothing the rim of a bowl on the wheel."
+      },
+      {
+        "id": "past-contrast-078",
+        "front": "At 5:30, the rehearsal was still under way. Complete: The pianist ___ the introduction while the singer warmed up backstage.",
+        "options": [
+          "The pianist was playing the introduction while the singer warmed up backstage.",
+          "The pianist played the introduction while the singer warmed up backstage."
+        ],
+        "answer": "The pianist was playing the introduction while the singer warmed up backstage.",
+        "explanation": "The rehearsal had not ended, and the pianist's playing was one activity happening at that moment.",
+        "example": "During sound check, the drummer was testing the cymbals as the singer warmed up."
+      },
+      {
+        "id": "past-contrast-014",
+        "front": "The class ended at 12:30. At 12:10, Niko was still at the board and the class had not moved on. Complete: Niko ___ the equation's answer.",
+        "options": [
+          "Niko explained the equation's answer.",
+          "Niko was explaining the equation's answer."
+        ],
+        "answer": "Niko was explaining the equation's answer.",
+        "explanation": "The class was still listening at 12:10, so Niko's explanation was in progress.",
+        "example": "At 12:10, Ms Lee was describing the next experiment."
+      },
+      {
+        "id": "past-contrast-054",
+        "front": "Complete: The students had been taking notes for ten minutes when the projector ___ blank.",
+        "options": [
+          "The students had been taking notes for ten minutes when the projector was going blank.",
+          "The students had been taking notes for ten minutes when the projector went blank."
+        ],
+        "answer": "The students had been taking notes for ten minutes when the projector went blank.",
+        "explanation": "Note-taking was underway; the screen changed in one completed event.",
+        "example": "He was drawing the map when his pencil snapped."
+      },
+      {
+        "id": "past-contrast-041",
+        "front": "The science fair closed at five on Saturday. Complete: Our group ___ a prize for the clearest experiment.",
+        "options": [
+          "Our group won a prize for the clearest experiment.",
+          "Our group was winning a prize for the clearest experiment."
+        ],
+        "answer": "Our group won a prize for the clearest experiment.",
+        "explanation": "Winning is the completed result announced at the end of the fair.",
+        "example": "Her team earned a ribbon for its model bridge."
+      },
+      {
+        "id": "past-contrast-042",
+        "front": "The family watched the recording after the trip. Complete: On the last day, their guide ___ them a quiet path to the waterfall.",
+        "options": [
+          "On the last day, their guide showed them a quiet path to the waterfall.",
+          "On the last day, their guide was showing them a quiet path to the waterfall."
+        ],
+        "answer": "On the last day, their guide showed them a quiet path to the waterfall.",
+        "explanation": "The last day is over, and the sentence reports what the guide did during that completed outing.",
+        "example": "Our driver found us a safe place to stop."
+      },
+      {
+        "id": "past-contrast-062",
+        "front": "Complete: The nurse was reading the chart when the patient ___ a question.",
+        "options": [
+          "The nurse was reading the chart when the patient asked a question.",
+          "The nurse was reading the chart when the patient was asking a question."
+        ],
+        "answer": "The nurse was reading the chart when the patient asked a question.",
+        "explanation": "The nurse's reading was underway; the patient's question is a separate completed event.",
+        "example": "I was checking the recipe when my sister called."
+      },
+      {
+        "id": "past-contrast-005",
+        "front": "The train reached York at 4:20. At 3:00, Maya was still on the puzzle's first page and had not found the last clue. Complete: Maya ___ it.",
+        "options": [
+          "Maya was completing it.",
+          "Maya completed it."
+        ],
+        "answer": "Maya was completing it.",
+        "explanation": "Maya had not reached the last clue at three, so the puzzle was still in progress.",
+        "example": "At three, I was sketching the old station from my window."
+      },
+      {
+        "id": "past-contrast-007",
+        "front": "At 2:15 yesterday, the school play was halfway through its rehearsal. Complete: The actors ___ the final scene.",
+        "options": [
+          "The actors rehearsed the final scene.",
+          "The actors were rehearsing the final scene."
+        ],
+        "answer": "The actors were rehearsing the final scene.",
+        "explanation": "The rehearsal was halfway through at 2:15, so the action was still in progress then.",
+        "example": "At 2:15, the dancers were practising their entrance."
+      },
+      {
+        "id": "past-contrast-038",
+        "front": "The workshop ended yesterday with a completed robot. Complete: The children ___ its wheels before the final demonstration.",
+        "options": [
+          "The children attached its wheels before the final demonstration.",
+          "The children were attaching its wheels before the final demonstration."
+        ],
+        "answer": "The children attached its wheels before the final demonstration.",
+        "explanation": "The wheels were attached before the completed demonstration; the sentence gives a finished step.",
+        "example": "I fitted the handle before showing everyone the box."
+      },
+      {
+        "id": "past-contrast-018",
+        "front": "The library closed at six. At 5:30, the display table was still empty and the librarian was laying out the books. Complete: The librarian ___ them on the table.",
+        "options": [
+          "The librarian arranged them on the table.",
+          "The librarian was arranging them on the table."
+        ],
+        "answer": "The librarian was arranging them on the table.",
+        "explanation": "The display was still being set up at 5:30, so the librarian was in the middle of arranging the books.",
+        "example": "At 5:30, Dad was watering the plants on the balcony."
+      },
+      {
+        "id": "past-contrast-016",
+        "front": "Work on the brakes started at three. The van was still on the lift with its wheels off at 3:20. Complete: At 3:20, the mechanic ___ the brakes on a delivery van.",
+        "options": [
+          "At 3:20, the mechanic was repairing the brakes on a delivery van.",
+          "At 3:20, the mechanic repaired the brakes on a delivery van."
+        ],
+        "answer": "At 3:20, the mechanic was repairing the brakes on a delivery van.",
+        "explanation": "The repair was still underway at 3:20 in the middle of the afternoon shift.",
+        "example": "At 3:20, the technician was replacing a cracked screen."
+      },
+      {
+        "id": "past-contrast-055",
+        "front": "Complete: The baby was sleeping in her cot when a delivery van ___ outside the house.",
+        "options": [
+          "The baby was sleeping in her cot when a delivery van stopped outside the house.",
+          "The baby was sleeping in her cot when a delivery van was stopping outside the house."
+        ],
+        "answer": "The baby was sleeping in her cot when a delivery van stopped outside the house.",
+        "explanation": "The baby's sleep was the background action; the van's arrival is a completed event.",
+        "example": "They were practising indoors when a visitor arrived."
+      },
+      {
+        "id": "past-contrast-040",
+        "front": "The charity walk ended at the park yesterday. Complete: At the finish, the organisers ___ every participant a medal.",
+        "options": [
+          "At the finish, the organisers were giving every participant a medal.",
+          "At the finish, the organisers gave every participant a medal."
+        ],
+        "answer": "At the finish, the organisers gave every participant a medal.",
+        "explanation": "The walk has ended, and the organisers completed the medal presentation at the finish.",
+        "example": "The volunteers handed each child a bottle of water."
+      },
+      {
+        "id": "past-contrast-060",
+        "front": "Complete: The class was working silently when the fire alarm ___ without warning.",
+        "options": [
+          "The class was working silently when the fire alarm sounded without warning.",
+          "The class was working silently when the fire alarm was sounding without warning."
+        ],
+        "answer": "The class was working silently when the fire alarm sounded without warning.",
+        "explanation": "The class's work was the ongoing background; the alarm began as a distinct event.",
+        "example": "He was washing the dishes when the lights went out."
+      },
+      {
+        "id": "past-contrast-053",
+        "front": "Complete: The fox was crossing the empty field when a farm dog ___ from behind the gate.",
+        "options": [
+          "The fox was crossing the empty field when a farm dog barked from behind the gate.",
+          "The fox was crossing the empty field when a farm dog was barking from behind the gate."
+        ],
+        "answer": "The fox was crossing the empty field when a farm dog barked from behind the gate.",
+        "explanation": "The fox was already crossing; the dog's bark was a distinct event during that action.",
+        "example": "We were walking beside the lake when a duck splashed into the water."
+      },
+      {
+        "id": "past-contrast-033",
+        "front": "The robot demonstration was half an hour away. The children already had one wheel in place and were working on the other three. Complete: The children ___ its wheels in the workshop.",
+        "options": [
+          "The children were attaching its wheels in the workshop.",
+          "The children attached its wheels in the workshop."
+        ],
+        "answer": "The children were attaching its wheels in the workshop.",
+        "explanation": "The demonstration had not begun and the children were still working on the robot.",
+        "example": "We were fitting the wings onto our model before the display."
+      },
+      {
+        "id": "past-contrast-020",
+        "front": "The clinic appointment lasted until 10:30. At 10:00, Dr Shah and her patient were still reviewing the scan; they had not discussed its result yet. Complete: Dr Shah ___ the scan with her patient.",
+        "options": [
+          "Dr Shah discussed the scan with her patient.",
+          "Dr Shah was discussing the scan with her patient."
+        ],
+        "answer": "Dr Shah was discussing the scan with her patient.",
+        "explanation": "They were still reviewing the scan at ten, so the discussion was ongoing.",
+        "example": "At ten, the nurse was explaining the new schedule."
+      },
+      {
+        "id": "past-contrast-049",
+        "front": "Complete: The bus was moving slowly through the village when a cyclist ___ the road.",
+        "options": [
+          "The bus was moving slowly through the village when a cyclist crossed the road.",
+          "The bus was moving slowly through the village when a cyclist was crossing the road."
+        ],
+        "answer": "The bus was moving slowly through the village when a cyclist crossed the road.",
+        "explanation": "The bus was already moving; the cyclist's crossing is the event that happened during that journey.",
+        "example": "They were carrying the sofa upstairs when a phone rang."
+      },
+      {
+        "id": "past-contrast-094",
+        "front": "The crew finished filming the scene on Tuesday. Complete: The director ___ the final take and sent the footage to the editor.",
+        "options": [
+          "The director approved the final take and sent the footage to the editor.",
+          "The director was approving the final take and sent the footage to the editor."
+        ],
+        "answer": "The director approved the final take and sent the footage to the editor.",
+        "explanation": "Approval and sending are completed steps after filming ended.",
+        "example": "They chose the best photograph and uploaded it that evening."
+      },
+      {
+        "id": "past-contrast-029",
+        "front": "At 10:30, the volunteers still had peppers left to harvest. Complete: They ___ the ripe ones from the garden beds.",
+        "options": [
+          "They were picking the ripe ones from the garden beds.",
+          "They picked the ripe ones from the garden beds."
+        ],
+        "answer": "They were picking the ripe ones from the garden beds.",
+        "explanation": "The harvest was not complete at 10:30; the volunteers were in the middle of picking.",
+        "example": "At ten, the children were collecting tomatoes in the greenhouse."
+      },
+      {
+        "id": "past-contrast-021",
+        "front": "At 4:25, half the diagrams already had labels and the children were still at work on the rest. Complete: At 4:25, they ___ labels beside the diagrams.",
+        "options": [
+          "At 4:25, they added labels beside the diagrams.",
+          "At 4:25, they were adding labels beside the diagrams."
+        ],
+        "answer": "At 4:25, they were adding labels beside the diagrams.",
+        "explanation": "They still had time left at 4:25, so the poster work was in progress.",
+        "example": "At 4:25, I was colouring the map for our display."
+      },
+      {
+        "id": "past-contrast-098",
+        "front": "The class completed its experiment and wrote down the result. Complete: After that, each student ___ the equipment to the cupboard.",
+        "options": [
+          "After that, each student returned the equipment to the cupboard.",
+          "After that, each student was returning the equipment to the cupboard."
+        ],
+        "answer": "After that, each student returned the equipment to the cupboard.",
+        "explanation": "Returning the equipment happened after the experiment and recording were complete.",
+        "example": "We finished the puzzle and put all the pieces back in the box."
+      },
+      {
+        "id": "past-contrast-081",
+        "front": "The hikers reached the summit at noon. Complete: They ___ lunch only after taking their group photo.",
+        "options": [
+          "They ate lunch only after taking their group photo.",
+          "They were eating lunch only after taking their group photo."
+        ],
+        "answer": "They ate lunch only after taking their group photo.",
+        "explanation": "The order is clear: the photo came first, then lunch was eaten as a completed event.",
+        "example": "We took off our boots and drank some water."
+      },
+      {
+        "id": "past-contrast-019",
+        "front": "The reporter's live segment began before 9:40 and ended a few minutes after it. Complete: The reporter ___ from outside the stadium.",
+        "options": [
+          "The reporter was speaking from outside the stadium.",
+          "The reporter spoke from outside the stadium."
+        ],
+        "answer": "The reporter was speaking from outside the stadium.",
+        "explanation": "The broadcast was still live at 9:40, so the reporter's speech was in progress.",
+        "example": "At that moment, the host was interviewing a local artist."
+      },
+      {
+        "id": "past-contrast-096",
+        "front": "The team heard the final whistle and knew the match was over. Complete: They ___ their coach and celebrated the win.",
+        "options": [
+          "They were thanking their coach and celebrated the win.",
+          "They thanked their coach and celebrated the win."
+        ],
+        "answer": "They thanked their coach and celebrated the win.",
+        "explanation": "The team completed the thank-you and then celebrated after the match ended.",
+        "example": "The students congratulated their teacher and took a class photo."
+      },
+      {
+        "id": "past-contrast-061",
+        "front": "Complete: The cat was chasing a toy across the hallway when it ___ into a basket.",
+        "options": [
+          "The cat was chasing a toy across the hallway when it was running into a basket.",
+          "The cat was chasing a toy across the hallway when it ran into a basket."
+        ],
+        "answer": "The cat was chasing a toy across the hallway when it ran into a basket.",
+        "explanation": "The chase was already in progress, and the cat's collision with the basket was a completed event.",
+        "example": "They were cycling downhill when a tyre burst."
+      },
+      {
+        "id": "past-contrast-077",
+        "front": "The baker served a steady queue all morning. At 11:20, there were still rolls to sell and customers waiting. Complete: The baker ___ rolls while customers chose fruit nearby.",
+        "options": [
+          "The baker sold rolls while customers chose fruit nearby.",
+          "The baker was selling rolls while customers chose fruit nearby."
+        ],
+        "answer": "The baker was selling rolls while customers chose fruit nearby.",
+        "explanation": "The market scene is in progress at 11:20, with the baker serving customers as they shop.",
+        "example": "At eleven, the florist was tying bouquets as shoppers browsed the stalls."
+      },
+      {
+        "id": "past-contrast-009",
+        "front": "The workshop ran from ten to noon. At 10:45, the group had built only half of its birdhouse. Complete: The group ___ it.",
+        "options": [
+          "The group was assembling it.",
+          "The group assembled it."
+        ],
+        "answer": "The group was assembling it.",
+        "explanation": "The birdhouse was only half built at 10:45, so the assembly was not complete.",
+        "example": "At 10:45, I was attaching the wheels to my model car."
+      },
+      {
+        "id": "past-contrast-037",
+        "front": "The family finished its road trip last night. Complete: In the final town, they ___ postcards for their friends.",
+        "options": [
+          "In the final town, they were mailing postcards for their friends.",
+          "In the final town, they mailed postcards for their friends."
+        ],
+        "answer": "In the final town, they mailed postcards for their friends.",
+        "explanation": "The trip and postcard mailing are both presented as completed past events.",
+        "example": "We sent our thank-you cards after the visit."
+      },
+      {
+        "id": "past-contrast-072",
+        "front": "During the last ten minutes of the workshop, groups were still assembling their projects. Complete: Our group ___ a cardboard tower while the next group tested a paper bridge.",
+        "options": [
+          "Our group was building a cardboard tower while the next group tested a paper bridge.",
+          "Our group built a cardboard tower while the next group tested a paper bridge."
+        ],
+        "answer": "Our group was building a cardboard tower while the next group tested a paper bridge.",
+        "explanation": "The projects were still being assembled during the final ten minutes, so this action was in progress.",
+        "example": "Our group was making a kite while another group was painting a sign."
+      },
+      {
+        "id": "past-contrast-024",
+        "front": "The guided dinosaur tour began at three and finished at four. At 3:30, the class was still in the gallery. Complete: The students ___ the dinosaur exhibit with their guide.",
+        "options": [
+          "The students explored the dinosaur exhibit with their guide.",
+          "The students were exploring the dinosaur exhibit with their guide."
+        ],
+        "answer": "The students were exploring the dinosaur exhibit with their guide.",
+        "explanation": "The class was still in the museum at 3:30; their visit to the exhibit was underway then.",
+        "example": "At two, we were following a ranger along the forest trail."
+      },
+      {
+        "id": "past-contrast-036",
+        "front": "The online class ended at noon yesterday. Complete: In the last five minutes, the teacher ___ the homework instructions.",
+        "options": [
+          "In the last five minutes, the teacher was repeating the homework instructions.",
+          "In the last five minutes, the teacher repeated the homework instructions."
+        ],
+        "answer": "In the last five minutes, the teacher repeated the homework instructions.",
+        "explanation": "The class is over, and the sentence reports an action completed before it ended.",
+        "example": "Ms Khan explained the assignment before we logged off."
+      },
+      {
+        "id": "past-contrast-017",
+        "front": "The corner-kick drill ran from five to five thirty. Nobody had finished their turns by 5:15. Complete: At 5:15, with half an hour left, the players ___ their corner kicks.",
+        "options": [
+          "At 5:15, with half an hour left, the players practised their corner kicks.",
+          "At 5:15, with half an hour left, the players were practising their corner kicks."
+        ],
+        "answer": "At 5:15, with half an hour left, the players were practising their corner kicks.",
+        "explanation": "They had not finished practice at 5:15, and the drills were in progress then.",
+        "example": "With twenty minutes left, we were rehearsing the chorus."
+      },
+      {
+        "id": "past-contrast-023",
+        "front": "Rosa began taking orders at nine. At 9:20, the queue still reached the bakery door. Complete: At 9:20, Rosa ___ orders at the counter.",
+        "options": [
+          "At 9:20, Rosa was taking orders at the counter.",
+          "At 9:20, Rosa took orders at the counter."
+        ],
+        "answer": "At 9:20, Rosa was taking orders at the counter.",
+        "explanation": "The rush was still underway at 9:20, so Rosa's work was in progress.",
+        "example": "At 9:20, Malik was packing fresh rolls into bags."
+      },
+      {
+        "id": "past-contrast-030",
+        "front": "The under-twelve race was still under way at 11:20. Complete: Lila ___ near the front of the group.",
+        "options": [
+          "Lila was running near the front of the group.",
+          "Lila ran near the front of the group."
+        ],
+        "answer": "Lila was running near the front of the group.",
+        "explanation": "The race had not ended at 11:20, so Lila's running was still in progress.",
+        "example": "At that point, two cyclists were riding side by side."
+      },
+      {
+        "id": "past-contrast-064",
+        "front": "At 7:30 yesterday evening, both children were still awake. Complete: One ___ a comic on the sofa, and the other was drawing at the table.",
+        "options": [
+          "One was reading a comic on the sofa, and the other was drawing at the table.",
+          "One read a comic on the sofa, and the other was drawing at the table."
+        ],
+        "answer": "One was reading a comic on the sofa, and the other was drawing at the table.",
+        "explanation": "Both activities were in progress at the same past time, so the past continuous fits the comic-reading too.",
+        "example": "At nine, I was practising piano while my brother was building a model."
+      },
+      {
+        "id": "past-contrast-050",
+        "front": "The audience had been listening to the speech for several minutes. Complete: Then a baby ___ loudly near the back.",
+        "options": [
+          "Then a baby was crying loudly near the back.",
+          "Then a baby cried loudly near the back."
+        ],
+        "answer": "Then a baby cried loudly near the back.",
+        "explanation": "The speech was in progress, and the baby's cry began as a new event.",
+        "example": "We were watching the match when the neighbours cheered."
+      },
+      {
+        "id": "past-contrast-035",
+        "front": "The organisers worked at the halfway station for an hour. At 2:30, some walkers had their medals and others were still in line. Complete: The organisers ___ medals to walkers near the halfway point.",
+        "options": [
+          "The organisers gave medals to walkers near the halfway point.",
+          "The organisers were giving medals to walkers near the halfway point."
+        ],
+        "answer": "The organisers were giving medals to walkers near the halfway point.",
+        "explanation": "The walk was still happening, and the medal distribution was under way at the halfway point.",
+        "example": "At the finish area, volunteers were handing out cups of water."
+      },
+      {
+        "id": "past-contrast-063",
+        "front": "Complete: The dancers were practising their steps when the music ___.",
+        "options": [
+          "The dancers were practising their steps when the music stopped.",
+          "The dancers were practising their steps when the music was stopping."
+        ],
+        "answer": "The dancers were practising their steps when the music stopped.",
+        "explanation": "Their practice was in progress; the music's stop happened at a clear point during it.",
+        "example": "We were rehearsing the scene when the curtain fell."
+      },
+      {
+        "id": "past-contrast-066",
+        "front": "The team was in the middle of its morning setup. Complete: Two volunteers ___ chairs while another checked the sound system.",
+        "options": [
+          "Two volunteers arranged chairs while another checked the sound system.",
+          "Two volunteers were arranging chairs while another checked the sound system."
+        ],
+        "answer": "Two volunteers were arranging chairs while another checked the sound system.",
+        "explanation": "The setup was still in progress, and the volunteers' chair work was one of the ongoing tasks.",
+        "example": "At six, we were hanging lights as our neighbours were setting out tables."
+      },
+      {
+        "id": "past-contrast-071",
+        "front": "At 8:00 that evening, the family was still preparing dinner. Complete: Dad ___ the vegetables while his daughter set the table.",
+        "options": [
+          "Dad was chopping the vegetables while his daughter set the table.",
+          "Dad chopped the vegetables while his daughter set the table."
+        ],
+        "answer": "Dad was chopping the vegetables while his daughter set the table.",
+        "explanation": "Dinner preparation was ongoing at eight, and the chopping was one activity in progress.",
+        "example": "Mum was stirring the soup as I was laying out the bowls."
+      },
+      {
+        "id": "past-contrast-043",
+        "front": "The shop's winter sale ended on Monday. Complete: Before closing, the manager ___ the last display of coats.",
+        "options": [
+          "Before closing, the manager was clearing the last display of coats.",
+          "Before closing, the manager cleared the last display of coats."
+        ],
+        "answer": "Before closing, the manager cleared the last display of coats.",
+        "explanation": "The sentence describes a completed task before a sale that has ended.",
+        "example": "The team packed the last box before the doors shut."
+      },
+      {
+        "id": "past-contrast-004",
+        "front": "The guide's tour ran from ten thirty to eleven thirty. The group was halfway through its long stop in the Egyptian gallery at eleven. Complete: At eleven, a guide ___ the visitors through the Egyptian gallery.",
+        "options": [
+          "At eleven, a guide led the visitors through the Egyptian gallery.",
+          "At eleven, a guide was leading the visitors through the Egyptian gallery."
+        ],
+        "answer": "At eleven, a guide was leading the visitors through the Egyptian gallery.",
+        "explanation": "The tour was in progress at eleven, so the past continuous places the action around that point in time.",
+        "example": "At noon, our coach was showing us a new passing drill."
+      },
+      {
+        "id": "past-contrast-083",
+        "front": "The storm ended at dawn. Complete: After the clouds cleared, the rescue team ___ the trail to the cabin.",
+        "options": [
+          "After the clouds cleared, the rescue team reopened the trail to the cabin.",
+          "After the clouds cleared, the rescue team was reopening the trail to the cabin."
+        ],
+        "answer": "After the clouds cleared, the rescue team reopened the trail to the cabin.",
+        "explanation": "The team reopened the trail after the storm was over; this is a completed event in the sequence.",
+        "example": "After the snow melted, workers cleared the mountain road."
+      },
+      {
+        "id": "past-contrast-065",
+        "front": "At noon during the picnic, the rain had not started. Complete: Eva ___ sandwiches while Tom filled the water bottles.",
+        "options": [
+          "Eva was making sandwiches while Tom filled the water bottles.",
+          "Eva made sandwiches while Tom filled the water bottles."
+        ],
+        "answer": "Eva was making sandwiches while Tom filled the water bottles.",
+        "explanation": "The picnic preparations were underway at noon; Eva's activity was happening alongside Tom's.",
+        "example": "At lunchtime, Mum was slicing fruit as Dad was pouring the drinks."
+      },
+      {
+        "id": "past-contrast-067",
+        "front": "At 10:15, the farm tour was still going on. Complete: The guide ___ the sheep while the children watched from the fence.",
+        "options": [
+          "The guide fed the sheep while the children watched from the fence.",
+          "The guide was feeding the sheep while the children watched from the fence."
+        ],
+        "answer": "The guide was feeding the sheep while the children watched from the fence.",
+        "explanation": "The tour was ongoing at 10:15, and feeding was an activity in progress as the children watched.",
+        "example": "During the visit, the keeper was brushing a pony as guests looked on."
+      },
+      {
+        "id": "past-contrast-056",
+        "front": "Complete: The hikers were resting beside the stream when dark clouds ___ over the ridge.",
+        "options": [
+          "The hikers were resting beside the stream when dark clouds gathered over the ridge.",
+          "The hikers were resting beside the stream when dark clouds were gathering over the ridge."
+        ],
+        "answer": "The hikers were resting beside the stream when dark clouds gathered over the ridge.",
+        "explanation": "The rest was already underway, and the clouds' arrival changed the situation.",
+        "example": "I was waiting at the platform when the announcement came."
+      },
+      {
+        "id": "past-contrast-073",
+        "front": "Mr Tran had already started on the hedge at 6:45. He finished it only after Ms Bell had put her watering can away. Complete: Mr Tran ___ the hedge as Ms Bell watered her roses.",
+        "options": [
+          "Mr Tran trimmed the hedge as Ms Bell watered her roses.",
+          "Mr Tran was trimming the hedge as Ms Bell watered her roses."
+        ],
+        "answer": "Mr Tran was trimming the hedge as Ms Bell watered her roses.",
+        "explanation": "The hedge trimming had already started and continued while Ms Bell watered her roses.",
+        "example": "At dusk, I was sweeping the path while my neighbour was watering the pots."
+      },
+      {
+        "id": "past-contrast-080",
+        "front": "The first customer came in at 9:05. Complete: Before opening the shop at nine, the cashier ___ the till.",
+        "options": [
+          "Before opening the shop at nine, the cashier counted the till.",
+          "Before opening the shop at nine, the cashier was counting the till."
+        ],
+        "answer": "Before opening the shop at nine, the cashier counted the till.",
+        "explanation": "The count was completed before the shop opened and the customer arrived.",
+        "example": "I checked the address, then sent the parcel."
+      },
+      {
+        "id": "past-contrast-008",
+        "front": "Leo kept his binoculars pointed at the coast for several minutes during the ferry ride. Complete: Halfway across the bay, Leo ___ the coastline through his binoculars.",
+        "options": [
+          "Halfway across the bay, Leo was watching the coastline through his binoculars.",
+          "Halfway across the bay, Leo watched the coastline through his binoculars."
+        ],
+        "answer": "Halfway across the bay, Leo was watching the coastline through his binoculars.",
+        "explanation": "Leo kept looking through his binoculars as the ferry crossed; his observation was in progress.",
+        "example": "Halfway through the hike, we were looking for the trail markers."
+      },
+      {
+        "id": "past-contrast-068",
+        "front": "Complete: At the same moment on the train, Salma ___ a postcard and her brother was looking at the route map.",
+        "options": [
+          "At the same moment on the train, Salma was writing a postcard and her brother was looking at the route map.",
+          "At the same moment on the train, Salma wrote a postcard and her brother was looking at the route map."
+        ],
+        "answer": "At the same moment on the train, Salma was writing a postcard and her brother was looking at the route map.",
+        "explanation": "The prompt places both activities at the same moment; Salma was in the middle of writing.",
+        "example": "On the coach, I was reading a guidebook while my friend was checking directions."
+      },
+      {
+        "id": "past-contrast-097",
+        "front": "The train stopped at the station. Complete: Before the doors opened, the conductor ___ the platform and gave the signal.",
+        "options": [
+          "Before the doors opened, the conductor checked the platform and gave the signal.",
+          "Before the doors opened, the conductor was checking the platform and gave the signal."
+        ],
+        "answer": "Before the doors opened, the conductor checked the platform and gave the signal.",
+        "explanation": "The conductor completed the safety check before giving the signal.",
+        "example": "The pilot checked the cabin and announced our arrival."
+      },
+      {
+        "id": "past-contrast-031",
+        "front": "The teacher began repeating the homework instructions just before 11:55 and finished after the hour. Complete: The teacher ___ the homework instructions to the group.",
+        "options": [
+          "The teacher repeated the homework instructions to the group.",
+          "The teacher was repeating the homework instructions to the group."
+        ],
+        "answer": "The teacher was repeating the homework instructions to the group.",
+        "explanation": "The class had not ended by 11:55, and the teacher was still explaining what to do.",
+        "example": "At the end of our lesson, Mr Vo was reviewing the vocabulary list."
+      },
+      {
+        "id": "past-contrast-046",
+        "front": "The hikers had been following the marked path for an hour. Complete: A fallen tree ___ their way just before the bridge.",
+        "options": [
+          "A fallen tree blocked their way just before the bridge.",
+          "A fallen tree was blocking their way just before the bridge."
+        ],
+        "answer": "A fallen tree blocked their way just before the bridge.",
+        "explanation": "Their walk was underway; the tree's sudden appearance is a completed event that stopped them.",
+        "example": "She was carrying the tray when a glass slipped off it."
+      },
+      {
+        "id": "past-contrast-011",
+        "front": "The final movement began just before eight and was still under way when the clock struck eight. Complete: The musicians ___ the final movement.",
+        "options": [
+          "The musicians played the final movement.",
+          "The musicians were playing the final movement."
+        ],
+        "answer": "The musicians were playing the final movement.",
+        "explanation": "The concert was still happening at eight, so the musicians were in the middle of playing.",
+        "example": "At eight, our class was listening to the school band."
+      },
+      {
+        "id": "past-contrast-074",
+        "front": "At 9:10, the radio programme was still live. Complete: The host ___ a guest while listeners sent questions online.",
+        "options": [
+          "The host interviewed a guest while listeners sent questions online.",
+          "The host was interviewing a guest while listeners sent questions online."
+        ],
+        "answer": "The host was interviewing a guest while listeners sent questions online.",
+        "explanation": "The live programme was underway at 9:10, with the interview happening as questions arrived.",
+        "example": "At noon, the presenter was speaking to a caller while viewers sent comments."
+      },
+      {
+        "id": "past-contrast-087",
+        "front": "The art exhibition ended on Sunday. Complete: Before the gallery closed, the curator ___ each painting and returned it to storage.",
+        "options": [
+          "Before the gallery closed, the curator photographed each painting and returned it to storage.",
+          "Before the gallery closed, the curator was photographing each painting and returned it to storage."
+        ],
+        "answer": "Before the gallery closed, the curator photographed each painting and returned it to storage.",
+        "explanation": "The curator completed the photographs and then returned the paintings before closing.",
+        "example": "We labelled each box and carried it upstairs."
+      },
+      {
+        "id": "past-contrast-076",
+        "front": "Complete: During the overnight train ride, at midnight, the attendant ___ tea while a passenger read in the lounge.",
+        "options": [
+          "During the overnight train ride, at midnight, the attendant served tea while a passenger read in the lounge.",
+          "During the overnight train ride, at midnight, the attendant was serving tea while a passenger read in the lounge."
+        ],
+        "answer": "During the overnight train ride, at midnight, the attendant was serving tea while a passenger read in the lounge.",
+        "explanation": "The train ride was underway at midnight, and the tea service was happening during that scene.",
+        "example": "At midnight, the guard was checking tickets while a traveller was reading quietly."
+      },
+      {
+        "id": "past-contrast-032",
+        "front": "The family spent the whole twenty-minute town stop looking through the postcard rack before deciding which ones to buy. Complete: At the shop, the family ___ postcards at a small shop.",
+        "options": [
+          "At the shop, the family chose postcards at a small shop.",
+          "At the shop, the family was choosing postcards at a small shop."
+        ],
+        "answer": "At the shop, the family was choosing postcards at a small shop.",
+        "explanation": "They had not left the town yet; choosing postcards was in progress during the trip.",
+        "example": "During our stop, we were picking snacks for the drive."
+      },
+      {
+        "id": "past-contrast-058",
+        "front": "Complete: The children were building a fort in the living room when the doorbell ___.",
+        "options": [
+          "The children were building a fort in the living room when the doorbell was ringing.",
+          "The children were building a fort in the living room when the doorbell rang."
+        ],
+        "answer": "The children were building a fort in the living room when the doorbell rang.",
+        "explanation": "The fort-building was already happening; the doorbell rang as a new event.",
+        "example": "We were having lunch when the courier knocked."
+      },
+      {
+        "id": "past-contrast-044",
+        "front": "The lights were on, and the band had started playing before the storm began. Complete: The power ___ during their second song.",
+        "options": [
+          "The power was failing during their second song.",
+          "The power failed during their second song."
+        ],
+        "answer": "The power failed during their second song.",
+        "explanation": "The band was already playing; the power failure is the new completed event that interrupted them.",
+        "example": "We were serving dessert when the fire alarm sounded."
+      },
+      {
+        "id": "past-contrast-025",
+        "front": "Arlo began the tomato row before noon. Several young plants still needed to go in when his neighbour started watering. Complete: Arlo ___ tomato plants near the fence while his neighbour watered the seedlings.",
+        "options": [
+          "Arlo planted tomato plants near the fence while his neighbour watered the seedlings.",
+          "Arlo was planting tomato plants near the fence while his neighbour watered the seedlings."
+        ],
+        "answer": "Arlo was planting tomato plants near the fence while his neighbour watered the seedlings.",
+        "explanation": "The project was not finished at noon, and Arlo's planting was happening alongside the watering.",
+        "example": "At noon, I was putting herbs in pots as my sister filled the watering can."
+      },
+      {
+        "id": "past-contrast-091",
+        "front": "The school bus arrived at 8:15. Complete: The teacher ___ the attendance list, and the class set off on its trip.",
+        "options": [
+          "The teacher checked the attendance list, and the class set off on its trip.",
+          "The teacher was checking the attendance list, and the class set off on its trip."
+        ],
+        "answer": "The teacher checked the attendance list, and the class set off on its trip.",
+        "explanation": "The check was completed before the class departed, making it a finished step in the sequence.",
+        "example": "The coach counted the players, then started practice."
+      },
+      {
+        "id": "past-contrast-089",
+        "front": "The club meeting finished with everyone agreeing on a date. Complete: The secretary ___ the date in the minutes and sent them to the group.",
+        "options": [
+          "The secretary was recording the date in the minutes and sent them to the group.",
+          "The secretary recorded the date in the minutes and sent them to the group."
+        ],
+        "answer": "The secretary recorded the date in the minutes and sent them to the group.",
+        "explanation": "The secretary completed the record and sent it after the meeting's decision.",
+        "example": "I wrote down the address and shared it with my team."
+      },
+      {
+        "id": "past-contrast-034",
+        "front": "The gusts started before four. Branches were still coming off the oak when the storm passed through at four. Complete: Strong gusts ___ branches from the old oak.",
+        "options": [
+          "Strong gusts broke branches from the old oak.",
+          "Strong gusts were breaking branches from the old oak."
+        ],
+        "answer": "Strong gusts were breaking branches from the old oak.",
+        "explanation": "The storm was active at four, and the gusts were continuing to break branches during it.",
+        "example": "All afternoon, rain was pushing leaves across the path."
+      },
+      {
+        "id": "past-contrast-052",
+        "front": "Complete: The workers were unloading the van when one heavy box ___ onto the pavement.",
+        "options": [
+          "The workers were unloading the van when one heavy box slipped onto the pavement.",
+          "The workers were unloading the van when one heavy box was slipping onto the pavement."
+        ],
+        "answer": "The workers were unloading the van when one heavy box slipped onto the pavement.",
+        "explanation": "The unloading was in progress; the box slipped once as an interrupting event.",
+        "example": "She was shelving the books when a stack toppled over."
+      },
+      {
+        "id": "past-contrast-045",
+        "front": "The dog had been asleep on the rug for half an hour. Complete: A dropped spoon ___ it.",
+        "options": [
+          "A dropped spoon woke it.",
+          "A dropped spoon was waking it."
+        ],
+        "answer": "A dropped spoon woke it.",
+        "explanation": "The sleep was already in progress; the spoon's fall caused one completed interruption.",
+        "example": "I was reading quietly when a knock came at the door."
+      },
+      {
+        "id": "past-contrast-026",
+        "front": "A question came in just before 2:00. The keynote speaker's long reply continued after two. Complete: The keynote speaker ___ a question from the audience.",
+        "options": [
+          "The keynote speaker was answering a question from the audience.",
+          "The keynote speaker answered a question from the audience."
+        ],
+        "answer": "The keynote speaker was answering a question from the audience.",
+        "explanation": "The session was underway at two, and the speaker was in the middle of responding to the audience.",
+        "example": "At the forum, the chair was responding to a question from a student."
+      },
+      {
+        "id": "past-contrast-057",
+        "front": "Complete: The mechanic was tightening the final bolt when the wrench ___ from his hand.",
+        "options": [
+          "The mechanic was tightening the final bolt when the wrench was slipping from his hand.",
+          "The mechanic was tightening the final bolt when the wrench slipped from his hand."
+        ],
+        "answer": "The mechanic was tightening the final bolt when the wrench slipped from his hand.",
+        "explanation": "The tightening was underway; the wrench's slip happened as a single event.",
+        "example": "She was fixing the lamp when a screw dropped onto the floor."
+      },
+      {
+        "id": "past-contrast-028",
+        "front": "The escape-room team had ten minutes left. Nobody had solved the code and they were still offering suggestions. Complete: They ___ the final code together around the table.",
+        "options": [
+          "They guessed the final code together around the table.",
+          "They were guessing the final code together around the table."
+        ],
+        "answer": "They were guessing the final code together around the table.",
+        "explanation": "The team still had time left and was working on the answer; it had not solved the code yet.",
+        "example": "We were looking for the last clue when the clock showed five minutes."
+      },
+      {
+        "id": "past-contrast-010",
+        "front": "The night shift lasted until midnight. Omar's camera review ran from eleven until the end of the shift. Complete: At 11:30, Omar ___ the security cameras.",
+        "options": [
+          "At 11:30, Omar checked the security cameras.",
+          "At 11:30, Omar was checking the security cameras."
+        ],
+        "answer": "At 11:30, Omar was checking the security cameras.",
+        "explanation": "The camera review was scheduled to continue after 11:30, so it was underway at that time.",
+        "example": "Just before midnight, the caretaker was locking the side doors."
+      },
+      {
+        "id": "past-contrast-095",
+        "front": "The café closed at nine. Complete: The staff ___ the chairs, wiped the tables, and switched off the lights.",
+        "options": [
+          "The staff stacked the chairs, wiped the tables, and switched off the lights.",
+          "The staff were stacking the chairs, wiped the tables, and switched off the lights."
+        ],
+        "answer": "The staff stacked the chairs, wiped the tables, and switched off the lights.",
+        "explanation": "These are three completed tasks in an end-of-day sequence.",
+        "example": "We washed the brushes, packed the paints, and shut the studio."
+      },
+      {
+        "id": "past-contrast-047",
+        "front": "Complete: The chef was stirring the sauce when the timer ___ from the counter.",
+        "options": [
+          "The chef was stirring the sauce when the timer was falling from the counter.",
+          "The chef was stirring the sauce when the timer fell from the counter."
+        ],
+        "answer": "The chef was stirring the sauce when the timer fell from the counter.",
+        "explanation": "The stirring was underway, while the timer's fall was a single completed event.",
+        "example": "We were crossing the courtyard when a ball rolled past us."
+      },
+      {
+        "id": "past-contrast-027",
+        "front": "There was a queue for the cinema's final screening. Ticket sales started at eight and continued past 8:15. Complete: At 8:15, staff ___ tickets at the entrance.",
+        "options": [
+          "At 8:15, staff sold tickets at the entrance.",
+          "At 8:15, staff were selling tickets at the entrance."
+        ],
+        "answer": "At 8:15, staff were selling tickets at the entrance.",
+        "explanation": "The cinema was still operating at 8:15, and ticket sales were in progress then.",
+        "example": "At the theatre, ushers were checking tickets before the show."
+      },
+      {
+        "id": "past-contrast-015",
+        "front": "The rain stopped at dusk. At five, while the storm continued, the children had not finished their castles. Complete: They ___ sandcastles under the shelter.",
+        "options": [
+          "They were building sandcastles under the shelter.",
+          "They built sandcastles under the shelter."
+        ],
+        "answer": "They were building sandcastles under the shelter.",
+        "explanation": "Their castles were unfinished at five, so building was still in progress.",
+        "example": "During the shower, two friends were playing cards in the café."
+      },
+      {
+        "id": "past-contrast-075",
+        "front": "At 1:00, the school kitchen was preparing lunch. Complete: One cook ___ rice while another washed the vegetables.",
+        "options": [
+          "One cook was boiling rice while another washed the vegetables.",
+          "One cook boiled rice while another washed the vegetables."
+        ],
+        "answer": "One cook was boiling rice while another washed the vegetables.",
+        "explanation": "The kitchen work was in progress at one; the rice was cooking at the same time as the vegetables were being washed.",
+        "example": "At one, I was warming the bread as my sister chopped herbs."
+      },
+      {
+        "id": "past-contrast-092",
+        "front": "The parcel was delivered at noon. Complete: At home, Felix ___ the box, removed the book, and put it on the shelf.",
+        "options": [
+          "At home, Felix was opening the box, removed the book, and put it on the shelf.",
+          "At home, Felix opened the box, removed the book, and put it on the shelf."
+        ],
+        "answer": "At home, Felix opened the box, removed the book, and put it on the shelf.",
+        "explanation": "The sentence lists a sequence of completed actions, all in the past simple.",
+        "example": "Mina peeled the orange, separated the pieces, and shared them."
+      },
+      {
+        "id": "past-contrast-022",
+        "front": "The boat tour returned at noon. At 11:15, the passengers were taking a series of pictures of the lighthouse from the upper deck. Complete: They ___ it.",
+        "options": [
+          "They were photographing it.",
+          "They photographed it."
+        ],
+        "answer": "They were photographing it.",
+        "explanation": "The passengers were still taking a series of pictures during the tour at 11:15.",
+        "example": "At 11:15, we were watching dolphins beside the boat."
+      },
+      {
+        "id": "past-contrast-048",
+        "front": "Complete: The children had been painting for twenty minutes when a bright rainbow ___ outside the window.",
+        "options": [
+          "The children had been painting for twenty minutes when a bright rainbow appeared outside the window.",
+          "The children had been painting for twenty minutes when a bright rainbow was appearing outside the window."
+        ],
+        "answer": "The children had been painting for twenty minutes when a bright rainbow appeared outside the window.",
+        "explanation": "The painting was in progress; the rainbow appeared as a new, completed event.",
+        "example": "I was typing a note when the screen suddenly went dark."
+      },
+      {
+        "id": "past-contrast-039",
+        "front": "The storm passed during the night. Complete: During the storm, the wind ___ several branches from the old oak.",
+        "options": [
+          "During the storm, the wind broke several branches from the old oak.",
+          "During the storm, the wind was breaking several branches from the old oak."
+        ],
+        "answer": "During the storm, the wind broke several branches from the old oak.",
+        "explanation": "The branches came down during one finished storm. The past simple reports the completed event.",
+        "example": "The hail damaged two greenhouse panels overnight."
+      },
+      {
+        "id": "past-contrast-090",
+        "front": "The bakery received its flour delivery at six. Complete: The baker ___ the bags into the storeroom before starting the ovens.",
+        "options": [
+          "The baker carried the bags into the storeroom before starting the ovens.",
+          "The baker was carrying the bags into the storeroom before starting the ovens."
+        ],
+        "answer": "The baker carried the bags into the storeroom before starting the ovens.",
+        "explanation": "Carrying the bags was completed before the baker started the ovens.",
+        "example": "She put the ingredients away, then began to cook."
+      },
+      {
+        "id": "past-contrast-082",
+        "front": "The bell rang at the end of the lesson. Complete: The class ___ its books and left the room.",
+        "options": [
+          "The class was packing its books and left the room.",
+          "The class packed its books and left the room."
+        ],
+        "answer": "The class packed its books and left the room.",
+        "explanation": "Packing and leaving are presented as completed steps after the bell.",
+        "example": "The players collected their bags and went home."
+      },
+      {
+        "id": "past-contrast-086",
+        "front": "The race marshal waved the runners forward. Complete: The front group ___ past the starting line and began the course.",
+        "options": [
+          "The front group was moving past the starting line and began the course.",
+          "The front group moved past the starting line and began the course."
+        ],
+        "answer": "The front group moved past the starting line and began the course.",
+        "explanation": "The group crossed the line and began the race as a completed start event.",
+        "example": "The boat left the harbour and headed south."
+      },
+      {
+        "id": "past-contrast-070",
+        "front": "Yuki's landscape was only half finished at 3:30. She continued to work beside her partner. Complete: Yuki ___ a landscape while her partner mixed paints beside her.",
+        "options": [
+          "Yuki painted a landscape while her partner mixed paints beside her.",
+          "Yuki was painting a landscape while her partner mixed paints beside her."
+        ],
+        "answer": "Yuki was painting a landscape while her partner mixed paints beside her.",
+        "explanation": "Both artists were working in the open studio at 3:30; Yuki's painting was not presented as finished.",
+        "example": "At three, Jo was sketching a bridge while Lee mixed the colours."
+      },
+      {
+        "id": "past-contrast-100",
+        "front": "The family had finished the aquarium visit and went home. Complete: At the exit, they ___ up a map of the harbour for their next stop.",
+        "options": [
+          "At the exit, they were picking up a map of the harbour for their next stop.",
+          "At the exit, they picked up a map of the harbour for their next stop."
+        ],
+        "answer": "At the exit, they picked up a map of the harbour for their next stop.",
+        "explanation": "The visit was over and collecting the map was a completed action as they left.",
+        "example": "We bought a guidebook before leaving the museum."
+      },
+      {
+        "id": "past-contrast-059",
+        "front": "Complete: The captain was explaining the route when the ship ___ sharply.",
+        "options": [
+          "The captain was explaining the route when the ship turned sharply.",
+          "The captain was explaining the route when the ship was turning sharply."
+        ],
+        "answer": "The captain was explaining the route when the ship turned sharply.",
+        "explanation": "The explanation was underway; the ship's sharp turn was a completed change during it.",
+        "example": "I was showing them the garden when a sprinkler switched on."
+      },
+      {
+        "id": "past-contrast-051",
+        "front": "Complete: Marta was rinsing a cup at the sink when the kitchen light ___ out.",
+        "options": [
+          "Marta was rinsing a cup at the sink when the kitchen light was going out.",
+          "Marta was rinsing a cup at the sink when the kitchen light went out."
+        ],
+        "answer": "Marta was rinsing a cup at the sink when the kitchen light went out.",
+        "explanation": "The light went out at one point while Marta was already rinsing the cup.",
+        "example": "I was brushing my teeth when the water turned cold."
+      },
+      {
+        "id": "past-contrast-006",
+        "front": "The kitchen team worked from six until eight. At seven, the chef was still adjusting the seasoning and had not served the soup. Complete: The chef ___ it.",
+        "options": [
+          "The chef tasted it.",
+          "The chef was tasting it."
+        ],
+        "answer": "The chef was tasting it.",
+        "explanation": "The chef was still adjusting the soup at seven, so the tasting was part of an ongoing process.",
+        "example": "At six thirty, Ana was checking the bread in the oven."
+      },
+      {
+        "id": "past-contrast-012",
+        "front": "The pottery class began at one and ended at three. At two, Priya had attached only one side of the mug's handle. Complete: Priya ___ the handle to her clay mug.",
+        "options": [
+          "Priya was attaching the handle to her clay mug.",
+          "Priya attached the handle to her clay mug."
+        ],
+        "answer": "Priya was attaching the handle to her clay mug.",
+        "explanation": "Only one side of the handle was attached at two, so Priya had not finished the task.",
+        "example": "At two, Ben was shaping a bowl on the wheel."
+      },
+      {
+        "id": "past-contrast-013",
+        "front": "Meal service began before the plane reached the mountains. Trays were still going out at 6:30. Complete: At 6:30, while it crossed the mountains, the crew ___ the meal trays.",
+        "options": [
+          "At 6:30, while it crossed the mountains, the crew served the meal trays.",
+          "At 6:30, while it crossed the mountains, the crew was serving the meal trays."
+        ],
+        "answer": "At 6:30, while it crossed the mountains, the crew was serving the meal trays.",
+        "explanation": "The flight was still underway at 6:30, and the crew's service was in progress then.",
+        "example": "At 6:30, the cabin staff were collecting empty cups."
+      },
+      {
+        "id": "past-contrast-079",
+        "front": "The guests arrived at six. Complete: Jane had not started dinner before they came; after opening the door, she ___ the soup.",
+        "options": [
+          "Jane had not started dinner before they came; after opening the door, she was heating the soup.",
+          "Jane had not started dinner before they came; after opening the door, she heated the soup."
+        ],
+        "answer": "Jane had not started dinner before they came; after opening the door, she heated the soup.",
+        "explanation": "The prompt says Jane began after the guests arrived, so this is a completed action that followed their arrival.",
+        "example": "The visitors came in, and then we made tea."
+      },
+      {
+        "id": "past-contrast-069",
+        "front": "The volunteer began working on name tags before the first guests arrived and still had several to make as people walked in. Complete: A volunteer ___ name tags while the organiser greeted guests.",
+        "options": [
+          "A volunteer prepared name tags while the organiser greeted guests.",
+          "A volunteer was preparing name tags while the organiser greeted guests."
+        ],
+        "answer": "A volunteer was preparing name tags while the organiser greeted guests.",
+        "explanation": "The preparations were happening at four, so the name-tag task was in progress alongside the greeting.",
+        "example": "At the door, we were checking invitations as the host was welcoming everyone."
+      },
+      {
+        "id": "past-contrast-093",
+        "front": "The lighthouse tour ended at four. Complete: The guide ___ the visitors through the exit and locked the door behind them.",
+        "options": [
+          "The guide was leading the visitors through the exit and locked the door behind them.",
+          "The guide led the visitors through the exit and locked the door behind them."
+        ],
+        "answer": "The guide led the visitors through the exit and locked the door behind them.",
+        "explanation": "Leading the visitors and locking the door are completed actions that ended the tour.",
+        "example": "The usher showed us out and closed the theatre."
+      },
+      {
+        "id": "past-contrast-084",
+        "front": "The computer restarted, and the update finished. Complete: Then Nia ___ her report and emailed it to her tutor.",
+        "options": [
+          "Then Nia saved her report and emailed it to her tutor.",
+          "Then Nia was saving her report and emailed it to her tutor."
+        ],
+        "answer": "Then Nia saved her report and emailed it to her tutor.",
+        "explanation": "The report was saved and emailed as completed actions after the update finished.",
+        "example": "I printed the form and handed it to the receptionist."
+      },
+      {
+        "id": "past-contrast-088",
+        "front": "The bus reached the last stop at 7:40. Complete: The driver ___ the doors, and the passengers stepped onto the pavement.",
+        "options": [
+          "The driver opened the doors, and the passengers stepped onto the pavement.",
+          "The driver was opening the doors, and the passengers stepped onto the pavement."
+        ],
+        "answer": "The driver opened the doors, and the passengers stepped onto the pavement.",
+        "explanation": "Opening the doors was a completed event followed by the passengers getting off.",
+        "example": "The guide unlocked the gate, and the visitors entered the garden."
+      }
+    ]
+  }
+]

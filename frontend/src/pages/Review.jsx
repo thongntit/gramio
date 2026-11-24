@@ -70,6 +70,7 @@ export default function Review() {
   });
   const [counts, setCounts] = useState(EMPTY_COUNTS);
   const [reviewedCount, setReviewedCount] = useState(0);
+  const [struggleRatings, setStruggleRatings] = useState([]);
   const refreshedMissingCard = useRef(null);
   const reviewStarted = useRef(false);
 
@@ -162,6 +163,16 @@ export default function Review() {
       [rating]: current[rating] + 1,
     }));
     setReviewedCount((current) => current + 1);
+    if (
+      reviewCard?.type === 'grammar'
+      && (rating === 'again' || rating === 'hard')
+      && typeof reviewCard.content_key === 'string'
+    ) {
+      setStruggleRatings((current) => [
+        ...current,
+        { contentKey: reviewCard.content_key, rating },
+      ]);
+    }
   };
 
   const recordFailedRating = (rating, reviewCard, attempt) => {
@@ -217,6 +228,7 @@ export default function Review() {
       <ReviewDone
         counts={counts}
         total={reviewedCount}
+        struggleRatings={struggleRatings}
         onExit={() => navigate('/', { replace: true })}
       />
     );
@@ -558,10 +570,55 @@ function ReviewError({ error, retryable, submitting, onRetry, onRefresh, onExit 
   );
 }
 
-function ReviewDone({ counts, total, onExit }) {
+function ReviewDone({ counts, total, struggleRatings, onExit }) {
   const remembered = counts.good + counts.easy;
   const accuracy = total ? Math.round((remembered / total) * 100) : 0;
   const completionTracked = useRef(false);
+  const [drillQuestions, setDrillQuestions] = useState([]);
+  const [questionIndex, setQuestionIndex] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [drillCorrect, setDrillCorrect] = useState(0);
+  const [drillLoadState, setDrillLoadState] = useState('idle');
+  const [drillTopics, setDrillTopics] = useState(null);
+  const [drillUnavailable, setDrillUnavailable] = useState(false);
+  const drillBankLoadStarted = useRef(false);
+  const hasStruggleCandidates = struggleRatings.some(
+    ({ rating, contentKey }) => (rating === 'again' || rating === 'hard') && contentKey,
+  );
+  const strongestMatch = [...struggleRatings]
+    .map((entry, index) => ({ ...entry, index }))
+    .filter((entry) => (entry.rating === 'again' || entry.rating === 'hard')
+      && drillTopics?.some((topic) => topic.reviewContentKeys.includes(entry.contentKey)))
+    .sort((left, right) => (
+      Number(right.rating === 'again') - Number(left.rating === 'again')
+      || right.index - left.index
+    ))[0];
+  const drillTopic = strongestMatch
+    ? drillTopics.find((topic) => topic.reviewContentKeys.includes(strongestMatch.contentKey))
+    : null;
+
+  useEffect(() => {
+    if (drillBankLoadStarted.current || !hasStruggleCandidates) return;
+    drillBankLoadStarted.current = true;
+
+    import('@/data/grammarContrastDrills.json')
+      .then((module) => setDrillTopics(module.default))
+      .catch(() => setDrillUnavailable(true));
+  }, [hasStruggleCandidates]);
+
+  const startDrill = () => {
+    if (!drillTopic) return;
+    const shuffled = [...drillTopic.questions];
+    for (let index = shuffled.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+    }
+    setDrillQuestions(shuffled.slice(0, 3));
+    setQuestionIndex(0);
+    setSelectedAnswer(null);
+    setDrillCorrect(0);
+    setDrillLoadState('drilling');
+  };
 
   useEffect(() => {
     if (total === 0 || completionTracked.current) return;
@@ -576,6 +633,104 @@ function ReviewDone({ counts, total, onExit }) {
       accuracy,
     });
   }, [accuracy, counts, total]);
+
+  if (drillLoadState === 'drilling' && drillQuestions[questionIndex]) {
+    const question = drillQuestions[questionIndex];
+    const isCorrect = selectedAnswer === question.answer;
+    const isLastQuestion = questionIndex === drillQuestions.length - 1;
+
+    return (
+      <div className="flex min-h-full flex-col items-center px-4 pb-8 pt-3 animate-screen-fade-in">
+        <div className="flex w-full max-w-lg items-center gap-3">
+          <button
+            type="button"
+            onClick={() => setDrillLoadState('idle')}
+            aria-label="Exit grammar drill"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border-soft)] bg-[var(--bg-card)] text-[var(--text-1)]"
+          >
+            <X size={18} strokeWidth={2} />
+          </button>
+          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-[var(--border-soft)]">
+            <div className="h-full rounded-full bg-[var(--primary-hex)]" style={{ width: `${((questionIndex + 1) / 3) * 100}%` }} />
+          </div>
+          <span className="min-w-[42px] text-right font-mono text-xs font-semibold text-[var(--text-2)]">{questionIndex + 1}/3</span>
+        </div>
+        <section className="mt-5 w-full max-w-lg rounded-[22px] border border-[var(--border-soft)] bg-[var(--bg-card)] p-5 shadow-[0_6px_20px_rgba(15,22,32,0.04)] dark:shadow-[0_6px_20px_rgba(0,0,0,0.3)]">
+          <h1 className="text-center text-xl font-extrabold text-[var(--text-1)]">{drillTopic.title}</h1>
+          <p className="mt-5 text-center text-lg font-semibold leading-relaxed text-[var(--text-1)]">{question.front}</p>
+          <div className="mt-5 flex flex-col gap-2">
+            {question.options.map((option) => {
+              const correct = selectedAnswer !== null && option === question.answer;
+              const wrong = selectedAnswer === option && !isCorrect;
+              return (
+                <button
+                  key={option}
+                  type="button"
+                  disabled={selectedAnswer !== null}
+                  onClick={() => {
+                    setSelectedAnswer(option);
+                    if (option === question.answer) setDrillCorrect((value) => value + 1);
+                  }}
+                  className={cn(
+                    'min-h-12 rounded-xl border px-3.5 py-3 text-left text-[15px] font-medium',
+                    'border-[var(--border-soft)] bg-[var(--bg-app)]',
+                    correct && 'border-[rgba(7,136,56,.4)] bg-[rgba(7,136,56,.08)] text-[#078838] dark:text-[#4ade80]',
+                    wrong && 'border-[rgba(190,18,60,.4)] bg-[rgba(190,18,60,.08)] text-[#be123c] dark:text-[#fda4af]',
+                    selectedAnswer !== null && !correct && !wrong && 'opacity-60',
+                  )}
+                >
+                  {option}
+                </button>
+              );
+            })}
+          </div>
+          {selectedAnswer !== null && (
+            <div role="status" className="mt-5 border-t border-[var(--border-soft)] pt-4">
+              <div className={cn('font-bold', isCorrect ? 'text-[#078838] dark:text-[#4ade80]' : 'text-[#be123c] dark:text-[#fda4af]')}>
+                {isCorrect ? 'Correct' : 'Not quite'}
+              </div>
+              {!isCorrect && (
+                <p className="mt-2 text-sm font-semibold text-[var(--text-1)]">
+                  Correct answer: {question.answer}
+                </p>
+              )}
+              <p className="mt-2 text-sm leading-relaxed text-[var(--text-2)]">{question.explanation}</p>
+              {question.example && (
+                <p className="mt-3 rounded-xl bg-[var(--bg-app)] p-3 text-sm italic leading-relaxed text-[var(--text-2)]">{question.example}</p>
+              )}
+              <button
+                type="button"
+                onClick={() => {
+                  if (isLastQuestion) {
+                    setDrillLoadState('results');
+                  } else {
+                    setQuestionIndex((index) => index + 1);
+                    setSelectedAnswer(null);
+                  }
+                }}
+                className="mt-5 h-12 w-full rounded-xl bg-[var(--primary-hex)] text-[15px] font-semibold text-white"
+              >
+                {isLastQuestion ? 'See results' : 'Next question'}
+              </button>
+            </div>
+          )}
+        </section>
+      </div>
+    );
+  }
+
+  if (drillLoadState === 'results') {
+    return (
+      <div className="flex min-h-full flex-col items-center px-6 py-16 text-center animate-screen-fade-in">
+        <div className="mb-4 inline-flex h-[88px] w-[88px] items-center justify-center rounded-full bg-[rgba(7,136,56,.10)] text-[#078838] dark:bg-[rgba(74,222,128,.14)] dark:text-[#4ade80]">
+          <Check size={42} strokeWidth={2} />
+        </div>
+        <h1 className="text-[26px] font-extrabold tracking-tight text-[var(--text-1)]">Drill complete</h1>
+        <p className="mt-2 text-[16px] text-[var(--text-2)]">You got {drillCorrect} of 3 correct.</p>
+        <button type="button" onClick={onExit} className="mt-7 h-12 w-full max-w-sm rounded-xl bg-[var(--primary-hex)] text-[15px] font-semibold text-white">Back to Today</button>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col items-center px-6 py-16 text-center animate-screen-fade-in">
@@ -616,6 +771,18 @@ function ReviewDone({ counts, total, onExit }) {
       >
         Back to Today
       </button>
+      {drillTopic && drillTopics && (
+        <button
+          type="button"
+          onClick={startDrill}
+          className="mt-3 h-12 w-full rounded-xl border border-[var(--primary-hex)] bg-[var(--bg-card)] text-[15px] font-semibold text-[var(--primary-hex)]"
+        >
+          Start grammar drill
+        </button>
+      )}
+      {!drillTopics && !drillUnavailable && hasStruggleCandidates && (
+        <p className="mt-3 text-sm text-[var(--text-2)]" role="status">Finding a short grammar drill…</p>
+      )}
     </div>
   );
 }
