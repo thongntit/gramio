@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAuth } from '@clerk/clerk-react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, Clapperboard, Inbox, Layers, PackageSearch, RotateCcw, Shuffle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CalendarDays, Clapperboard, Inbox, Layers, PackageSearch, RotateCcw, Shuffle } from 'lucide-react';
 import MissionSession from '@/components/MissionSession';
 import stories from '@/data/englishMissionStories';
 import puzzles from '@/data/englishMissionPuzzles';
+import { cn } from '@/lib/cn';
 import sampleWithoutReplacement from '@/lib/sampleWithoutReplacement';
+import { getDailyMission, getDailyMissionResult, saveDailyMissionResult } from '@/services/dailyMission';
 import { getScheduledRematches, resolveRematch, scheduleRematch } from '@/services/missionRematch';
 
 const ACTIVITIES = [...stories, ...puzzles];
@@ -20,6 +22,22 @@ const ICONS = {
   'vocabulary-taboo': Layers,
 };
 const DATE_FORMAT = new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric' });
+
+function loadDaily(userId) {
+  const mission = getDailyMission(new Date());
+  return { ...mission, result: getDailyMissionResult(userId, mission.dateKey) };
+}
+
+function bestDaily(previous, current) {
+  if (
+    previous.dateKey === current.dateKey
+    && previous.result
+    && previous.result.score > (current.result?.score ?? -1)
+  ) {
+    return { ...current, result: previous.result };
+  }
+  return current;
+}
 
 function grammarRound(question, skill) {
   return {
@@ -65,6 +83,22 @@ function MissionHub({ userId }) {
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
   const [now, setNow] = useState(() => Date.now());
+  const [daily, setDaily] = useState(() => loadDaily(userId));
+
+  useEffect(() => {
+    function refresh() {
+      const current = loadDaily(userId);
+      setDaily((previous) => bestDaily(previous, current));
+    }
+    const today = new Date();
+    const nextDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
+    const timer = window.setTimeout(refresh, nextDay - today);
+    window.addEventListener('focus', refresh);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener('focus', refresh);
+    };
+  }, [daily.dateKey, userId]);
 
   const dueCount = scheduled.filter(({ dueAt }) => dueAt <= now).length;
   const nextDue = scheduled[0]?.dueAt;
@@ -80,6 +114,21 @@ function MissionHub({ userId }) {
       ? sampleWithoutReplacement(activity.rounds, activity.roundLimit)
       : activity.rounds;
     setSession({ title: activity.title, rounds });
+  }
+
+  function startDaily() {
+    const current = loadDaily(userId);
+    setDaily((previous) => bestDaily(previous, current));
+    setStatus('');
+    setSession({ title: 'Daily Mission', rounds: current.rounds, dateKey: current.dateKey });
+  }
+
+  function completeDaily(score, total) {
+    const { dateKey } = session;
+    const result = saveDailyMissionResult(userId, dateKey, score, total);
+    setDaily((previous) => previous.dateKey === dateKey
+      ? bestDaily(previous, { ...previous, result })
+      : previous);
   }
 
   async function startRematch() {
@@ -121,6 +170,7 @@ function MissionHub({ userId }) {
         session={session}
         onExit={() => setSession(null)}
         onAnswer={recordAnswer}
+        onComplete={session.dateKey ? completeDaily : undefined}
       />
     );
   }
@@ -138,6 +188,16 @@ function MissionHub({ userId }) {
         <h1 className="text-2xl font-extrabold tracking-tight text-[var(--text-1)]">English Missions</h1>
       </header>
       <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+        <MissionTile
+          icon={CalendarDays}
+          title="Daily Mission"
+          description={daily.result
+            ? `Best today: ${daily.result.score}/${daily.result.total} · Play again`
+            : '3 questions across inbox, grammar, and vocabulary'}
+          onClick={startDaily}
+          disabled={loading}
+          featured
+        />
         {ACTIVITIES.map(({ id, title, description, ...activity }) => (
           <MissionTile
             key={id}
@@ -161,14 +221,17 @@ function MissionHub({ userId }) {
   );
 }
 
-function MissionTile({ icon, title, description, onClick, disabled }) {
+function MissionTile({ icon, title, description, onClick, disabled, featured }) {
   const Icon = icon;
   return (
     <button
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className="flex min-h-[72px] w-full items-center gap-3 rounded-card border border-[var(--border-soft)] bg-[var(--bg-card)] p-3 text-left disabled:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--primary-hex)]"
+      className={cn(
+        'flex min-h-[72px] w-full items-center gap-3 rounded-card border border-[var(--border-soft)] bg-[var(--bg-card)] p-3 text-left disabled:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--primary-hex)]',
+        featured && 'border-[var(--primary-hex)] sm:col-span-2',
+      )}
     >
       <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--bg-app)] text-[var(--primary-hex)]">
         <Icon size={20} aria-hidden="true" />

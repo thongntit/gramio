@@ -5,15 +5,17 @@ import { cn } from '@/lib/cn';
 const PRIMARY_ACTION = 'min-h-12 w-full rounded-xl bg-[var(--primary-hex)] px-4 py-2 font-semibold text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary-hex)]';
 const SECONDARY_ACTION = 'min-h-11 rounded-xl border border-[var(--border-soft)] bg-[var(--bg-card)] px-3 py-2 text-sm font-semibold text-[var(--text-1)] disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--primary-hex)]';
 
-export default function MissionSession({ session, onAnswer, onExit }) {
+export default function MissionSession({ session, onAnswer, onComplete, onExit }) {
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState(0);
   const { title, rounds } = session;
   const round = rounds[index];
 
   function recordAnswer(correct) {
-    if (correct) setScore((previous) => previous + 1);
+    const nextScore = score + Number(correct);
+    if (correct) setScore(nextScore);
     onAnswer(round, correct);
+    if (index === rounds.length - 1) onComplete?.(nextScore, rounds.length);
   }
 
   if (!round) {
