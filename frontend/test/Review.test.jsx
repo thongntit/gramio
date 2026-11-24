@@ -635,6 +635,9 @@ describe('Review', () => {
         ? question.options.find((option) => option !== question.answer)
         : question.answer;
       await user.click(screen.getByRole('button', { name: choice }));
+      if (index === 0) {
+        expect(screen.getByText(`Correct answer: ${question.answer}`)).toBeInTheDocument();
+      }
       expect(screen.getByText(question.explanation)).toBeInTheDocument();
       expect(screen.getByText(question.example)).toBeInTheDocument();
       await user.click(screen.getByRole('button', {

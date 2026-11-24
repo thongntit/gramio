@@ -689,6 +689,11 @@ function ReviewDone({ counts, total, struggleRatings, onExit }) {
               <div className={cn('font-bold', isCorrect ? 'text-[#078838] dark:text-[#4ade80]' : 'text-[#be123c] dark:text-[#fda4af]')}>
                 {isCorrect ? 'Correct' : 'Not quite'}
               </div>
+              {!isCorrect && (
+                <p className="mt-2 text-sm font-semibold text-[var(--text-1)]">
+                  Correct answer: {question.answer}
+                </p>
+              )}
               <p className="mt-2 text-sm leading-relaxed text-[var(--text-2)]">{question.explanation}</p>
               {question.example && (
                 <p className="mt-3 rounded-xl bg-[var(--bg-app)] p-3 text-sm italic leading-relaxed text-[var(--text-2)]">{question.example}</p>
