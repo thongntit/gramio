@@ -1,12 +1,14 @@
-import { useEffect } from 'react';
+import { lazy, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AppShell from './components/AppShell';
-import Today from './pages/Today';
-import Review from './pages/Review';
-import Library from './pages/Library';
-import Profile from './pages/Profile';
 import PrivateRoute from './components/PrivateRoute';
+import AnalyticsTracker from './components/AnalyticsTracker';
 import { useThemeStore } from './stores/themeStore';
+
+const Today = lazy(() => import('./pages/Today'));
+const Review = lazy(() => import('./pages/Review'));
+const Library = lazy(() => import('./pages/Library'));
+const Profile = lazy(() => import('./pages/Profile'));
 
 function App() {
   const { isDark } = useThemeStore();
@@ -38,40 +40,19 @@ function App() {
 
   return (
     <Router>
+      <AnalyticsTracker />
       <Routes>
-        <Route element={<AppShell />}>
-          <Route
-            path="/"
-            element={
-              <PrivateRoute>
-                <Today />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/review"
-            element={
-              <PrivateRoute>
-                <Review />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/library"
-            element={
-              <PrivateRoute>
-                <Library />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              <PrivateRoute>
-                <Profile />
-              </PrivateRoute>
-            }
-          />
+        <Route
+          element={(
+            <PrivateRoute>
+              <AppShell />
+            </PrivateRoute>
+          )}
+        >
+          <Route path="/" element={<Today />} />
+          <Route path="/review" element={<Review />} />
+          <Route path="/library" element={<Library />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>
     </Router>

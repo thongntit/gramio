@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { SignedIn, SignedOut, SignIn, useUser } from '@clerk/clerk-react'
 import { useLearningStore } from '@/stores/learningStore'
+import { identifyUser, resetAnalytics } from '@/lib/analytics'
 
 const HAS_CLERK = !!import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
@@ -31,6 +32,14 @@ function ConfiguredPrivateRoute({ children }) {
     }
     previousUserId.current = userId
   }, [resetLearning, user?.id])
+
+  useEffect(() => {
+    if (user?.id) {
+      identifyUser(user.id, { auth_provider: 'clerk' })
+    } else {
+      resetAnalytics()
+    }
+  }, [user?.id])
 
   return (
     <>

@@ -11,7 +11,7 @@
     "preview": "cd frontend && bun run preview",
     "db:generate": "cd database && bun generate.js",
     "db:status": "echo 'Database stats:' && wc -l database/words.json && ls -lh database/words.json",
-    "test": "echo 'Run tests in frontend directory' && cd frontend && bun test",
+    "test": "echo 'Run tests in frontend directory' && cd frontend && bun run test",
     "clean": "rm -rf frontend/dist frontend/node_modules/.vite",
     "setup": "echo 'Installing frontend dependencies...' && cd frontend && bun install"
   },

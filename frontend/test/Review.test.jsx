@@ -12,11 +12,13 @@ import {
 } from '@/services/openspeakApi';
 import { useLearningStore } from '@/stores/learningStore';
 import Review from '@/pages/Review';
+import { track } from '@/lib/analytics';
 
 const testDir = path.dirname(fileURLToPath(import.meta.url));
 const reviewSource = readFileSync(path.resolve(testDir, '../src/pages/Review.jsx'), 'utf8');
 
 const clerk = vi.hoisted(() => ({ signOut: vi.fn() }));
+const analytics = vi.hoisted(() => ({ track: vi.fn() }));
 
 vi.mock('@clerk/clerk-react', () => ({
   useAuth: () => ({ getToken: () => Promise.resolve('fresh-token') }),
@@ -31,6 +33,10 @@ vi.mock('@/services/openspeakApi', async (importOriginal) => {
     submitReview: vi.fn(),
   };
 });
+
+vi.mock('@/lib/analytics', () => ({
+  track: analytics.track,
+}));
 
 const CARD = {
   id: 'be7d7592-2e3d-4a41-8cf5-20f1ea90f4fd',
@@ -134,10 +140,17 @@ async function selectAndReveal(user, option) {
   await screen.findByLabelText('Correct answer');
 }
 
-function swipeReviewCard({ fromX, toX, fromY = 180, toY = fromY }) {
+async function armSwipe() {
+  await act(async () => {
+    await new Promise((resolve) => setTimeout(resolve, 260));
+  });
+}
+
+async function swipeReviewCard({ fromX, toX, fromY = 180, toY = fromY }) {
   const card = screen.getByTestId('review-card');
   const pointer = { pointerId: 1, pointerType: 'touch' };
   fireEvent.pointerDown(card, { ...pointer, clientX: fromX, clientY: fromY });
+  await armSwipe();
   fireEvent.pointerMove(card, { ...pointer, clientX: toX, clientY: toY });
   fireEvent.pointerUp(card, { ...pointer, clientX: toX, clientY: toY });
 }
@@ -148,6 +161,73 @@ beforeEach(() => {
 });
 
 describe('Review', () => {
+  it('tracks a review lifecycle with safe card metadata', async () => {
+    const user = userEvent.setup();
+    useLearningStore.getState().replaceToday(TODAY);
+    submitReview.mockResolvedValue({ duplicate: false, today: CAUGHT_UP });
+
+    renderReview();
+
+    expect(track).toHaveBeenCalledWith('review_started', { due_count: 1 });
+    await selectAndReveal(user, CARD.answer);
+    await user.click(screen.getByRole('button', { name: 'Good' }));
+
+    expect(track).toHaveBeenCalledWith('card_answered', {
+      card_id: CARD.id,
+      deck_id: CARD.deck_id,
+      card_type: CARD.type,
+      level: CARD.level,
+      rating: 'good',
+      answered_correctly: true,
+    });
+    expect(await screen.findByText(/session complete/i)).toBeInTheDocument();
+    expect(track).toHaveBeenCalledWith('review_completed', {
+      cards_reviewed: 1,
+      again: 0,
+      hard: 0,
+      good: 1,
+      easy: 0,
+      accuracy: 100,
+    });
+  });
+
+  it('tracks failed review submissions with retry context and safe card metadata', async () => {
+    const user = userEvent.setup();
+    useLearningStore.getState().replaceToday(TODAY);
+    submitReview
+      .mockRejectedValueOnce(new ApiError(503, { message: 'Service unavailable' }, '/reviews'))
+      .mockRejectedValueOnce(new ApiError(503, { message: 'Service unavailable' }, '/reviews'));
+
+    renderReview();
+
+    await revealAndRate(user, 'Good');
+    await user.click(await screen.findByRole('button', { name: /retry review/i }));
+    await screen.findByRole('button', { name: /retry review/i });
+
+    expect(track.mock.calls.filter(([event]) => event === 'card_answer_failed')).toEqual([
+      ['card_answer_failed', {
+        card_id: CARD.id,
+        deck_id: CARD.deck_id,
+        card_type: CARD.type,
+        level: CARD.level,
+        rating: 'good',
+        attempt: 'initial',
+        status: 503,
+        retryable: true,
+      }],
+      ['card_answer_failed', {
+        card_id: CARD.id,
+        deck_id: CARD.deck_id,
+        card_type: CARD.type,
+        level: CARD.level,
+        rating: 'good',
+        attempt: 'retry',
+        status: 503,
+        retryable: true,
+      }],
+    ]);
+  });
+
   it('renders the backend queue head and answer fields', async () => {
     const user = userEvent.setup();
     useLearningStore.getState().replaceToday(TODAY);
@@ -193,7 +273,7 @@ describe('Review', () => {
     renderReview();
 
     await selectAndReveal(user, option);
-    swipeReviewCard(gesture);
+    await swipeReviewCard(gesture);
 
     await vi.waitFor(() => expect(submitReview).toHaveBeenCalledOnce());
     expect(submitReview.mock.calls[0][0]).toEqual(
@@ -211,6 +291,7 @@ describe('Review', () => {
     const card = screen.getByTestId('review-card');
     const pointer = { pointerId: 1, pointerType: 'touch' };
     fireEvent.pointerDown(card, { ...pointer, clientX: 240, clientY: 180 });
+    await armSwipe();
     fireEvent.pointerMove(card, { ...pointer, clientX: 180, clientY: 180 });
 
     expect(screen.getByText('Easy', { selector: '[aria-hidden="true"]' })).toBeInTheDocument();
@@ -257,6 +338,7 @@ describe('Review', () => {
     const card = screen.getByTestId('review-card');
     const pointer = { pointerId: 1, pointerType: 'touch' };
     fireEvent.pointerDown(card, { ...pointer, clientX: 240, clientY: 180 });
+    await armSwipe();
     fireEvent.pointerMove(card, { ...pointer, clientX: 180, clientY: 180 });
 
     expect(card).toHaveClass('transition-none');
@@ -268,7 +350,7 @@ describe('Review', () => {
     useLearningStore.getState().replaceToday(TODAY);
     renderReview();
 
-    swipeReviewCard({ fromX: 240, toX: 120 });
+    await swipeReviewCard({ fromX: 240, toX: 120 });
 
     expect(submitReview).not.toHaveBeenCalled();
   });
@@ -279,7 +361,7 @@ describe('Review', () => {
     renderReview();
 
     await user.click(screen.getByRole('button', { name: /show answer/i }));
-    swipeReviewCard({ fromX: 240, toX: 120 });
+    await swipeReviewCard({ fromX: 240, toX: 120 });
 
     expect(screen.getByText(/choose an answer to swipe/i)).toBeInTheDocument();
     expect(submitReview).not.toHaveBeenCalled();
@@ -291,7 +373,7 @@ describe('Review', () => {
     renderReview();
 
     await user.click(screen.getByRole('button', { name: /show answer/i }));
-    swipeReviewCard({ fromX: 240, toX: 120 });
+    await swipeReviewCard({ fromX: 240, toX: 120 });
 
     expect(screen.getByText(/use a rating button below/i)).toBeInTheDocument();
     expect(submitReview).not.toHaveBeenCalled();
@@ -303,8 +385,8 @@ describe('Review', () => {
     renderReview();
 
     await selectAndReveal(user, CARD.answer);
-    swipeReviewCard({ fromX: 200, toX: 180 });
-    swipeReviewCard({ fromX: 200, toX: 160, fromY: 180, toY: 300 });
+    await swipeReviewCard({ fromX: 200, toX: 180 });
+    await swipeReviewCard({ fromX: 200, toX: 160, fromY: 180, toY: 300 });
 
     expect(submitReview).not.toHaveBeenCalled();
   });
@@ -317,9 +399,9 @@ describe('Review', () => {
     renderReview();
 
     await selectAndReveal(user, CARD.answer);
-    swipeReviewCard({ fromX: 240, toX: 120 });
+    await swipeReviewCard({ fromX: 240, toX: 120 });
     await vi.waitFor(() => expect(submitReview).toHaveBeenCalledOnce());
-    swipeReviewCard({ fromX: 120, toX: 240 });
+    await swipeReviewCard({ fromX: 120, toX: 240 });
 
     expect(submitReview).toHaveBeenCalledOnce();
     request.resolve({ duplicate: false, today: NEXT_TODAY });
@@ -335,9 +417,9 @@ describe('Review', () => {
     renderReview();
 
     await selectAndReveal(user, CARD.answer);
-    swipeReviewCard({ fromX: 240, toX: 120 });
+    await swipeReviewCard({ fromX: 240, toX: 120 });
     await screen.findByRole('button', { name: /retry review/i });
-    swipeReviewCard({ fromX: 120, toX: 240 });
+    await swipeReviewCard({ fromX: 120, toX: 240 });
 
     expect(submitReview).toHaveBeenCalledOnce();
   });

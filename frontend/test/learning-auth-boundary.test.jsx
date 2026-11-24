@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import PrivateRoute from '@/components/PrivateRoute';
+import { identifyUser, resetAnalytics } from '@/lib/analytics';
 
 const clerk = vi.hoisted(() => ({ signedIn: false }));
 
@@ -11,7 +12,13 @@ vi.mock('@clerk/clerk-react', () => ({
   useUser: () => ({ user: clerk.signedIn ? { id: 'user_123' } : null }),
 }));
 
+vi.mock('@/lib/analytics', () => ({
+  identifyUser: vi.fn(),
+  resetAnalytics: vi.fn(),
+}));
+
 beforeEach(() => {
+  vi.clearAllMocks();
   clerk.signedIn = false;
 });
 
@@ -25,6 +32,7 @@ describe('learning authentication boundary', () => {
 
     expect(screen.getByText('Clerk sign in')).toBeInTheDocument();
     expect(screen.queryByText('Protected queue')).not.toBeInTheDocument();
+    expect(resetAnalytics).toHaveBeenCalledOnce();
   });
 
   it('shows an explicit configuration state without Clerk configuration', () => {
@@ -50,5 +58,6 @@ describe('learning authentication boundary', () => {
 
     expect(screen.getByText('Protected queue')).toBeInTheDocument();
     expect(screen.queryByText('Clerk sign in')).not.toBeInTheDocument();
+    expect(identifyUser).toHaveBeenCalledWith('user_123', { auth_provider: 'clerk' });
   });
 });

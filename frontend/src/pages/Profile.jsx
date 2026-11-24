@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
+import NotificationSettings from '@/components/NotificationSettings';
 import { getProfileSummary } from '@/services/openspeakApi';
 import { useThemeStore } from '@/stores/themeStore';
 import { cn } from '@/lib/cn';
@@ -219,6 +220,8 @@ export default function Profile() {
           />
         </Card>
       </div>
+
+      <NotificationSettings />
 
       <h2 className="px-5 mb-2.5 text-[12px] font-bold uppercase tracking-eyebrow text-[var(--text-2)]">
         Account

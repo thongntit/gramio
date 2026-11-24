@@ -15,6 +15,7 @@ const INITIAL_STATE = {
   reviewStatus: 'idle',
   reviewError: null,
   pendingReview: null,
+  reviewSnapshot: null,
 };
 
 function toStatusError(error) {
@@ -163,8 +164,13 @@ export const useLearningStore = create((set, get) => ({
       clientRequestId: crypto.randomUUID(),
       clientReviewedAt: new Date().toISOString(),
     };
+    const today = get().today;
     set({
+      today: today?.queue?.length > 1
+        ? { ...today, queue: today.queue.slice(1), caughtUp: false }
+        : today,
       pendingReview,
+      reviewSnapshot: today,
       reviewStatus: 'idle',
       reviewError: null,
     });
@@ -172,24 +178,26 @@ export const useLearningStore = create((set, get) => ({
   },
 
   submitPendingReview: async (getToken) => {
-    const { pendingReview, reviewStatus, today } = get();
+    const { pendingReview, reviewStatus, reviewSnapshot, today } = get();
     if (!pendingReview) return null;
     if (reviewStatus === 'submitting') return null;
-    const requestEpoch = get().sessionEpoch;
-    const isCurrentSession = () => get().sessionEpoch === requestEpoch;
-
-    if (today?.queue?.[0]?.card?.id !== pendingReview.cardId) {
+    const expectedCardId = reviewSnapshot?.queue?.[1]?.card?.id
+      ?? reviewSnapshot?.queue?.[0]?.card?.id;
+    if (today?.queue?.[0]?.card?.id !== expectedCardId) {
       const reviewError = {
         status: 409,
         message: 'The review session changed. Refresh before rating again.',
       };
       set({
         pendingReview: null,
+        reviewSnapshot: null,
         reviewStatus: 'error',
         reviewError,
       });
       return null;
     }
+    const requestEpoch = get().sessionEpoch;
+    const isCurrentSession = () => get().sessionEpoch === requestEpoch;
 
     set({ reviewStatus: 'submitting', reviewError: null });
     try {
@@ -202,6 +210,7 @@ export const useLearningStore = create((set, get) => ({
         loadStatus: 'ready',
         loadError: null,
         pendingReview: null,
+        reviewSnapshot: null,
         reviewStatus: 'idle',
         reviewError: null,
       });
@@ -225,11 +234,13 @@ export const useLearningStore = create((set, get) => ({
           pendingReview,
         });
       } else {
-        set({
+        set((state) => ({
+          today: state.reviewSnapshot ?? state.today,
+          pendingReview: null,
+          reviewSnapshot: null,
           reviewStatus: 'error',
           reviewError,
-          pendingReview: null,
-        });
+        }));
       }
       return null;
     }

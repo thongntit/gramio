@@ -1,5 +1,7 @@
+import { Suspense } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import TabBar from './TabBar';
+import InstallPrompt from './InstallPrompt';
 
 export default function AppShell() {
   const { pathname } = useLocation();
@@ -16,11 +18,22 @@ export default function AppShell() {
           '[transform:translateZ(0)]',
         ].join(' ')}
       >
+        {!isReview && <InstallPrompt />}
         <main className={`flex-1 overflow-y-auto ${isReview ? 'pb-4' : 'pb-24'} [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden`}>
-          <Outlet />
+          <Suspense fallback={<RouteLoading />}>
+            <Outlet />
+          </Suspense>
         </main>
         {!isReview && <TabBar />}
       </div>
+    </div>
+  );
+}
+
+function RouteLoading() {
+  return (
+    <div className="flex min-h-full items-center justify-center p-6" role="status" aria-live="polite">
+      <span className="text-sm text-[var(--text-2)]">Loading screen…</span>
     </div>
   );
 }

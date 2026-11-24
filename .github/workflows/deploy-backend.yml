@@ -66,7 +66,7 @@ jobs:
       - name: Trigger dev Coolify redeploy
         run: |
           curl --fail-with-body --silent --show-error \
-            -X GET "${{ secrets.COOLIFY_DEV_WEBHOOK_URL }}&force=true" \
+            -X POST "${{ secrets.COOLIFY_DEV_WEBHOOK_URL }}&force=true" \
             -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"
 
   deploy-production:
@@ -79,5 +79,5 @@ jobs:
       - name: Trigger production Coolify redeploy
         run: |
           curl --fail-with-body --silent --show-error \
-            -X GET "${{ secrets.COOLIFY_PROD_WEBHOOK_URL }}&force=true" \
+            -X POST "${{ secrets.COOLIFY_PROD_WEBHOOK_URL }}&force=true" \
             -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"

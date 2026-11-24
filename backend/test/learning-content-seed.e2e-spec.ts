@@ -127,6 +127,7 @@ function createTestDataSource(): DataSource {
 async function truncateLearningTables(dataSource: DataSource): Promise<void> {
   await dataSource.query(`
     TRUNCATE TABLE
+      notification_subscriptions,
       review_events,
       user_card_progress,
       user_decks,

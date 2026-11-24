@@ -9,6 +9,7 @@ import {
   unenrollDeck,
 } from '@/services/openspeakApi';
 import { useLearningStore } from '@/stores/learningStore';
+import { track } from '@/lib/analytics';
 
 vi.mock('@/services/openspeakApi', async (importOriginal) => {
   const actual = await importOriginal();
@@ -19,6 +20,10 @@ vi.mock('@/services/openspeakApi', async (importOriginal) => {
     unenrollDeck: vi.fn(),
   };
 });
+
+vi.mock('@/lib/analytics', () => ({
+  track: vi.fn(),
+}));
 
 const DECK = {
   id: '22222222-2222-4222-8222-222222222222',
@@ -119,6 +124,43 @@ beforeEach(() => {
 });
 
 describe('LibraryDeckDetail enrollment', () => {
+  it('tracks a successful deck enrollment without sending card content', async () => {
+    const user = userEvent.setup();
+    renderDetail();
+    enrollDeck.mockResolvedValue(ENROLLMENT);
+
+    await user.click(screen.getByRole('button', { name: /learn deck/i }));
+
+    expect(track).toHaveBeenCalledWith('deck_enrolled', {
+      deck_id: DECK.id,
+      deck_slug: DECK.slug,
+      deck_type: DECK.type,
+      level: DECK.level,
+      card_count: DECK.cardCount,
+    });
+  });
+
+  it('tracks a successful deck unenrollment without sending card content', async () => {
+    const user = userEvent.setup();
+    renderDetail({ deck: { ...DECK, isLearning: true } });
+    const stoppedToday = { ...TODAY, queue: [], totalDue: 0, caughtUp: true };
+    unenrollDeck.mockResolvedValue({
+      deckId: DECK.id,
+      isLearning: false,
+      today: stoppedToday,
+    });
+
+    await user.click(screen.getByRole('button', { name: /stop learning/i }));
+
+    expect(track).toHaveBeenCalledWith('deck_unenrolled', {
+      deck_id: DECK.id,
+      deck_slug: DECK.slug,
+      deck_type: DECK.type,
+      level: DECK.level,
+      card_count: DECK.cardCount,
+    });
+  });
+
   it('learns the whole deck and immediately replaces Today', async () => {
     const user = userEvent.setup();
     const props = renderDetail();

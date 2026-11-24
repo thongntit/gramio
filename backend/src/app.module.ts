@@ -10,6 +10,7 @@ import { LearningDataModule } from './learning/learning-data.module';
 import { LearningContentModule } from './learning-content/learning-content.module';
 import { UsersModule } from './users/users.module';
 import { ReviewsModule } from './reviews/reviews.module';
+import { NotificationsModule } from './notifications/notifications.module';
 
 @Module({
   imports: [
@@ -27,6 +28,9 @@ import { ReviewsModule } from './reviews/reviews.module';
           then: Joi.required(),
           otherwise: Joi.optional(),
         }),
+        VAPID_SUBJECT: Joi.string().uri().optional(),
+        VAPID_PUBLIC_KEY: Joi.string().optional(),
+        VAPID_PRIVATE_KEY: Joi.string().optional(),
       }),
     }),
     DatabaseModule,
@@ -37,6 +41,7 @@ import { ReviewsModule } from './reviews/reviews.module';
     LearningContentModule,
     AuthModule,
     ReviewsModule,
+    NotificationsModule,
   ],
   controllers: [AppController],
 })
