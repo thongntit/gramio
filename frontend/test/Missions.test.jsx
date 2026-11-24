@@ -6,6 +6,7 @@ import Missions from '@/pages/Missions';
 import stories from '@/data/englishMissionStories';
 import puzzles from '@/data/englishMissionPuzzles';
 import grammarBank from '@/data/grammarContrastDrills.json';
+import { getDailyMission, getDailyMissionResult } from '@/services/dailyMission';
 import { getScheduledRematches, scheduleRematch } from '@/services/missionRematch';
 
 const USER_ID = 'user-missions-test';
@@ -72,7 +73,7 @@ describe('English Missions', () => {
     const parcel = stories.find(({ id }) => id === 'missing-parcel');
     renderMissions(theme);
 
-    expect(screen.getAllByRole('button')).toHaveLength(6);
+    expect(screen.getAllByRole('button')).toHaveLength(7);
     await user.click(screen.getByRole('button', { name: /the missing parcel/i }));
     for (const [index, round] of parcel.rounds.entries()) {
       expect(screen.getByRole('heading', { name: round.prompt, exact: true })).toBeInTheDocument();
@@ -154,5 +155,27 @@ describe('English Missions', () => {
     expect(rematch.rematchKey).toBe(missed.rematchKey);
     await chooseAnswer(user, rematch);
     expect(getScheduledRematches(USER_ID)).toEqual([]);
+  });
+
+  it.each(['light', 'dark'])('plays the daily set and restores its score in %s mode', async (theme) => {
+    const user = userEvent.setup();
+    const { dateKey, rounds } = getDailyMission(new Date());
+    const page = renderMissions(theme);
+    await user.click(screen.getByRole('button', { name: /^daily mission/i }));
+
+    for (const [index, round] of rounds.entries()) {
+      expect(screen.getByRole('heading', { name: round.prompt, exact: true })).toBeInTheDocument();
+      await chooseAnswer(user, round);
+      if (index < rounds.length - 1) expect(getDailyMissionResult(USER_ID, dateKey)).toBeNull();
+      await user.click(screen.getByRole('button', { name: index === rounds.length - 1 ? 'See results' : 'Next question' }));
+    }
+
+    expect(screen.getByText('You got 3 of 3 correct.')).toBeInTheDocument();
+    expect(getDailyMissionResult(USER_ID, dateKey)).toEqual({ score: 3, total: 3 });
+    page.unmount();
+    renderMissions(theme);
+    expect(screen.getByRole('button', { name: /daily mission.*best today: 3\/3/i })).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: /^daily mission/i }));
+    expect(screen.getByRole('heading', { name: rounds[0].prompt, exact: true })).toBeInTheDocument();
   });
 });
