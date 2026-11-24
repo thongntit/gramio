@@ -13,6 +13,7 @@ import {
 import { useLearningStore } from '@/stores/learningStore';
 import Review from '@/pages/Review';
 import { track } from '@/lib/analytics';
+import grammarContrastDrills from '@/data/grammarContrastDrills.json';
 
 const testDir = path.dirname(fileURLToPath(import.meta.url));
 const reviewSource = readFileSync(path.resolve(testDir, '../src/pages/Review.jsx'), 'utf8');
@@ -119,14 +120,16 @@ const CAUGHT_UP = {
   serverTimestamp: '2026-07-18T00:02:00.000Z',
 };
 
-function renderReview() {
+function renderReview(theme) {
   return render(
-    <MemoryRouter initialEntries={['/review']}>
-      <Routes>
-        <Route path="/review" element={<Review />} />
-        <Route path="/" element={<div>Today route</div>} />
-      </Routes>
-    </MemoryRouter>,
+    <div className={theme === 'dark' ? 'dark' : undefined}>
+      <MemoryRouter initialEntries={['/review']}>
+        <Routes>
+          <Route path="/review" element={<Review />} />
+          <Route path="/" element={<div>Today route</div>} />
+        </Routes>
+      </MemoryRouter>
+    </div>,
   );
 }
 
@@ -602,6 +605,99 @@ describe('Review', () => {
     await user.click(screen.getByRole('button', { name: /back to today/i }));
 
     expect(screen.getByText('Today route')).toBeInTheDocument();
+  });
+
+  it.each(['light', 'dark'])('offers a three-question drill after successful retry in %s mode', async (theme) => {
+    const user = userEvent.setup();
+    const [drill] = grammarContrastDrills;
+    const card = { ...CARD, content_key: drill.reviewContentKeys[0] };
+    useLearningStore.getState().replaceToday({ ...TODAY, queue: [queueItem(card)] });
+    submitReview
+      .mockRejectedValueOnce(new ApiError(503, { message: 'Service unavailable' }, '/reviews'))
+      .mockResolvedValueOnce({ duplicate: false, today: CAUGHT_UP });
+
+    renderReview(theme);
+    await revealAndRate(user, 'Hard');
+    const retry = await screen.findByRole('button', { name: /retry review/i });
+    expect(screen.queryByRole('button', { name: /start grammar drill/i })).not.toBeInTheDocument();
+    await user.click(retry);
+
+    expect(await screen.findByText(/session complete/i)).toBeInTheDocument();
+    await user.click(await screen.findByRole('button', { name: /start grammar drill/i }));
+
+    const usedQuestions = new Set();
+    for (let index = 0; index < 3; index += 1) {
+      const question = drill.questions.find(({ front }) => screen.queryByText(front));
+      expect(question).toBeDefined();
+      expect(usedQuestions.has(question.id)).toBe(false);
+      usedQuestions.add(question.id);
+      const choice = index === 0
+        ? question.options.find((option) => option !== question.answer)
+        : question.answer;
+      await user.click(screen.getByRole('button', { name: choice }));
+      if (index === 0) {
+        expect(screen.getByText(`Correct answer: ${question.answer}`)).toBeInTheDocument();
+      }
+      expect(screen.getByText(question.explanation)).toBeInTheDocument();
+      expect(screen.getByText(question.example)).toBeInTheDocument();
+      await user.click(screen.getByRole('button', {
+        name: index === 2 ? /see results/i : /next question/i,
+      }));
+    }
+
+    expect(screen.getByText(/2\s*(?:out of|of|\/)\s*3/i)).toBeInTheDocument();
+    expect(submitReview).toHaveBeenCalledTimes(2);
+    await user.click(screen.getByRole('button', { name: /back to today/i }));
+    expect(screen.getByText('Today route')).toBeInTheDocument();
+  });
+
+  it.each([
+    ['an unrelated card rated Hard', CARD.content_key, 'Hard'],
+    ['a mapped card rated Good', grammarContrastDrills[0].reviewContentKeys[0], 'Good'],
+  ])('keeps the normal completion screen for %s', async (_name, contentKey, rating) => {
+    const user = userEvent.setup();
+    useLearningStore.getState().replaceToday({
+      ...TODAY,
+      queue: [queueItem({ ...CARD, content_key: contentKey })],
+    });
+    submitReview.mockResolvedValueOnce({ duplicate: false, today: CAUGHT_UP });
+
+    renderReview();
+    await revealAndRate(user, rating);
+
+    expect(await screen.findByText(/session complete/i)).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /start grammar drill/i })).not.toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: /back to today/i }));
+    expect(screen.getByText('Today route')).toBeInTheDocument();
+  });
+
+  it('uses the last accepted Again rating ahead of an earlier Hard rating on another topic', async () => {
+    const user = userEvent.setup();
+    const [firstDrill, secondDrill] = grammarContrastDrills;
+    const harderCard = { ...CARD, content_key: firstDrill.reviewContentKeys[0] };
+    const againCard = {
+      ...CARD,
+      id: NEXT_CARD.id,
+      front: 'We ___ here since May.',
+      content_key: secondDrill.reviewContentKeys[0],
+    };
+    const nextToday = { ...TODAY, queue: [queueItem(againCard)] };
+    useLearningStore.getState().replaceToday({
+      ...TODAY,
+      queue: [queueItem(harderCard), queueItem(againCard)],
+      totalDue: 2,
+    });
+    submitReview
+      .mockResolvedValueOnce({ duplicate: false, today: nextToday })
+      .mockResolvedValueOnce({ duplicate: false, today: CAUGHT_UP });
+
+    renderReview();
+    await revealAndRate(user, 'Hard');
+    await screen.findByText(againCard.front);
+    await revealAndRate(user, 'Again');
+    await user.click(await screen.findByRole('button', { name: /start grammar drill/i }));
+
+    expect(screen.getByRole('heading', { name: secondDrill.title })).toBeInTheDocument();
   });
 });
 
