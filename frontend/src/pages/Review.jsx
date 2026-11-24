@@ -8,11 +8,13 @@ import {
   X,
 } from 'lucide-react';
 import { cn } from '@/lib/cn';
+import sampleWithoutReplacement from '@/lib/sampleWithoutReplacement';
 import TypeChip from '@/components/ui/TypeChip';
 import ReauthenticateButton from '@/components/ReauthenticateButton';
 import useHorizontalSwipe from '@/hooks/useHorizontalSwipe';
 import { track } from '@/lib/analytics';
 import { useLearningStore } from '@/stores/learningStore';
+import { scheduleRematch } from '@/services/missionRematch';
 
 const REVIEW_BUTTONS = [
   { id: 'again', label: 'Again', color: '#be123c' },
@@ -50,7 +52,7 @@ function isRenderableReviewCard(card) {
 
 export default function Review() {
   const navigate = useNavigate();
-  const { getToken } = useAuth();
+  const { getToken, userId } = useAuth();
   const today = useLearningStore((state) => state.today);
   const loadStatus = useLearningStore((state) => state.loadStatus);
   const loadError = useLearningStore((state) => state.loadError);
@@ -229,6 +231,7 @@ export default function Review() {
         counts={counts}
         total={reviewedCount}
         struggleRatings={struggleRatings}
+        userId={userId}
         onExit={() => navigate('/', { replace: true })}
       />
     );
@@ -570,7 +573,7 @@ function ReviewError({ error, retryable, submitting, onRetry, onRefresh, onExit 
   );
 }
 
-function ReviewDone({ counts, total, struggleRatings, onExit }) {
+function ReviewDone({ counts, total, struggleRatings, userId, onExit }) {
   const remembered = counts.good + counts.easy;
   const accuracy = total ? Math.round((remembered / total) * 100) : 0;
   const completionTracked = useRef(false);
@@ -608,12 +611,7 @@ function ReviewDone({ counts, total, struggleRatings, onExit }) {
 
   const startDrill = () => {
     if (!drillTopic) return;
-    const shuffled = [...drillTopic.questions];
-    for (let index = shuffled.length - 1; index > 0; index -= 1) {
-      const swapIndex = Math.floor(Math.random() * (index + 1));
-      [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
-    }
-    setDrillQuestions(shuffled.slice(0, 3));
+    setDrillQuestions(sampleWithoutReplacement(drillTopic.questions, 3));
     setQuestionIndex(0);
     setSelectedAnswer(null);
     setDrillCorrect(0);
@@ -670,6 +668,7 @@ function ReviewDone({ counts, total, struggleRatings, onExit }) {
                   onClick={() => {
                     setSelectedAnswer(option);
                     if (option === question.answer) setDrillCorrect((value) => value + 1);
+                    else scheduleRematch(userId, { skill: drillTopic.id, questionId: question.id });
                   }}
                   className={cn(
                     'min-h-12 rounded-xl border px-3.5 py-3 text-left text-[15px] font-medium',
