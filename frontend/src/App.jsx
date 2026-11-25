@@ -8,6 +8,7 @@ import { useThemeStore } from './stores/themeStore';
 const Today = lazy(() => import('./pages/Today'));
 const Review = lazy(() => import('./pages/Review'));
 const Library = lazy(() => import('./pages/Library'));
+const Missions = lazy(() => import('./pages/Missions'));
 const Profile = lazy(() => import('./pages/Profile'));
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
           <Route path="/" element={<Today />} />
           <Route path="/review" element={<Review />} />
           <Route path="/library" element={<Library />} />
+          <Route path="/missions" element={<Missions />} />
           <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>

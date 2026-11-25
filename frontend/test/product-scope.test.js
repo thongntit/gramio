@@ -27,14 +27,14 @@ const legacyRuntimeFiles = [
   '../src/lib/score.js',
 ];
 
-test('registered routes and tabs expose only Gramio MVP surfaces', () => {
+test('registered routes and tabs expose the Gramio learning surfaces', () => {
   const routes = [...appSource.matchAll(/<Route\b[^>]*\bpath="([^"]+)"/gs)]
     .map((match) => match[1]);
   const tabs = [
     ...tabBarSource.matchAll(/\{\s*to: '([^']+)',\s*label: '([^']+)'/g),
   ].map((match) => ({ to: match[1], label: match[2] }));
 
-  assert.deepEqual(routes, ['/', '/review', '/library', '/profile']);
+  assert.deepEqual(routes, ['/', '/review', '/library', '/missions', '/profile']);
   assert.deepEqual(tabs, [
     { to: '/', label: 'Today' },
     { to: '/review', label: 'Review' },
